@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  @media screen and (min-width > 1280px) {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
+@font-face {
+  font-family: Inter;
+  src: url(assets/fonts/Inter.ttf) format("truetype");
+}
+@font-face {
+  font-family: SpaceGrotesk;
+  src: url(assets/fonts/SpaceGrotesk.ttf) format("truetype");
+}
+@property --scroll-position {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@property --scroll-position-delayed {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  animation: adjust-pos linear both;
+  animation-timeline: scroll(root);
+}
+
+@keyframes adjust-pos {
+  to {
+    --scroll-position: 1;
+    --scroll-position-delayed: 1;
+  }
+}
+
+body {
+  transition: --scroll-position-delayed 0.15s linear;
+  --scroll-velocity: calc(
+    var(--scroll-position) - var(--scroll-position-delayed)
+  );
+  --scroll-direction: sign(var(--scroll-velocity));
+
+  --when-scrolling: abs(var(--scroll-direction));
+
+  --hide-bars: var(--when-scrolling);
+
+  /* --color-text: #111;
+  --color-bg: #f8c792;
+  --color-link: #000;
+  --color-link-hover: #000;
+  --color-border: #a7927b;
+  --marquee-bg: #000;
+  --marquee-text: #fff;
+  --menu-focus: #775e41;
+  color: var(--color-text); */
+  /* background-color: var(--color-bg); */
+}
+.word,
+.word > .char {
+  display: inline-block;
+}
+.menu__item-link:focus:not(:focus-visible) {
+  color: var(--color-link);
+}
+/* 
+.overlay {
+  border-image: fill 0 linear-gradient(#0003, #000);
+} */
