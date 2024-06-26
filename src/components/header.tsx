@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import { LucideIcons } from "@/components/icons";
 import MenuButton from "./menu-button";

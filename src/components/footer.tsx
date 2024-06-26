@@ -1,4 +1,3 @@
-import React from "react";
 import { LucideIcons } from "@/components/icons";
 
 function Footer() {

@@ -3,7 +3,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./routes/root";
 import Home from "./routes";
 import ErrorPage from "./routes/error-page";
-import Overlay from "./components/overlay";
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -17,10 +16,6 @@ const router = createBrowserRouter([
         element: <Home />,
       },
     ],
-  },
-  {
-    path: "/test",
-    element: <Overlay />,
   },
 ]);
 
