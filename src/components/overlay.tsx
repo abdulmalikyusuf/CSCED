@@ -100,7 +100,7 @@ function Overlay({
   }, [isOpen]);
 
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} className="z-[999]">
       <svg
         className="overlay w-full h-full absolute inset-0 z-50"
         width="100%"

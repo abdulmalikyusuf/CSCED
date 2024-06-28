@@ -2,68 +2,74 @@ import { useRef, Fragment } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { closestEdge } from "@/lib/utils";
-// import "./nav.css";
 
-function Nav() {
-  const container = useRef<HTMLUListElement | null>(null);
-  const navItems = [
-    {
-      title: "Home",
-      children:
-        "Mia Terra, Quest Hill, Bean Palace, Treehouse, Mia Terra, Quest Hill, Bean Palace, Treehouse"
-          .split(", ")
-          .map((child) => {
-            return { text: child, bgImage: "bg-[url(assets/img/2.jpg)]" };
-          }),
-    },
-    {
-      title: "About Us",
-      children:
-        "Tia Alta, Quadratic Bliss, Host Mall, Freefall Dome, Tia Alta, Quadratic Bliss, Host Mall, Freefall Dome"
-          .split(", ")
-          .map((child) => {
-            return { text: child, bgImage: "bg-[url(assets/img/4.jpg)]" };
-          }),
-    },
-    {
-      title: "The Team",
-      children:
-        "Dome House, Revellion High, Wax Palace, Cellar Tree, Dome House, Revellion High, Wax Palace, Cellar Tree"
-          .split(", ")
-          .map((child) => {
-            return { text: child, bgImage: "bg-[url(assets/img/3.jpg)]" };
-          }),
-    },
-    {
-      title: "Guayaquil",
-      children:
-        "Frank Tower, Dom Dom, Santa Maria, Big Molly, Frank Tower, Dom Dom, Santa Maria, Big Molly"
-          .split(", ")
-          .map((child) => {
-            return {
-              text: child,
-              bgImage: "bg-[url(assets/img/1.jpg)]",
-            };
-          }),
-    },
-  ];
+const navItems = [
+  {
+    title: "Home",
+    children:
+      "Mia Terra, Quest Hill, Bean Palace, Treehouse, Mia Terra, Quest Hill, Bean Palace, Treehouse"
+        .split(", ")
+        .map((child) => {
+          return { text: child, bgImage: "bg-[url(assets/img/2.jpg)]" };
+        }),
+  },
+  {
+    title: "About Us",
+    children:
+      "Tia Alta, Quadratic Bliss, Host Mall, Freefall Dome, Tia Alta, Quadratic Bliss, Host Mall, Freefall Dome"
+        .split(", ")
+        .map((child) => {
+          return { text: child, bgImage: "bg-[url(assets/img/4.jpg)]" };
+        }),
+  },
+  {
+    title: "The Team",
+    children:
+      "Dome House, Revellion High, Wax Palace, Cellar Tree, Dome House, Revellion High, Wax Palace, Cellar Tree"
+        .split(", ")
+        .map((child) => {
+          return { text: child, bgImage: "bg-[url(assets/img/3.jpg)]" };
+        }),
+  },
+  {
+    title: "Contact",
+    children:
+      "Frank Tower, Dom Dom, Santa Maria, Big Molly, Frank Tower, Dom Dom, Santa Maria, Big Molly"
+        .split(", ")
+        .map((child) => {
+          return {
+            text: child,
+            bgImage: "bg-[url(assets/img/1.jpg)]",
+          };
+        }),
+  },
+];
+function Nav({ isOpen }: { isOpen: boolean }) {
+  const container = useRef<HTMLElement | null>(null);
+
   return (
-    <ul className="relative md:flex md:gap-6 bg-[#f8c792] md:bg-white [--color-link-hover:#000] [--marquee-text:#fff] [--menu-focus:#775e41] text-[#111]">
-      {navItems.map((item) => (
-        <NavItem key={item.title} {...item} containerRef={container} />
-      ))}
-    </ul>
+    <nav
+      className={`group/header max-md:fixed inset-y-0 right-0 max-md:py-14 max-md:z-[1] max-md:bg-[#111] transition-[width] delay-150 duration-300 ease-in-out ${
+        isOpen ? "max-md:w-3/4" : "max-md:w-0"
+      }`}
+      ref={container}
+    >
+      <ul className="relative md:flex md:gap-6 bg-[#f8c792] md:bg-white [--color-link-hover:#000] [--marquee-text:#fff] [--menu-focus:#775e41] text-[#111]">
+        {navItems.map((item) => (
+          <NavItem key={item.title} {...item} />
+        ))}
+      </ul>
+    </nav>
   );
 }
 
 export default Nav;
 
 type NavItemProps = {
-  containerRef: React.MutableRefObject<HTMLUListElement | null>;
   title: string;
   children: { text: string; bgImage: string }[];
 };
-function NavItem({ containerRef, title, children }: NavItemProps) {
+function NavItem({ title, children }: NavItemProps) {
   const animationDefaults = { duration: 0.6, ease: "expo" };
 
   const menuItem = useRef<HTMLLIElement | null>(null);
@@ -71,7 +77,7 @@ function NavItem({ containerRef, title, children }: NavItemProps) {
   const marquee = useRef<HTMLDivElement | null>(null);
   const marqueeInner = useRef<HTMLDivElement | null>(null);
 
-  const { contextSafe } = useGSAP({ scope: containerRef });
+  const { contextSafe } = useGSAP({ scope: menuItem.current });
 
   const mouseEnter = (ev) => {
     // find closest side to the mouse
@@ -84,6 +90,7 @@ function NavItem({ containerRef, title, children }: NavItemProps) {
       .timeline({ defaults: animationDefaults })
       .set(marquee.current, { y: edge === "top" ? "-101%" : "101%" }, 0)
       .set(marqueeInner.current, { y: edge === "top" ? "101%" : "-101%" }, 0)
+      .set(DOMLink.current, { opacity: 0 })
       .to([marquee.current, marqueeInner.current], { y: "0%" }, 0);
   };
   const mouseLeave = (ev) => {
@@ -92,6 +99,7 @@ function NavItem({ containerRef, title, children }: NavItemProps) {
 
     gsap
       .timeline({ defaults: animationDefaults })
+      .set(DOMLink.current, { opacity: 1 })
       .to(marquee.current, { y: edge === "top" ? "-101%" : "101%" }, 0)
       .to(marqueeInner.current, { y: edge === "top" ? "101%" : "-101%" }, 0);
   };
@@ -111,11 +119,11 @@ function NavItem({ containerRef, title, children }: NavItemProps) {
 
   return (
     <li
-      className="menu__item relative overflow-hidden text-center [&>:not(:last-child)]:shadow-[0_-1px_#a7927b] md:[&>:not(:last-child)]:shadow-none last:shadow-[0_1px_#a7927b,_0_-1px_#a7927b] md:!shadow-none"
+      className="menu__item relative overflow-hidden text-center shadow-[0_-1px_#a7927b] last:shadow-[0_1px_#a7927b,_0_-1px_#a7927b] md:shadow-none md:last:shadow-none"
       ref={menuItem}
     >
       <a
-        className="menu__item-link block md:inline-flex relative cursor-pointer focus:text-[var(--menu-focus) focus-visible:text-[var(--menu-focus)] [&>:focus:not(:focus-visible)]:text-[#000] whitespace-nowrap text-[6vw] md:text-sm font-semibold md:font-medium pt-[1vh] px-[1vw] md:p-0 uppercase md:capitalize"
+        className="menu__item-link block md:inline-flex relative cursor-pointer focus:text-[var(--menu-focus)] focus-visible:text-[var(--menu-focus)] [&>:focus:not(:focus-visible)]:text-[#000] whitespace-nowrap text-[6vw] md:text-sm font-semibold md:font-medium pt-[1vh] px-[1vw] md:p-0 uppercase md:capitalize"
         href="#"
         ref={DOMLink}
         onMouseEnter={contextSafe(mouseEnter)}

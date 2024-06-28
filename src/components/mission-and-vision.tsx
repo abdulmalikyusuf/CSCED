@@ -18,7 +18,7 @@ function MissionAndVision() {
         </button>
       </div>
       <div className="flex flex-wrap *:w-full md:*:w-1/2">
-        <div className="bg-[#040066] p-20">
+        <div className="bg-[#040066] p-10 md:p-14 lg:p-20">
           <p className="text-lg font-medium leading-loose text-pretty">
             To build the Resilience of vulnerable populations using locally
             available Solutions that ensure Participation and bring meaningful

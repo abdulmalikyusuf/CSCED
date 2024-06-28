@@ -18,10 +18,10 @@ function FeatureCard({
   return (
     <div
       key={title}
-      className={`relative ${bgImage} bg-cover bg-center group overflow-clip`}
+      className={`relative h-96 md:h-[480px] lg:h-screen lg:max-h-[900px] ${bgImage} bg-cover bg-center group overflow-clip`}
     >
       <div
-        className={`p-8 md:p-14 w-full ${transitionClass} group-hover:translate-y-0 duration-700 transition-transform will-change-transform`}
+        className={`py-6 px-10 md:py-8 lg:py-10 w-full ${transitionClass} group-hover:translate-y-0 duration-700 transition-transform will-change-transform`}
       >
         <div className="">
           <div className="size-10 md:size-16 mb-3">
