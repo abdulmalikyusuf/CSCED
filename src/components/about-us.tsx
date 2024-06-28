@@ -1,11 +1,14 @@
+import Image1 from "@/assets/images/Frame-115-1.png";
+import Image2 from "@/assets/images/home-1_01-2.png";
+
 function AboutUs() {
   return (
     <div className="flex flex-col lg:flex-row items-center gap-16 text-black pr-4 sm:pr-8 lg:pr-16">
       <div className="shrink-0 relative">
-        <img src="assets/images/Frame-115-1.png" alt="" className="" />
+        <img src={Image1} alt="" className="" />
         <div className="absolute bottom-0">
           <div className="relative">
-            <img src="assets/images/home-1_01-2.png" alt="" className="" />
+            <img src={Image2} alt="" className="" />
             <div className="absolute left-[20%] bottom-[15%] text-white font-space-grotesk">
               <p className="text-3xl font-bold mb-2">Empowering Lives:</p>
               <p className="text-3xl font-bold">

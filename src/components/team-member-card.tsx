@@ -1,11 +1,12 @@
 import { LucideIcons } from "./icons";
+import TeamMemberPhoto from "@/assets/images/Frame-115-1.png";
 
 function TeamMemberCard() {
   return (
     <div className="rounded-lg shadow-xl overflow-clip">
       <div className="relative">
         <img
-          src="src/assets/images/neom-wbOKjgQv3nY-unsplash.jpg"
+          src={TeamMemberPhoto}
           alt=""
           className="object-cover h-80 w-full lg:w-96"
         />

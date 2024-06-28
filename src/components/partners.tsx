@@ -4,7 +4,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import partnerImage from "assets/images/Frame-123-1.png";
+import partnerImage from "@/assets/images/Frame-123-1.png";
 
 function Partners() {
   const container = useRef<HTMLDivElement | null>(null);
