@@ -4,7 +4,14 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import partnerImage from "@/assets/images/Frame-123-1.png";
+import AdamawaSACA from "@/assets/images/partners/adamawa-SACA.jpg";
+import BritishCouncil from "@/assets/images/partners/british-council.png";
+import FAO from "@/assets/images/partners/fao.jpg";
+import NELA from "@/assets/images/partners/nela.jpg";
+import NEMA from "@/assets/images/partners/nema.jpg";
+import OCHA from "@/assets/images/partners/search-for-common-ground.jpg";
+import UNHCR from "@/assets/images/partners/unhcr.png";
+import WorldBank from "@/assets/images/partners/world-bank.jpg";
 
 function Partners() {
   const container = useRef<HTMLDivElement | null>(null);
@@ -130,20 +137,29 @@ function Partners() {
   );
 
   return (
-    <div className="flex *:shrink-0 overflow-x-hidden" ref={container}>
-      {"ghsdxjwqlkty".split("").map((i) => (
+    <div className="flex gap-8 *:shrink-0 overflow-x-hidden" ref={container}>
+      {[
+        AdamawaSACA,
+        BritishCouncil,
+        FAO,
+        NELA,
+        NEMA,
+        OCHA,
+        UNHCR,
+        WorldBank,
+      ].map((partner, i) => (
         <div
           key={i}
           ref={pushRef}
-          className="relative overflow-hidden group *:[transition-timing-function:_cubic-bezier(0.65,0,0.35,1)]"
+          className="relative overflow-hidden max-h-[139px] max-w-[278px] group *:[transition-timing-function:_cubic-bezier(0.65,0,0.35,1)]"
         >
           <img
-            src={partnerImage}
+            src={partner}
             alt=""
-            className="flex transition-all duration-500 group-hover:-translate-y-full"
+            className="flex object-contain transition-all duration-500 group-hover:-translate-y-full"
           />
           <img
-            src={partnerImage}
+            src={partner}
             alt=""
             className="translate-y-full absolute inset-0 transition-all duration-500 group-hover:translate-y-0"
           />
