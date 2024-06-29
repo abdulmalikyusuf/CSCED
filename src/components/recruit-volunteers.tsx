@@ -43,7 +43,7 @@ function RecruitVolunteers() {
             >
               <summary className="flex justify-between marker:hidden rounded-full py-2 px-5 text-[#232323] text-lg font-medium capitalize border-2 border-black/15 group-open:bg-[#01592E] group-open:text-white group-open:border-[#01592E]">
                 <p className="">{title}</p>
-                <p className="text-lg text-[#01592E] group-open:text-white">
+                <p className="text-lg text-[#f8c792] group-open:text-white">
                   <LucideIcons.plus className="inline-block open:hidden" />
                   <LucideIcons.minus className="hidden open:inline-block" />
                 </p>

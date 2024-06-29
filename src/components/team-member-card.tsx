@@ -11,21 +11,21 @@ function TeamMemberCard() {
           className="object-cover h-80 w-full lg:w-96"
         />
         <div className="absolute bottom-14 right-0">
-          <div className="group/share flex items-center p-[5px] rounded-l-full bg-[#01592E] transition-transform duration-500 will-change-transform translate-x-[calc(100%-60px)] hover:bg-[#FFAC00] hover:translate-x-0">
+          <div className="group/share flex items-center p-[5px] rounded-l-full bg-[#111] transition-transform duration-500 will-change-transform translate-x-[calc(100%-60px)] hover:bg-[#FFAC00] hover:translate-x-0">
             <div className="flex items-center justify-center size-11 rounded-full bg-white text-xl mr-auto">
-              <LucideIcons.share className="stroke-[#01592E] group-hover/share:stroke-[#FFAC00]" />
+              <LucideIcons.share className="stroke-[#111] group-hover/share:stroke-[#f8c792]" />
             </div>
             <div className="flex gap-2 ml-4">
-              <div className="size-8 rounded-full flex justify-center items-center border border-white">
+              <div className="opacity-0 group-hover/share:opacity-100 size-8 rounded-full flex justify-center items-center border border-white">
                 <LucideIcons.twitter size={16} className="" />
               </div>
-              <div className="size-8 rounded-full flex justify-center items-center border border-white">
+              <div className="opacity-0 group-hover/share:opacity-100 size-8 rounded-full flex justify-center items-center border border-white">
                 <LucideIcons.facebook size={16} className="" />
               </div>
-              <div className="size-8 rounded-full flex justify-center items-center border border-white">
+              <div className="opacity-0 group-hover/share:opacity-100 size-8 rounded-full flex justify-center items-center border border-white">
                 <LucideIcons.linkedIn size={16} className="" />
               </div>
-              <div className="size-8 rounded-full flex justify-center items-center border border-white">
+              <div className="opacity-0 group-hover/share:opacity-100 size-8 rounded-full flex justify-center items-center border border-white">
                 <LucideIcons.instagram size={16} className="" />
               </div>
             </div>

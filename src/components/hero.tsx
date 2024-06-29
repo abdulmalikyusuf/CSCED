@@ -3,10 +3,19 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Splitting from "splitting";
+import { GroupField } from "@prismicio/client";
+import {
+  HomepageDocumentDataHeroSectionItem,
+  Simplify,
+} from "#/types.generated";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Hero() {
+function Hero({
+  data,
+}: {
+  data: GroupField<Simplify<HomepageDocumentDataHeroSectionItem>>;
+}) {
   const container = useRef<HTMLDivElement | null>(null);
   const title = useRef<HTMLHeadingElement | null>(null);
   const subTitle = useRef<HTMLHeadingElement | null>(null);
@@ -69,26 +78,30 @@ function Hero() {
       });
     },
     { scope: container }
-  ); // <-- scope is for selector text (optional)
+  );
+
   return (
     <div
       ref={container}
-      className="bg-[url(assets/images/neom-wbOKjgQv3nY-unsplash.jpg)] bg-no-repeat bg-cover h-screen max-h-[900px] flow-root"
+      className="bg-[url(assets/images/neom-wbOKjgQv3nY-unsplash.jpg)] bg-blend-saturation bg-no-repeat bg-cover h-screen max-h-[900px] flow-root"
     >
       <div className="flex flex-col items-center justify-center h-full max-w-4xl mx-auto text-center">
-        <h6 className="text-2xl uppercase mb-12" ref={title}>
-          resilience for all
+        <h6
+          className="text-lg md:text-2xl uppercase mb-2 md:mb-6 lg:mb-12"
+          ref={title}
+        >
+          {data[0].title[0].text}
         </h6>
         <h2
-          className="text-6xl font-bold capitalize tracking-wider font-space-grotesk [--color-highlight-end:_#49af42] [--color-highlight-end-alt:_#4252af]"
+          className="text-4xl md:text-6xl font-bold capitalize tracking-wider font-space-grotesk [--color-highlight-end:_#fff] [--color-highlight-end-alt:_#f8c792]"
           data-splitting="chars"
           ref={subTitle}
         >
-          there is no big thing than your concern
+          {data[0].subtitle[0].text}
         </h2>
         <button
           type="button"
-          className="mt-8 px-8 py-4 bg-black text-white rounded-full text-sm uppercase font-medium"
+          className="mt-4 md:mt-6 lg:mt-8 px-8 py-4 bg-black text-white rounded-full text-sm uppercase font-medium"
         >
           learn more
         </button>

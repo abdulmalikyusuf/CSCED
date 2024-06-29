@@ -16,3 +16,20 @@ const distMetric = (x, y, x2, y2) => {
 };
 
 export { closestEdge, distMetric };
+
+type Field =
+  | {
+      type: "heading1" | "paragraph";
+      text: string;
+      spans: [];
+      direction: "ltr" | "rtl";
+    }
+  | Record<string, never>;
+
+function parsePrismicField(field: any) {
+  field = field[0];
+  if (field.type.startsWith("heading") || field.type === "paragraph")
+    return field.text;
+}
+
+export { parsePrismicField };

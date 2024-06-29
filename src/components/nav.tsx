@@ -54,7 +54,7 @@ function Nav({ isOpen }: { isOpen: boolean }) {
       }`}
       ref={container}
     >
-      <ul className="relative md:flex md:gap-6 bg-[#f8c792] md:bg-white [--color-link-hover:#000] [--marquee-text:#fff] [--menu-focus:#775e41] text-[#111]">
+      <ul className="relative md:flex md:gap-6 bg-primary md:bg-white [--color-link-hover:#111] [--marquee-text:#fff] [--menu-focus:#775e41] text-[#111]">
         {navItems.map((item) => (
           <NavItem key={item.title} {...item} />
         ))}

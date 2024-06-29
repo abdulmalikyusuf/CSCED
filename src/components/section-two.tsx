@@ -3,15 +3,25 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Splitting from "splitting";
+import { GroupField, TitleField } from "@prismicio/client";
+import { PrismicRichText } from "@prismicio/react";
 
 import IconBox5 from "@/assets/images/icon-box_05.png";
 import IconBox6 from "@/assets/images/icon-box_06.png";
 import IconBox7 from "@/assets/images/icon-box_07.png";
 import IconBox8 from "@/assets/images/icon-box_08.png";
+import {
+  HomepageDocumentDataSectionGridItem,
+  Simplify,
+} from "#/types.generated";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function SectionTwo() {
+type Props = {
+  title: TitleField;
+  data: GroupField<Simplify<HomepageDocumentDataSectionGridItem>>;
+};
+function SectionTwo({ title, data }: Props) {
   const container = useRef<HTMLDivElement | null>(null);
   const text = useRef<HTMLSpanElement | null>(null);
   const animationDefaults = {
@@ -79,7 +89,7 @@ function SectionTwo() {
     >
       <div className="min-w-80">
         <h4 className="text-3xl font-bold text-pretty font-space-grotesk">
-          Empowering Lives,{" "}
+          {title[0].text}
           <span
             ref={text}
             data-splitting="chars"
@@ -92,11 +102,10 @@ function SectionTwo() {
           >
             Creating
           </span>{" "}
-          Impact
         </h4>
         <button
           type="button"
-          className="mt-8 text-[#232323] uppercase font-medium text-sm rounded-full px-8 py-4 border-2 border-[#01592E]"
+          className="mt-8 text-[#232323] uppercase font-medium text-sm rounded-full px-8 py-4 border-2 border-[#f8c792]"
         >
           Donate Now
         </button>
@@ -109,13 +118,11 @@ function SectionTwo() {
             </div>
             <div className="">
               <h6 className="text-xl mb-3 font-semibold">
-                Community Development Programs
+                {data[idx].title[0].text}
               </h6>
-              <p className="opacity-80 text-wrap">
-                Engage in our holistic community development initiatives. From
-                infrastructure projects to educational programs, we work
-                collaboratively to foster sustainable growth and empowerment.
-              </p>
+              <div className="opacity-80 text-wrap">
+                <PrismicRichText field={data[idx].text} />
+              </div>
             </div>
           </div>
         ))}

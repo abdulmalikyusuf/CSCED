@@ -23,6 +23,9 @@ export default {
       ],
     },
     extend: {
+      colors: {
+        primary: "#f8c792"
+      },
       keyframes: {
         marquee: {
           to: { transform: "translate3d(-50%, 0, 0)" },

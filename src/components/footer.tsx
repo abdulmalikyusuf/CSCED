@@ -20,7 +20,7 @@ function Footer() {
             ))}
           </ul>
         </div>
-        <div className="">
+        <div className="order-1 md:order-2">
           <p className="">
             We envision a Sustainable future where everyone can access
             development, leaving no one behind.
