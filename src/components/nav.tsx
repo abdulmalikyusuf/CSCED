@@ -1,4 +1,5 @@
 import { useRef, Fragment } from "react";
+import { NavLink } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { closestEdge } from "@/lib/utils";
@@ -6,6 +7,7 @@ import { closestEdge } from "@/lib/utils";
 const navItems = [
   {
     title: "Home",
+    href: "/",
     children:
       "Mia Terra, Quest Hill, Bean Palace, Treehouse, Mia Terra, Quest Hill, Bean Palace, Treehouse"
         .split(", ")
@@ -15,6 +17,7 @@ const navItems = [
   },
   {
     title: "About Us",
+    href: "/about-us",
     children:
       "Tia Alta, Quadratic Bliss, Host Mall, Freefall Dome, Tia Alta, Quadratic Bliss, Host Mall, Freefall Dome"
         .split(", ")
@@ -24,6 +27,7 @@ const navItems = [
   },
   {
     title: "The Team",
+    href: "/",
     children:
       "Dome House, Revellion High, Wax Palace, Cellar Tree, Dome House, Revellion High, Wax Palace, Cellar Tree"
         .split(", ")
@@ -32,7 +36,18 @@ const navItems = [
         }),
   },
   {
-    title: "Contact",
+    title: "The Mission",
+    href: "/",
+    children:
+      "Dome House, Revellion High, Wax Palace, Cellar Tree, Dome House, Revellion High, Wax Palace, Cellar Tree"
+        .split(", ")
+        .map((child) => {
+          return { text: child, bgImage: "bg-[url(assets/img/3.jpg)]" };
+        }),
+  },
+  {
+    title: "Contact Us",
+    href: "/",
     children:
       "Frank Tower, Dom Dom, Santa Maria, Big Molly, Frank Tower, Dom Dom, Santa Maria, Big Molly"
         .split(", ")
@@ -67,11 +82,11 @@ export default Nav;
 
 type NavItemProps = {
   title: string;
+  href: string;
   children: { text: string; bgImage: string }[];
 };
-function NavItem({ title, children }: NavItemProps) {
+function NavItem({ title, children, href }: NavItemProps) {
   const animationDefaults = { duration: 0.6, ease: "expo" };
-
   const menuItem = useRef<HTMLLIElement | null>(null);
   const DOMLink = useRef<HTMLAnchorElement | null>(null);
   const marquee = useRef<HTMLDivElement | null>(null);
@@ -116,21 +131,24 @@ function NavItem({ title, children }: NavItemProps) {
       menuItem.current.clientHeight
     );
   };
-
   return (
     <li
-      className="menu__item relative overflow-hidden text-center shadow-[0_-1px_#a7927b] last:shadow-[0_1px_#a7927b,_0_-1px_#a7927b] md:shadow-none md:last:shadow-none"
+      className="relative overflow-hidden text-center shadow-[0_-1px_#a7927b] last:shadow-[0_1px_#a7927b,_0_-1px_#a7927b] md:shadow-none md:last:shadow-none"
       ref={menuItem}
     >
-      <a
-        className="menu__item-link block md:inline-flex relative cursor-pointer focus:text-[var(--menu-focus)] focus-visible:text-[var(--menu-focus)] [&>:focus:not(:focus-visible)]:text-[#000] whitespace-nowrap text-[6vw] md:text-sm font-semibold md:font-medium pt-[1vh] px-[1vw] md:p-0 uppercase md:capitalize"
-        href="#"
+      <NavLink
+        to={href}
+        className={({ isActive, isPending }) =>
+          `${
+            isActive ? "text-primary" : "text-[#111]"
+          } md:!opacity-100 block md:inline-flex relative cursor-pointer focus:text-[var(--menu-focus)] focus-visible:text-[var(--menu-focus)] [&>:focus:not(:focus-visible)]:text-[#000] whitespace-nowrap text-[6vw] md:text-sm font-semibold md:font-medium pt-[1vh] px-[1vw] md:p-0 uppercase md:capitalize`
+        }
         ref={DOMLink}
         onMouseEnter={contextSafe(mouseEnter)}
         onMouseLeave={contextSafe(mouseLeave)}
       >
         {title}
-      </a>
+      </NavLink>
       <div
         className="marquee md:hidden absolute top-0 left-0 overflow-hidden w-full h-full pointer-events-none bg-[#000] -translate3d-y-full"
         ref={marquee}

@@ -11,9 +11,11 @@ import {
   Instagram,
   Plus,
   Minus,
+  ChevronRight,
 } from "lucide-react";
 
 export const LucideIcons = {
+  chevronRight: ChevronRight,
   hamburger: Menu,
   search: Search,
   telephone: Phone,

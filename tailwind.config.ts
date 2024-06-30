@@ -21,10 +21,11 @@ export default {
         "Arial",
         "sans-serif",
       ],
+      DMSans: ["DMSans", "system-ui"],
     },
     extend: {
       colors: {
-        primary: "#f8c792"
+        primary: "#f8c792",
       },
       keyframes: {
         marquee: {

@@ -16,6 +16,11 @@
   font-family: SpaceGrotesk;
   src: url(assets/fonts/SpaceGrotesk.ttf) format("truetype");
 }
+@font-face {
+  font-family: DMSans;
+  src: url(assets/fonts/DMSans-VariableFont_opszwght.ttf) format("truetype");
+}
+
 @property --scroll-position {
   syntax: "<number>";
   inherits: true;
@@ -62,17 +67,6 @@ body {
   --when-scrolling: abs(var(--scroll-direction));
 
   --hide-bars: var(--when-scrolling);
-
-  /* --color-text: #111;
-  --color-bg: #f8c792;
-  --color-link: #000;
-  --color-link-hover: #000;
-  --color-border: #a7927b;
-  --marquee-bg: #000;
-  --marquee-text: #fff;
-  --menu-focus: #775e41;
-  color: var(--color-text); */
-  /* background-color: var(--color-bg); */
 }
 .word,
 .word > .char {
