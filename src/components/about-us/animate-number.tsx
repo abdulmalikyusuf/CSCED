@@ -9,6 +9,7 @@ type Props = {
   from: number;
   to: number;
   duration?: number;
+  suffix: string;
 };
 
 function AnimateNumber(config: Props) {
@@ -47,8 +48,9 @@ function AnimateNumber(config: Props) {
         innerHTML: config.from || 0,
         duration: config.duration || 1,
         delay: 2,
-        ease: "power1.in",
+        ease: "power4.in",
         snap: { innerHTML: 1 },
+        // onUpdate: () => (this.targets().innerHTML += config.suffix),
       }
     );
   useGSAP(

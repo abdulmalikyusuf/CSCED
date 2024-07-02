@@ -28,12 +28,17 @@ const goals = [
 function AboutUs() {
   return (
     <>
-      <div className="bg-[url(assets/images/neom-wbOKjgQv3nY-unsplash.jpg)] h-[70vh] grayscale-0 flex flex-col items-center justify-center">
-        <h2 className="text-4xl font-bold">About Us</h2>
-        <div className="mt-4 flex gap-2 items-center text-sm font-semibold">
-          <h6 className="">HOME</h6>
-          <LucideIcons.chevronRight size={16} />
-          <h6 className="">ABOUT US</h6>
+      <div className="relative h-[70vh] flex flex-col items-center justify-center">
+        <div className="absolute inset-0 -z-0 grayscale">
+          <img src={Image1} alt="" className="size-full object-cover" />
+        </div>
+        <div className="z-10">
+          <h2 className="text-4xl font-bold text-primary">About Us</h2>
+          <div className="mt-4 flex gap-2 items-center text-sm font-semibold">
+            <h6 className="text-primary">HOME</h6>
+            <LucideIcons.chevronRight size={16} />
+            <h6 className="">ABOUT US</h6>
+          </div>
         </div>
       </div>
       <div className="flex flex-col gap-10 md:gap-16 lg:gap-20 py-16 bg-white text-[#111]">
@@ -98,12 +103,14 @@ function AboutUs() {
               {goals.map((goal) => (
                 <div
                   key={goal.title}
-                  className="flex-1 flex flex-col items-center gap-10 px-6 md:px-4 py-6 rounded-lg hover:bg-white hover:shadow-md"
+                  className="flex-1 flex flex-col items-center gap-10 px-6 md:px-4 py-6 rounded-lg max-w-xs max-md:mx-auto hover:bg-white hover:shadow-md"
                 >
                   <img src={goal.image} alt="" className="size-[100px]" />
                   <div className="text-center">
                     <h6 className="text-xl font-bold">{goal.title}</h6>
-                    <p className="mt-2 text-balance">{goal.text}</p>
+                    <p className="mt-2 text-balance leading-relaxed">
+                      {goal.text}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -119,8 +126,12 @@ function AboutUs() {
             ].map((stat) => (
               <div key={stat[0]} className="flex items-center gap-1 w-min">
                 <h2 className="text-4xl leading-none text-primary font-bold font-space-grotesk">
-                  <AnimateNumber from={0} to={parseInt(stat[0])} />
-                  {stat[1]}
+                  <AnimateNumber
+                    from={0}
+                    to={parseInt(stat[0])}
+                    suffix={stat[1]}
+                  />
+                  {/* {stat[1]} */}
                 </h2>
                 <p className="leading-none uppercase font-semibold">
                   {stat[2]}

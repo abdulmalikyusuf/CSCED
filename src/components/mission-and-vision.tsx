@@ -33,11 +33,17 @@ function Mission() {
     <div className="flex flex-wrap *:w-full md:*:w-1/2">
       <div className="bg-[#111] p-10 md:p-14 lg:p-20">
         <p className="text-lg font-medium leading-loose text-pretty">
-          To build the Resilience of vulnerable populations using locally
-          available Solutions that ensure Participation and bring meaningful
-          development. Leaving no one behind.
+          To promote access to essential information, knowledge, and skills,
+          while empowering the poor and vulnerable to achieve sustainable
+          development. We are dedicated to creating opportunities that foster
+          self-reliance and resilience, focusing on inclusive programs that
+          address critical needs and support community growth. Our mission is to
+          bridge gaps and dismantle barriers, ensuring that every individual has
+          the resources and support needed to thrive. By fostering a culture of
+          empowerment and collaboration, we aim to drive meaningful change and
+          contribute to a more equitable and prosperous future for all.
         </p>
-        <div className="flex gap-2 mt-6">
+        {/* <div className="flex gap-2 mt-6">
           <div className="">
             <h6 className="text-2xl font-bold">25%</h6>
             <p className="text-sm font-medium uppercase font-space-grotesk">
@@ -50,7 +56,7 @@ function Mission() {
               volunteers
             </p>
           </div>
-        </div>
+        </div> */}
         <button
           type="button"
           className="mt-10 px-8 py-4 bg-[#f8c792] text-white rounded-full text-sm uppercase font-medium"
@@ -82,8 +88,16 @@ function Vision() {
     <div className="flex flex-wrap *:w-full md:*:w-1/2">
       <div className="bg-[#111] p-10 md:p-14 lg:p-20">
         <p className="text-lg font-medium leading-loose text-pretty">
-          We envision a Sustainable future where everyone can access
-          development, leaving no one behind.
+          To empower communities by facilitating access to comprehensive
+          healthcare services, diverse economic development opportunities, and
+          quality education. We strive to create an environment where
+          individuals are equipped with the knowledge, skills, and resources
+          necessary to achieve self-reliance and sustainable growth. Our vision
+          is to build inclusive communities where every person has the
+          opportunity to contribute meaningfully to society, fostering a culture
+          of mutual support, respect, and collaboration. Through our efforts, we
+          aim to break the cycle of poverty and inequality, ensuring a brighter
+          and more equitable future for all.
         </p>
 
         <button

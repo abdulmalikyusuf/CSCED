@@ -8,11 +8,12 @@ function Footer() {
           <h6 className="text-lg font-medium">PARTNERS</h6>
           <ul className="mt-8 flex flex-col gap-2.5 opacity-70">
             {[
-              "Save the Children",
-              "Nigeria Humanitarian Fund Donate in Honor",
-              "E.Her",
-              "ZOE",
-              "State Primary Health Care",
+              "Adamawa State Gov't",
+              "British Council",
+              "FAO",
+              "MSH",
+              "World Bank",
+              "UNHCR",
             ].map((partner) => (
               <li key={partner} className="text-wrap">
                 {partner}
@@ -79,8 +80,8 @@ function Footer() {
             <p className="pl-4">Privacy Policy</p>
           </div>
           <p className="">
-            Copyright © {new Date().getFullYear()} FRAD Foundations by
-            NaijaCreatives. All Rights Reserved.
+            Copyright © {new Date().getFullYear()} CSCED by Vuetify Solutions.
+            All Rights Reserved.
           </p>
         </div>
       </div>

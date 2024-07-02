@@ -36,21 +36,21 @@ function Home() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm*:min-w-[480px] lg:h-screen lg:max-h-[900px]">
         {[
           {
-            bgImage: "bg-[url(assets/images/Frame-116-2-1.png)]",
+            bgImage: "bg-[url(assets/images/feature-1.jpg)]",
             svgIcon: Community,
             title: data.features[0].title,
             text: data.features[0].text,
             transitionClass: "translate-y-[18%] md:translate-y-[30%]",
           },
           {
-            bgImage: "bg-[url(assets/images/Group-938-1.png)]",
+            bgImage: "bg-[url(assets/images/feature-2.jpg)]",
             svgIcon: Volunteer,
             title: data.features[1].title,
             text: data.features[1].text,
             transitionClass: "translate-y-[30%] md:translate-y-[40%]",
           },
           {
-            bgImage: "bg-[url(assets/images/Group-939-1.png)]",
+            bgImage: "bg-[url(assets/images/feature-3.jpg)]",
             svgIcon: Gift,
             title: data.features[2].title,
             text: data.features[2].text,

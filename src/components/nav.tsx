@@ -138,11 +138,7 @@ function NavItem({ title, children, href }: NavItemProps) {
     >
       <NavLink
         to={href}
-        className={({ isActive, isPending }) =>
-          `${
-            isActive ? "text-primary" : "text-[#111]"
-          } md:!opacity-100 block md:inline-flex relative cursor-pointer focus:text-[var(--menu-focus)] focus-visible:text-[var(--menu-focus)] [&>:focus:not(:focus-visible)]:text-[#000] whitespace-nowrap text-[6vw] md:text-sm font-semibold md:font-medium pt-[1vh] px-[1vw] md:p-0 uppercase md:capitalize`
-        }
+        className="[&.active]:md:text-primary md:hover:text-primary md:!opacity-100 block md:inline-flex relative cursor-pointer max-md:focus:text-[var(--menu-focus)] max-md:focus-visible:text-[var(--menu-focus)] max-md:[&>:focus:not(:focus-visible)]:text-[#000] whitespace-nowrap text-[6vw] md:text-sm font-semibold md:font-medium pt-[1vh] px-[1vw] md:p-0 uppercase md:capitalize"
         ref={DOMLink}
         onMouseEnter={contextSafe(mouseEnter)}
         onMouseLeave={contextSafe(mouseLeave)}

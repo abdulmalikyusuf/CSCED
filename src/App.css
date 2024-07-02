@@ -18,18 +18,7 @@
 }
 @font-face {
   font-family: DMSans;
-  src: url(assets/fonts/DMSans-VariableFont_opszwght.ttf) format("truetype");
-}
-
-@property --scroll-position {
-  syntax: "<number>";
-  inherits: true;
-  initial-value: 0;
-}
-@property --scroll-position-delayed {
-  syntax: "<number>";
-  inherits: true;
-  initial-value: 0;
+  src: url(assets/fonts/DMSans.ttf) format("truetype");
 }
 
 :root {
@@ -50,23 +39,7 @@
   animation-timeline: scroll(root);
 }
 
-@keyframes adjust-pos {
-  to {
-    --scroll-position: 1;
-    --scroll-position-delayed: 1;
-  }
-}
-
 body {
-  transition: --scroll-position-delayed 0.15s linear;
-  --scroll-velocity: calc(
-    var(--scroll-position) - var(--scroll-position-delayed)
-  );
-  --scroll-direction: sign(var(--scroll-velocity));
-
-  --when-scrolling: abs(var(--scroll-direction));
-
-  --hide-bars: var(--when-scrolling);
 }
 .word,
 .word > .char {
