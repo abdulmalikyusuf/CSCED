@@ -77,7 +77,7 @@ function MenuButton({ isOpen, setIsOpen }: Props) {
       0
     );
     tl.reversed(!isOpen);
-  }, [isOpen, tl]);
+  }, [isOpen]);
 
   const handleClick = contextSafe(() => {
     setIsOpen((prev) => !prev);

@@ -9,6 +9,8 @@ import {
   Simplify,
 } from "#/types.generated";
 
+import BgImage from "@/assets/images/neom-wbOKjgQv3nY-unsplash.jpg";
+
 gsap.registerPlugin(ScrollTrigger);
 
 function Hero({
@@ -81,10 +83,10 @@ function Hero({
   );
 
   return (
-    <div
-      ref={container}
-      className="bg-[url(assets/images/neom-wbOKjgQv3nY-unsplash.jpg)] bg-blend-saturation bg-no-repeat bg-cover h-screen max-h-[900px] flow-root"
-    >
+    <div ref={container} className="relative h-screen max-h-[900px] flow-root">
+      <div className="absolute inset-0 -z-0 grayscale">
+        <img src={BgImage} alt="" className="size-full object-cover" />
+      </div>
       <div className="flex flex-col items-center justify-center h-full max-w-4xl mx-auto text-center">
         <h6
           className="text-lg md:text-2xl uppercase mb-2 md:mb-6 lg:mb-12"

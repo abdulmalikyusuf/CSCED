@@ -32,4 +32,12 @@ function parsePrismicField(field: any) {
     return field.text;
 }
 
+export function formatNumber(value: number | string) {
+  return new Intl.NumberFormat("en-GB", {
+    style: "decimal",
+    notation: "compact",
+    compactDisplay: "short",
+  }).format(Number(value));
+}
+
 export { parsePrismicField };

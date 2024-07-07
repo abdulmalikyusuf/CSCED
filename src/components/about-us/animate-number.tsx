@@ -1,7 +1,8 @@
-import { useRef } from "react";
+import { ReactNode, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { formatNumber } from "@/lib/utils";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,20 +54,30 @@ function AnimateNumber(config: Props) {
         // onUpdate: () => (this.targets().innerHTML += config.suffix),
       }
     );
+  const count = { value: config.from },
+    endValue = config.to;
+
   useGSAP(
     () => {
       ScrollTrigger.create({
         trigger: el.current,
-        start: "top 70%",
-        onEnter: () => animateToNumber(),
-        onEnterBack: () => animateToNumber(),
-        onLeave: () => reverseAnimation(),
-        onLeaveBack: () => reverseAnimation(),
+        start: "top 50%",
+        onEnter: () => {
+          gsap.to(count, {
+            value: endValue,
+            duration: config.duration || 2,
+            roundProps: "value",
+            ease: "power1.in",
+            onUpdate: function () {
+              el.current.innerHTML = formatNumber(count.value) + config.suffix;
+            },
+          });
+        },
       });
     },
     { scope: el.current }
   );
-  return <span ref={el} />;
+  return <span ref={el}>{config.from}</span>;
 }
 
 export default AnimateNumber;

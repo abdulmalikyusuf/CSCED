@@ -17,7 +17,7 @@ function Header() {
           <img src={Logo} alt="" className="h-10 md:h-14" />
         </div>
 
-        <Nav isOpen={open} />
+        <Nav isOpen={open} setIsOpen={setOpen} />
         <MenuButton isOpen={open} setIsOpen={setOpen} />
         <button type="button" className="hidden md:inline-block size-10">
           <LucideIcons.search />

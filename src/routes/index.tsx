@@ -1,4 +1,7 @@
 import { useSinglePrismicDocument } from "@prismicio/react";
+import { hourglass } from "ldrs";
+
+hourglass.register();
 
 import Community from "@/assets/svg/community-group-leader-svgrepo-com.svg";
 import Gift from "@/assets/svg/gift-svgrepo-com.svg";
@@ -11,7 +14,6 @@ import MissionAndVision from "@/components/mission-and-vision";
 import Team from "@/components/team";
 import RecruitVolunteers from "@/components/recruit-volunteers";
 import Partners from "@/components/partners";
-import Loading from "@/components/loading";
 import type { HomepageDocument } from "#/types.generated.ts";
 
 function Home() {
@@ -20,12 +22,17 @@ function Home() {
 
   const data = document?.data;
 
-  // const { about_us, hero_section, section_one, features } =
-  //   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  //   document && document.data;
-
   if (state === "loading" || state === "idle" || state === "failed") {
-    return <Loading />;
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <l-hourglass
+          size="40"
+          bg-opacity="0.1"
+          speed="1.75"
+          color="black"
+        ></l-hourglass>
+      </div>
+    );
   }
 
   return (

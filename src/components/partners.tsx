@@ -1,7 +1,7 @@
 /* eslint-disable prefer-const */
 // @ts-nocheck
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import AdamawaSACA from "@/assets/images/partners/adamawa-SACA.jpg";
@@ -17,13 +17,15 @@ function Partners() {
   const container = useRef<HTMLDivElement | null>(null);
   const ref = useRef<HTMLDivElement[]>([]);
 
-  const pushRef = (el: HTMLHeadingElement) => ref.current.push(el!);
+  const pushRef = (el: HTMLDivElement | null) => {
+    if (el && !ref.current.includes(el)) {
+      ref.current.push(el);
+    }
+  };
 
   useGSAP(
     () => {
-      let items = gsap.utils.toArray<HTMLDivElement>(
-        container.current.querySelectorAll(".marquee__item")
-      );
+      let items = gsap.utils.toArray<HTMLDivElement>(ref.current);
 
       let config = {
         paused: false,
@@ -36,8 +38,8 @@ function Partners() {
           repeat: config.repeat,
           paused: config.paused,
           defaults: { ease: "none" },
-          // onReverseComplete: () =>
-          //   tl.totalTime(tl.rawTime() + tl.duration() * 100),
+          onReverseComplete: () =>
+            tl.totalTime(tl.rawTime() + tl.duration() * 100),
         }),
         length = items.length,
         startX = items[0].offsetLeft,
@@ -61,6 +63,8 @@ function Partners() {
             (parseFloat(gsap.getProperty(el, "x", "px")) / w) * 100 +
               gsap.getProperty(el, "xPercent")
           );
+          console.log(xPercents);
+
           return xPercents[i];
         },
       });
@@ -79,6 +83,8 @@ function Partners() {
         distanceToStart = item.offsetLeft + curX - startX;
         distanceToLoop =
           distanceToStart + widths[i] * gsap.getProperty(item, "scaleX");
+        console.log(snap(((curX - distanceToLoop) / widths[i]) * 100));
+
         tl.to(
           item,
           {
@@ -105,10 +111,9 @@ function Partners() {
           .add("label" + i, distanceToStart / pixelsPerSecond);
         times[i] = distanceToStart / pixelsPerSecond;
       }
-
       tl.progress(1, true).progress(0, true); // pre-render for performance
     },
-    { scope: container.current, dependencies: [] }
+    { scope: container }
   );
 
   return (
@@ -122,8 +127,13 @@ function Partners() {
         OCHA,
         UNHCR,
         WorldBank,
-      ].map((partner) => (
-        <div key={partner} ref={pushRef} className="marquee__item">
+      ].map((partner, idx) => (
+        <div
+          key={partner}
+          ref={pushRef}
+          // ref={(el: HTMLDivElement) => (ref.current[idx] = el)}
+          className="marquee__item"
+        >
           <img
             src={partner}
             alt=""

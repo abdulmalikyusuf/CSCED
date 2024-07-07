@@ -2,6 +2,8 @@ import { LucideIcons } from "@/components/icons";
 import Image1 from "@/assets/images/neom-wbOKjgQv3nY-unsplash.jpg";
 import AboutUsImage from "@/assets/images/about-us/icon-education.png";
 import AnimateNumber from "@/components/about-us/animate-number";
+import Testimonials from "@/components/testimonials";
+import Partners from "@/components/partners";
 
 const goals = [
   {
@@ -32,9 +34,11 @@ function AboutUs() {
         <div className="absolute inset-0 -z-0 grayscale">
           <img src={Image1} alt="" className="size-full object-cover" />
         </div>
-        <div className="z-10">
-          <h2 className="text-4xl font-bold text-primary">About Us</h2>
-          <div className="mt-4 flex gap-2 items-center text-sm font-semibold">
+        <div className="relative">
+          <h2 className="text-2xl md:text-4xl font-bold text-primary text-stroke-px text-stroke-[#111] gradient-text bg-gradient-to-br from-primary to-[#111]">
+            About Us
+          </h2>
+          <div className="mt-4 flex gap-2 items-center justify-center text-sm font-semibold">
             <h6 className="text-primary">HOME</h6>
             <LucideIcons.chevronRight size={16} />
             <h6 className="">ABOUT US</h6>
@@ -43,19 +47,19 @@ function AboutUs() {
       </div>
       <div className="flex flex-col gap-10 md:gap-16 lg:gap-20 py-16 bg-white text-[#111]">
         <div className="md:columns-2 lg:gap-16 px-4 sm:px-8 lg:px-16">
-          <h5 className="text-lg md:text-3xl font-semibold uppercase md:mb-2">
+          <h5 className="text-lg md:text-3xl font-semibold text-primary uppercase md:mb-2">
             about us
           </h5>
           <h4 className="text-3xl md:text-5xl font-bold font-space-grotesk capitalize">
-            Future Resilience and Development Foundation (FRAD Foundation)
+            Centre for Social Change and Economic Development (CSCED)
           </h4>
           <div className="mt-2 md:mt-6 leading-relaxed opacity-80 flex flex-col gap-4">
             <p className="">
-              Future Resilience and Development Foundation (FRAD Foundation) is
-              a registered Non-profit organization with the corporate affairs
-              commission (CAC) with CAC No CAC/IT/NO/139393 in 2019 in
-              accordance with the Nigerian Law with office address at Suit B87,
-              Mohammed Goni, Complex, Maiduguri Borno state, Nigeria.
+              Centre for Social Change and Economic Development (CSCED) is a
+              registered Non-profit organization with the corporate affairs
+              commission (CAC) with CAC No CAC/IT/NO/ in 2019 in accordance with
+              the Nigerian Law with office address at Suit B87, Mohammed Goni,
+              Complex, Maiduguri Borno state, Nigeria.
             </p>
             <p className="">
               Our organization has grown periodically through our work with
@@ -92,7 +96,7 @@ function AboutUs() {
         <div className="">
           <div className="bg-[url(assets/images/clean-gray-paper.png)] pt-8 md:pt-10 pb-16 md:pb-28 px-4 sm:px-8 lg:px-16">
             <div className="text-center">
-              <h4 className="text-lg md:text-2xl font-medium font-space-grotesk md:mb-2">
+              <h4 className="text-lg md:text-2xl font-medium text-primary font-space-grotesk md:mb-2">
                 HELP IS OUR GOAL
               </h4>
               <h3 className="text-3xl md:text-5xl font-bold">
@@ -117,11 +121,11 @@ function AboutUs() {
             </div>
           </div>
 
-          <div className="mx-4 sm:mx-8 lg:mx-16 md:-translate-y-1/2 flex flex-row flex-wrap gap-6 md:gap-0 justify-between items-center py-8 md:py-14 px-10 md:px-20 rounded-2xl bg-[#111] text-white">
+          <div className="mx-4 sm:mx-8 lg:mx-16 md:-translate-y-1/2 max-md:mt-10 grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 justify-between items-center py-8 md:py-14 px-10 md:px-20 rounded-2xl bg-[#111] text-white">
             {[
               ["35", "", "years of foundation"],
               ["60", "+", "monthly donors"],
-              ["1500", "k", "incredible volunteers"],
+              ["1500", "", "incredible volunteers"],
               ["785", "", "successful campaign"],
             ].map((stat) => (
               <div key={stat[0]} className="flex items-center gap-1 w-min">
@@ -140,7 +144,7 @@ function AboutUs() {
             ))}
           </div>
         </div>
-        <div className="px-4 sm:px-8 lg:px-16 flex flex-col md:flex-row gap-8 md:gap-14">
+        <div className="px-4 sm:px-8 lg:px-16 flex flex-col-reverse md:flex-row gap-8 md:gap-14">
           <div className="flex-1 grid grid-cols-12 grid-rows-12">
             <img
               src={Image1}
@@ -155,10 +159,10 @@ function AboutUs() {
           </div>
           <div className="flex-1">
             <div className="">
-              <h4 className="text-lg md:text-2xl font-medium font-space-grotesk uppercase md:mb-2">
+              <h4 className="text-lg md:text-2xl font-medium font-space-grotesk text-primary uppercase md:mb-2">
                 become a volunteer
               </h4>
-              <h3 className="text-3xl md:text-5xl font-bold capitalize">
+              <h3 className="text-3xl md:text-5xl font-bold capitalize font-DMSans">
                 why we need you
               </h3>
             </div>
@@ -170,38 +174,39 @@ function AboutUs() {
           </div>
         </div>
 
+        <Testimonials />
+
         <div className="px-4 sm:px-8 lg:px-16">
-          <div className="flex flex-col md:flex-row gap-8 md:gap-14 shadow-xl rounded-2xl overflow-clip">
-            <div className="flex-1">
-              <img src={Image1} alt="" className="grayscale h-full w-full" />
-            </div>
-            <div className="flex-1 p-8">
-              <div className="">
-                <h4 className="md:text-xl font-medium font-space-grotesk uppercase md:mb-1">
-                  testimonials
-                </h4>
-                <h3 className="text-2xl md:text-4xl font-bold capitalize">
-                  what people think
-                </h3>
+          <div className="text-center">
+            <h6 className="md:text-xl font-medium text-primary font-space-grotesk uppercase">
+              what's new
+            </h6>
+            <h3 className="md:mt-2 text-3xl md:text-5xl font-bold font-DMSans capitalize">
+              read our latest news
+            </h3>
+          </div>
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="shadow-lg max-w-96 rounded-lg overflow-clip">
+              <div className="relative">
+                <img src={Image1} alt="" className="h-56" />
+                <div className="absolute left-4 top-4">
+                  <p className="py-1 px-2.5 text-[#111] bg-primary rounded-2xl text-xs font-DMSans uppercase">
+                    charity
+                  </p>
+                </div>
               </div>
-              <p className="mt-6 md:mt-10 md:text-lg leading-snug font-medium">
-                Aishatu, an IDP from Askira UBA LGA in Maiduguri, used CVA funds
-                from Save the Children and FRAD foundation to invest in poultry
-                and expand her food business. As a struggling single mother, she
-                continues to work hard, utilizing the funds received to increase
-                her investments and improve her livelihood.
-              </p>
-              <div className="mt-4 md:mt-8">
-                <h4 className="text-sm md:text-xl font-medium -tracking-tighter">
-                  Aisha Yerima
-                </h4>
-                <h6 className="text-xl md:text-3xl font-semibold font-space-grotesk tracking-tighter">
-                  Volunteer
+              <div className="p-4">
+                <h6 className="text-sm font-DMSans capitalize">
+                  september, 2024
                 </h6>
+                <h5 className="capitalize text-lg font-medium font-space-grotesk tracking-tight">
+                  women empowerment
+                </h5>
               </div>
             </div>
           </div>
         </div>
+        <Partners />
       </div>
     </>
   );

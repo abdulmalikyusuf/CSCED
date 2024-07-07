@@ -27,7 +27,7 @@ const navItems = [
   },
   {
     title: "The Team",
-    href: "/",
+    href: "/the-team",
     children:
       "Dome House, Revellion High, Wax Palace, Cellar Tree, Dome House, Revellion High, Wax Palace, Cellar Tree"
         .split(", ")
@@ -37,7 +37,7 @@ const navItems = [
   },
   {
     title: "The Mission",
-    href: "/",
+    href: "/our-mission",
     children:
       "Dome House, Revellion High, Wax Palace, Cellar Tree, Dome House, Revellion High, Wax Palace, Cellar Tree"
         .split(", ")
@@ -47,7 +47,7 @@ const navItems = [
   },
   {
     title: "Contact Us",
-    href: "/",
+    href: "/contact-us",
     children:
       "Frank Tower, Dom Dom, Santa Maria, Big Molly, Frank Tower, Dom Dom, Santa Maria, Big Molly"
         .split(", ")
@@ -59,7 +59,13 @@ const navItems = [
         }),
   },
 ];
-function Nav({ isOpen }: { isOpen: boolean }) {
+function Nav({
+  isOpen,
+  setIsOpen,
+}: {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   const container = useRef<HTMLElement | null>(null);
 
   return (
@@ -71,7 +77,7 @@ function Nav({ isOpen }: { isOpen: boolean }) {
     >
       <ul className="relative md:flex md:gap-6 bg-primary md:bg-white [--color-link-hover:#111] [--marquee-text:#fff] [--menu-focus:#775e41] text-[#111]">
         {navItems.map((item) => (
-          <NavItem key={item.title} {...item} />
+          <NavItem key={item.title} {...item} handleClick={setIsOpen} />
         ))}
       </ul>
     </nav>
@@ -84,8 +90,9 @@ type NavItemProps = {
   title: string;
   href: string;
   children: { text: string; bgImage: string }[];
+  handleClick: React.Dispatch<React.SetStateAction<boolean>>;
 };
-function NavItem({ title, children, href }: NavItemProps) {
+function NavItem({ title, children, href, handleClick }: NavItemProps) {
   const animationDefaults = { duration: 0.6, ease: "expo" };
   const menuItem = useRef<HTMLLIElement | null>(null);
   const DOMLink = useRef<HTMLAnchorElement | null>(null);
@@ -135,6 +142,7 @@ function NavItem({ title, children, href }: NavItemProps) {
     <li
       className="relative overflow-hidden text-center shadow-[0_-1px_#a7927b] last:shadow-[0_1px_#a7927b,_0_-1px_#a7927b] md:shadow-none md:last:shadow-none"
       ref={menuItem}
+      onClick={() => handleClick(false)}
     >
       <NavLink
         to={href}
