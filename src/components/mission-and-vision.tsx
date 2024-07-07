@@ -4,16 +4,16 @@ function MissionAndVision() {
   const [tab, setTab] = useState<"vision" | "mission">("mission");
   return (
     <div className="min-h-full">
-      <div className="flex gap-6 ml-1">
+      <div className="flex gap-2 sm:gap-4 md:gap-6 ml-1">
         {["mission", "vision"].map((btn: "mission" | "vision") => (
           <button
             key={btn}
             type="button"
             onClick={() => setTab(btn)}
-            className={`px-8 py-4 rounded-t-lg text-2xl font-semibold font-space-grotesk uppercase
+            className={`px-4 md:px-8 py-2 md:py-4 rounded-t-md md:rounded-t-lg text-sm md:text-lg leading-none font-medium md:font-semibold font-space-grotesk uppercase
               ${tab === btn && "bg-[#f8c792] text-white"} ${
               tab !== btn &&
-              "text-[#f8c792] border-2 border-b-0 border-[#f8c792]"
+              "text-[#f8c792] border-[1.5px] md:border-2 border-b-0 border-[#f8c792]"
             }`}
           >
             {btn}
@@ -31,8 +31,8 @@ export default MissionAndVision;
 function Mission() {
   return (
     <div className="flex flex-wrap *:w-full md:*:w-1/2">
-      <div className="bg-[#111] p-10 md:p-14 lg:p-20">
-        <p className="text-lg font-medium leading-loose text-pretty">
+      <div className="bg-[#111] p-6 sm:p-8 md:p-10 lg:p-16">
+        <p className="md:text-lg font-medium leading-loose text-pretty">
           To promote access to essential information, knowledge, and skills,
           while empowering the poor and vulnerable to achieve sustainable
           development. We are dedicated to creating opportunities that foster
@@ -59,7 +59,7 @@ function Mission() {
         </div> */}
         <button
           type="button"
-          className="mt-10 px-8 py-4 bg-[#f8c792] text-white rounded-full text-sm uppercase font-medium"
+          className="mt-10 px-4 md:px-8 py-2 md:py-4 bg-[#f8c792] text-white rounded-full text-sm uppercase font-medium"
         >
           learn more
         </button>
@@ -86,8 +86,8 @@ function Mission() {
 function Vision() {
   return (
     <div className="flex flex-wrap *:w-full md:*:w-1/2">
-      <div className="bg-[#111] p-10 md:p-14 lg:p-20">
-        <p className="text-lg font-medium leading-loose text-pretty">
+      <div className="bg-[#111] p-6 sm:p-8 md:p-10 lg:p-16">
+        <p className="md:text-lg font-medium leading-loose text-pretty">
           To empower communities by facilitating access to comprehensive
           healthcare services, diverse economic development opportunities, and
           quality education. We strive to create an environment where
@@ -102,7 +102,7 @@ function Vision() {
 
         <button
           type="button"
-          className="mt-10 px-8 py-4 bg-white text-[#111111] rounded-full text-sm uppercase font-medium"
+          className="mt-10 px-4 md:px-8 py-2 md:py-4 bg-white text-[#111111] rounded-full text-sm uppercase font-medium"
         >
           donate now
         </button>

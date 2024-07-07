@@ -12,10 +12,10 @@ function RecruitVolunteers() {
         />
       </div>
       <div className="flex-1">
-        <p className="text-lg font-medium tracking-tight text-[#232323]">
+        <p className="md:text-xl font-medium font-space-grotesk tracking-tight text-primary">
           BECOME A VOLUNTEER
         </p>
-        <h5 className="text-4xl font-bold font-space-grotesk text-[#232323]">
+        <h5 className="text-3xl md:text-5xl font-semibold md:font-bold text-[#232323]">
           Why We Need You
         </h5>
         <div className="flex flex-col gap-4 mt-6">
@@ -41,14 +41,20 @@ function RecruitVolunteers() {
               key={title}
               className="group/accordion transition-transform duration-300 cursor-pointer"
             >
-              <summary className="flex justify-between marker:hidden rounded-full py-2 px-5 text-[#232323] text-lg font-medium capitalize border-2 border-black/15 group-open:bg-[#01592E] group-open:text-white group-open:border-[#01592E]">
+              <summary className="flex justify-between marker:hidden rounded-full py-2 px-5 text-[#232323] text-sm md:text-lg font-medium capitalize border-2 border-black/15 group-open:bg-[#01592E] group-open:text-white group-open:border-[#01592E]">
                 <p className="">{title}</p>
-                <p className="text-lg text-[#f8c792] group-open:text-white">
-                  <LucideIcons.plus className="inline-block open:hidden" />
-                  <LucideIcons.minus className="hidden open:inline-block" />
+                <p className="text-primary group-open:text-white">
+                  <LucideIcons.plus
+                    size={16}
+                    className="inline-block open:hidden"
+                  />
+                  <LucideIcons.minus
+                    size={16}
+                    className="hidden open:inline-block"
+                  />
                 </p>
               </summary>
-              <div className="mx-5 mt-4 opacity-0 group-open/accordion:opacity-100 transition-opacity transition-[height] duration-500">
+              <div className="mx-5 mt-4 opacity-0 group-open/accordion:opacity-100 transition-[height,_opacity] duration-500">
                 <p className="text-pretty text-[#232323] font-medium leading-relaxed opacity-80">
                   {text}
                 </p>
