@@ -3,7 +3,6 @@ import Image1 from "@/assets/images/neom-wbOKjgQv3nY-unsplash.jpg";
 import AboutUsImage from "@/assets/images/about-us/icon-education.png";
 import AnimateNumber from "@/components/about-us/animate-number";
 import Testimonials from "@/components/testimonials";
-import Partners from "@/components/partners";
 
 const goals = [
   {
@@ -35,7 +34,7 @@ function AboutUs() {
           <img src={Image1} alt="" className="size-full object-cover" />
         </div>
         <div className="relative">
-          <h2 className="text-2xl md:text-4xl font-bold text-primary text-stroke-px text-stroke-[#111] gradient-text bg-gradient-to-br from-primary to-[#111]">
+          <h2 className="text-2xl md:text-4xl font-bold text-center text-primary text-stroke-px text-stroke-[#111] gradient-text bg-gradient-to-br from-primary to-[#111]">
             About Us
           </h2>
           <div className="mt-4 flex gap-2 items-center justify-center text-sm font-semibold">
@@ -206,7 +205,7 @@ function AboutUs() {
             </div>
           </div>
         </div>
-        <Partners />
+        {/* <Partners /> */}
       </div>
     </>
   );

@@ -15,4 +15,11 @@ export default defineConfig({
       "#": path.resolve(__dirname, "./"),
     },
   },
+  build: {
+    minify: false,
+    terserOptions: {
+      compress: false,
+      mangle: false,
+    },
+  },
 });

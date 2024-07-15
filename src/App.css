@@ -47,6 +47,15 @@
 .menu__item-link:focus:not(:focus-visible) {
   color: var(--color-link);
 }
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 /* 
 .overlay {
   border-image: fill 0 linear-gradient(#0003, #000);

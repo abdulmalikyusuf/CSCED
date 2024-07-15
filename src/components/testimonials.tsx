@@ -9,19 +9,43 @@ function Testimonials() {
   const prevBtn = useRef<HTMLButtonElement | null>(null);
   const nextBtn = useRef<HTMLButtonElement | null>(null);
   const ref = useRef<HTMLDivElement[]>([]);
-  const currentEl = 0;
+  let currentSlide = 1;
 
   const pushRef = (el: HTMLDivElement | null) => {
     if (el && !ref.current.includes(el)) {
       ref.current.push(el);
     }
   };
+  const slideCount = ref.current.length;
 
   const { contextSafe } = useGSAP({ scope: container.current });
 
-  const nextTestimonial = contextSafe(() => {
-    if (ref.current.length === 0) return;
-    gsap.to(ref.current, { xPercent: -100 });
+  let isAnimating;
+
+  const navigate = contextSafe((direction: "right" | "left") => {
+    if (isAnimating) return;
+    const items = gsap.utils.toArray<HTMLDivElement>(ref.current);
+
+    isAnimating = true;
+
+    if (direction === "right") {
+      gsap.to(items, {
+        x:
+          currentSlide < ref.current.length
+            ? `-=${currentSlide > 1 ? 320 + 20 : 320}`
+            : 0,
+      });
+      currentSlide === ref.current.length
+        ? (currentSlide = 1)
+        : (currentSlide += 1);
+    } else {
+      gsap.to(items, {
+        x: `+=${currentSlide > 1 ? 320 + 20 : 0}`,
+      });
+      currentSlide === 1 ? (currentSlide = 1) : (currentSlide -= 1);
+    }
+
+    isAnimating = false;
   });
 
   return (
@@ -50,28 +74,29 @@ function Testimonials() {
         </div>
       </div>
 
-      <div className="relative">
+      <div className="relative grow-0 w-full md:w-3/5 overflow-x-clip h-full">
         <button
           type="button"
           ref={prevBtn}
-          className="z-[1] absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 bg-white size-12 rounded-full shadow-md shadow-primary flex justify-center items-center"
+          onClick={() => navigate("left")}
+          className="z-[1] absolute top-[80%] left-0 -translate-y-1/2 bg-white size-12 rounded-full shadow-md shadow-primary flex justify-center items-center"
         >
           <LucideIcons.chevronRight size={20} className="-rotate-180" />
         </button>
         <button
           type="button"
           ref={nextBtn}
-          onClick={nextTestimonial}
-          className="z-[1] absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 bg-white size-12 rounded-full shadow-md shadow-primary flex justify-center items-center"
+          onClick={() => navigate("right")}
+          className="z-[1] absolute top-[80%] right-0 -translate-y-1/2 bg-white size-12 rounded-full shadow-md shadow-primary flex justify-center items-center"
         >
           <LucideIcons.chevronRight size={20} className="" />
         </button>
-        <div className="flex gap-4 overflow-hidden">
-          {"gh".split("").map((testimonial) => (
+        <div className="flex gap-4 overflowx-scroll no-scrollbar">
+          {"qwerty".split("").map((testimonial) => (
             <div
               key={testimonial}
               ref={pushRef}
-              className="flex-1 shrink-0 shadow-2xl shadow-primary rounded-2xl p-10"
+              className="shrink-0 w-[20rem] shadow-2xl shadow-primary rounded-2xl p-10"
             >
               <p className="leading-relaxed">
                 Maryam Umar, a 38-year-old housewife" from Gwange 3, Maiduguri,

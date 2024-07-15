@@ -1,7 +1,7 @@
 /* eslint-disable prefer-const */
 // @ts-nocheck
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import AdamawaSACA from "@/assets/images/partners/adamawa-SACA.jpg";
@@ -59,10 +59,9 @@ function Partners() {
         // convert "x" to "xPercent" to make things responsive, and populate the widths/xPercents Arrays to make lookups faster.
         xPercent: (i, el) => {
           let w = (widths[i] = parseFloat(gsap.getProperty(el, "width", "px")));
-          xPercents[i] = snap(
+          xPercents[i] =
             (parseFloat(gsap.getProperty(el, "x", "px")) / w) * 100 +
-              gsap.getProperty(el, "xPercent")
-          );
+            gsap.getProperty(el, "xPercent");
           console.log(xPercents);
 
           return xPercents[i];
@@ -83,12 +82,11 @@ function Partners() {
         distanceToStart = item.offsetLeft + curX - startX;
         distanceToLoop =
           distanceToStart + widths[i] * gsap.getProperty(item, "scaleX");
-        console.log(snap(((curX - distanceToLoop) / widths[i]) * 100));
 
         tl.to(
           item,
           {
-            xPercent: snap(((curX - distanceToLoop) / widths[i]) * 100),
+            xPercent: -50,
             duration: distanceToLoop / pixelsPerSecond,
           },
           0
@@ -112,8 +110,9 @@ function Partners() {
         times[i] = distanceToStart / pixelsPerSecond;
       }
       tl.progress(1, true).progress(0, true); // pre-render for performance
+      tl.play();
     },
-    { scope: container }
+    { scope: container.current }
   );
 
   return (
@@ -127,7 +126,7 @@ function Partners() {
         OCHA,
         UNHCR,
         WorldBank,
-      ].map((partner, idx) => (
+      ].map((partner) => (
         <div
           key={partner}
           ref={pushRef}

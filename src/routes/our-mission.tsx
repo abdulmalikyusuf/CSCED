@@ -1,12 +1,14 @@
 import { LucideIcons } from "@/components/icons";
 import Image1 from "@/assets/images/feature-2.jpg";
+import Image2 from "@/assets/images/feature-1.jpg";
+import Image3 from "@/assets/images/feature-3.jpg";
 
 function OurMission() {
   return (
     <>
       <div className="relative h-[70vh] bg-[url(assets/images/feature-3.jpg)] bg-no-repeat bg-cover bg-center flex flex-col items-center justify-center">
         <div className="">
-          <h2 className="text-2xl md:text-4xl font-bold text-primary text-stroke-px text-stroke-[#111] gradient-text bg-gradient-to-br from-primary to-[#111]">
+          <h2 className="text-2xl md:text-4xl font-bold text-center text-primary text-stroke-px text-stroke-[#111] gradient-text bg-gradient-to-br from-primary to-[#111]">
             The Mission
           </h2>
           <div className="mt-4 flex gap-2 items-center justify-center text-sm md:text-base font-semibold">
@@ -40,6 +42,45 @@ function OurMission() {
           >
             learn more
           </button>
+        </div>
+      </div>
+
+      <div className="py-16 px-4 sm:px-8 lg:px-16 mb-20">
+        <div className="text-center text-[#232323]">
+          <h6 className="md:text-xl font-semibold font-space-grotesk text-primary uppercase">
+            Empowering Lives, Building Futures
+          </h6>
+          <h4 className="text-3xl md:text-5xl font-bold font-DMSans capitalize">
+            Committed to Social and Economic Development for All
+          </h4>
+          <p className="mt-4 md:mt-6 md:text-lg font-Montserrat font-medium">
+            Our gallery showcases the heart and soul of our organization in
+            action. These images capture the essence of our efforts,
+            highlighting the faces and stories of those we serve. Through these
+            visuals, we invite you to witness the impact of our mission and join
+            us in our journey towards creating a brighter, more equitable
+            future.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-x-4 md:gap-y-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-10 2xl:grid-cols-[repeat(auto-fill,_minmax(420px,_1fr))] 2xl:gap-10 items-stretch mt-6 md:mt-10">
+          {[
+            Image1,
+            Image2,
+            Image3,
+            Image1,
+            Image2,
+            Image3,
+            Image1,
+            Image2,
+            Image3,
+            Image1,
+            Image2,
+            Image3,
+          ].map((img, i) => (
+            <div key={i} className="h-full">
+              <img src={img} alt="" className="h-full" />
+            </div>
+          ))}
         </div>
       </div>
 
