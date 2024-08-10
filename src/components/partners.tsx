@@ -1,6 +1,3 @@
-/* eslint-disable prefer-const */
-// @ts-nocheck
-
 import Marquee from "react-fast-marquee";
 
 import AdamawaSACA from "@/assets/images/partners/adamawa-SACA.jpg";
@@ -18,7 +15,7 @@ function Partners() {
       pauseOnHover
       pauseOnClick
       direction="left"
-      className="flex gap-8 *:shrink-0 overflow-x-hidden"
+      className="flex gap-8 *:shrink-0 overflow-x-hidden *:px-10"
     >
       {[
         AdamawaSACA,

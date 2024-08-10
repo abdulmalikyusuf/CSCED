@@ -6,10 +6,10 @@ import Splitting from "splitting";
 import { GroupField, TitleField } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
 
-import IconBox5 from "@/assets/images/icon-box_05.png";
-import IconBox6 from "@/assets/images/icon-box_06.png";
-import IconBox7 from "@/assets/images/icon-box_07.png";
-import IconBox8 from "@/assets/images/icon-box_08.png";
+import ConflitResolution from "@/assets/images/Icon-Blue-Conflict-Resolution-And-Mediation.png";
+import Education from "@/assets/images/1016545.png";
+import FoodSecurity from "@/assets/images/noun-food-security-4965899.png";
+import WomensRight from "@/assets/images/Women's Right.png";
 import {
   HomepageDocumentDataSectionGridItem,
   Simplify,
@@ -111,24 +111,26 @@ function SectionTwo({ title, data }: Props) {
         </button>
       </div>
       <div className="flex-shrink grid grid-cols-1 md:grid-cols-2 gap-y-14 gap-x-8">
-        {[IconBox5, IconBox6, IconBox7, IconBox8].map((image, idx) => (
-          <div key={idx}>
-            <div className="flex items-center">
-              <div className="w-20 md:w-24 flex-shrink-0">
-                <img src={image} alt={idx.toString()} className="" />
+        {[ConflitResolution, Education, FoodSecurity, WomensRight].map(
+          (image, idx) => (
+            <div key={idx}>
+              <div className="flex items-center gap-2 md:gap-4">
+                <div className="size-10 md:size-14 flex-shrink-0">
+                  <img src={image} alt={idx.toString()} className="" />
+                </div>
+                <h6 className="text-xl md:text-2xl !leading-none font-medium md:font-semibold">
+                  {data[idx].title[0].text}
+                </h6>
               </div>
-              <h6 className="text-xl md:text-2xl leading-none font-medium md:font-semibold">
-                {data[idx].title[0].text}
-              </h6>
-            </div>
 
-            <div className="mt-2 md:mt-4">
-              <div className="opacity-80 text-pretty">
-                <PrismicRichText field={data[idx].text} />
+              <div className="mt-2 md:mt-4">
+                <div className="opacity-80 text-pretty text-justify">
+                  <PrismicRichText field={data[idx].text} />
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          )
+        )}
       </div>
     </div>
   );

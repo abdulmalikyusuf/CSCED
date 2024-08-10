@@ -1,5 +1,5 @@
 import { LucideIcons } from "./icons";
-import TeamMemberPhoto from "@/assets/images/Frame-115-1.png";
+import TeamMemberPhoto from "@/assets/images/pexels-rdne-6646945.jpg";
 
 function TeamMemberCard() {
   return (
@@ -11,9 +11,9 @@ function TeamMemberCard() {
           className="object-cover h-80 md:h-96 w-full group-hover/parent:grayscale"
         />
         <div className="absolute bottom-14 right-0">
-          <div className="flex items-center p-[5px] rounded-l-full bg-[#111] transition-transform duration-500 will-change-transform translate-x-[calc(100%-60px)] hover:bg-[#FFAC00] group-hover/parent:translate-x-0">
+          <div className="flex items-center p-[5px] rounded-l-full bg-black transition-transform duration-500 will-change-transform translate-x-[calc(100%-60px)] hover:bg-[#FFAC00] group-hover/parent:translate-x-0">
             <div className="flex items-center justify-center size-11 rounded-full bg-white text-xl mr-auto">
-              <LucideIcons.share className="stroke-[#111] group-hover/parent:stroke-[#f8c792]" />
+              <LucideIcons.share className="stroke-black group-hover/parent:stroke-[#f8c792]" />
             </div>
             <div className="flex gap-2 ml-4">
               <div className="opacity-0 group-hover/parent:opacity-100 size-8 rounded-full flex justify-center items-center border border-white">

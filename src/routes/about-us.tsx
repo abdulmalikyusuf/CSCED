@@ -1,8 +1,9 @@
 import { LucideIcons } from "@/components/icons";
-import Image1 from "@/assets/images/neom-wbOKjgQv3nY-unsplash.jpg";
+import Feature2 from "@/assets/images/feature-2.jpg";
 import AboutUsImage from "@/assets/images/about-us/icon-education.png";
 import AnimateNumber from "@/components/about-us/animate-number";
 import Testimonials from "@/components/testimonials";
+import { Articles } from "@/components/articles";
 
 const goals = [
   {
@@ -28,13 +29,13 @@ const goals = [
 ];
 function AboutUs() {
   return (
-    <>
+    <div className="">
       <div className="relative h-[70vh] flex flex-col items-center justify-center">
-        <div className="absolute inset-0 -z-0 grayscale">
-          <img src={Image1} alt="" className="size-full object-cover" />
+        <div className="absolute inset-0 -z-0">
+          <img src={Feature2} alt="" className="size-full object-cover" />
         </div>
         <div className="relative">
-          <h2 className="text-2xl md:text-4xl font-bold text-center text-primary text-stroke-px text-stroke-[#111] gradient-text bg-gradient-to-br from-primary to-[#111]">
+          <h2 className="text-2xl md:text-4xl font-bold text-center text-primary text-stroke-px text-stroke-black gradient-text bg-gradient-to-br from-primary to-black">
             About Us
           </h2>
           <div className="mt-4 flex gap-2 items-center justify-center text-sm font-semibold">
@@ -44,7 +45,7 @@ function AboutUs() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-10 md:gap-16 lg:gap-20 py-16 bg-white text-[#111]">
+      <div className="flex flex-col gap-10 md:gap-16 lg:gap-20 py-16 bg-white text-black">
         <div className="md:columns-2 lg:gap-16 px-4 sm:px-8 lg:px-16">
           <h5 className="text-lg md:text-3xl font-semibold text-primary uppercase md:mb-2">
             about us
@@ -52,7 +53,7 @@ function AboutUs() {
           <h4 className="text-3xl md:text-5xl font-bold font-space-grotesk capitalize">
             Centre for Social Change and Economic Development (CSCED)
           </h4>
-          <div className="mt-2 md:mt-6 leading-relaxed opacity-80 flex flex-col gap-4">
+          <div className="mt-2 md:mt-6 leading-relaxed text-justify opacity-80 flex flex-col gap-4">
             <p className="">
               Centre for Social Change and Economic Development (CSCED) is a
               registered Non-profit organization with the corporate affairs
@@ -67,7 +68,7 @@ function AboutUs() {
               network of field staff and field researcher and data collectors
               working in 5 LGAs of MMC, JERE, Konduga, Mafa and Magumeri.
             </p>
-            <img src={Image1} alt="" className="h-80" />
+            <img src={Feature2} alt="" className="h-80" />
             <p className="">
               As an organization, our approach is founded on the integration
               between capacity building of our staff and adherence to strict
@@ -110,8 +111,10 @@ function AboutUs() {
                 >
                   <img src={goal.image} alt="" className="size-[100px]" />
                   <div className="text-center">
-                    <h6 className="text-xl font-bold">{goal.title}</h6>
-                    <p className="mt-2 text-balance leading-relaxed">
+                    <h6 className="text-xl leading-none font-bold">
+                      {goal.title}
+                    </h6>
+                    <p className="mt-2 text-justify leading-relaxed">
                       {goal.text}
                     </p>
                   </div>
@@ -120,7 +123,7 @@ function AboutUs() {
             </div>
           </div>
 
-          <div className="mx-4 sm:mx-8 lg:mx-16 md:-translate-y-1/2 max-md:mt-10 grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 justify-between items-center py-8 md:py-14 px-10 md:px-20 rounded-2xl bg-[#111] text-white">
+          <div className="mx-4 sm:mx-8 lg:mx-16 md:-translate-y-1/2 max-md:mt-10 grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 justify-between items-center py-8 md:py-14 px-10 md:px-20 rounded-2xl bg-black text-white">
             {[
               ["35", "", "years of foundation"],
               ["60", "+", "monthly donors"],
@@ -144,17 +147,8 @@ function AboutUs() {
           </div>
         </div>
         <div className="px-4 sm:px-8 lg:px-16 flex flex-col-reverse md:flex-row gap-8 md:gap-14">
-          <div className="flex-1 grid grid-cols-12 grid-rows-12">
-            <img
-              src={Image1}
-              alt=""
-              className="aspect-[] row-start-1 row-end-8 col-start-1 col-end-8"
-            />
-            <img
-              src={Image1}
-              alt=""
-              className="aspect-[] col-start-7 col-end-13 row-start-6 row-end-13"
-            />
+          <div className="flex-1">
+            <img src={Feature2} alt="" className="" />
           </div>
           <div className="flex-1">
             <div className="">
@@ -184,30 +178,13 @@ function AboutUs() {
               read our latest news
             </h3>
           </div>
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            <div className="shadow-lg max-w-96 rounded-lg overflow-clip">
-              <div className="relative">
-                <img src={Image1} alt="" className="h-56" />
-                <div className="absolute left-4 top-4">
-                  <p className="py-1 px-2.5 text-[#111] bg-primary rounded-2xl text-xs font-DMSans uppercase">
-                    charity
-                  </p>
-                </div>
-              </div>
-              <div className="p-4">
-                <h6 className="text-sm font-DMSans capitalize">
-                  september, 2024
-                </h6>
-                <h5 className="capitalize text-lg font-medium font-space-grotesk tracking-tight">
-                  women empowerment
-                </h5>
-              </div>
-            </div>
+          <div className="mt-10">
+            <Articles />
           </div>
         </div>
         {/* <Partners /> */}
       </div>
-    </>
+    </div>
   );
 }
 

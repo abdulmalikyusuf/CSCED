@@ -4,9 +4,9 @@ import Image1 from "@/assets/images/feature-2.jpg";
 function ContactUs() {
   return (
     <>
-      <div className="relative h-[70vh] bg-[url(assets/images/feature-3.jpg)] grayscale bg-no-repeat bg-cover bg-center flex flex-col items-center justify-center">
+      <div className="relative h-[70vh] bg-[url(assets/images/feature-3.jpg)] bg-no-repeat bg-cover bg-center flex flex-col items-center justify-center">
         <div className="">
-          <h2 className="text-2xl md:text-4xl font-bold text-primary text-center text-stroke-px text-stroke-[#111] gradient-text bg-gradient-to-br from-primary to-[#111]">
+          <h2 className="text-2xl md:text-4xl font-bold text-primary text-center text-stroke-px text-stroke-black gradient-text bg-gradient-to-br from-primary to-black">
             Reach out to us
           </h2>
           <div className="mt-4 flex gap-2 items-center justify-center text-sm font-semibold">
@@ -20,7 +20,7 @@ function ContactUs() {
         <div className="flex-shrink-0 md:w-3/5">
           <img src={Image1} alt="" className="h-full w-full" />
         </div>
-        <div className="px-4 sm:px-8 lg:px-0 text-[#111]">
+        <div className="px-4 sm:px-8 lg:px-0 text-black">
           <h5 className="md:text-xl font-semibold uppercase md:mb-2 font-space-grotesk text-primary">
             Contact Us
           </h5>
@@ -28,7 +28,7 @@ function ContactUs() {
             get in touch with us
           </h4>
           <div className="mt-2 md:mt-4 leading-relaxed opacity-80">
-            <p className="">
+            <p className="text-justify">
               Connect with us to be a part of positive change. Whether you have
               questions, feedback, or want to explore collaboration
               opportunities, the CSCED team is here for you. Your engagement
@@ -46,7 +46,7 @@ function ContactUs() {
                 <h5 className="text-lg font-bold font-space-grotesk text-primary">
                   Visit
                 </h5>
-                <p className="mt-0.5 leading-none text-sm font-DMSans font-medium text-[#111]">
+                <p className="mt-0.5 leading-none text-sm font-DMSans font-medium text-black">
                   House No. 6, Gama Street, Maiduguri, Borno State.
                 </p>
               </div>
@@ -59,7 +59,7 @@ function ContactUs() {
                 <h5 className="text-lg font-bold font-space-grotesk text-primary">
                   E-Mail Us
                 </h5>
-                <p className="mt-0.5 leading-none text-sm font-DMSans font-medium text-[#111]">
+                <p className="mt-0.5 leading-none text-sm font-DMSans font-medium text-black">
                   info@csced.org
                 </p>
               </div>
@@ -72,7 +72,7 @@ function ContactUs() {
                 <h5 className="text-lg font-bold font-space-grotesk text-primary">
                   Call
                 </h5>
-                <p className="mt-0.5 leading-none text-sm font-DMSans font-medium text-[#111]">
+                <p className="mt-0.5 leading-none text-sm font-DMSans font-medium text-black">
                   +234 901 2345 677
                 </p>
               </div>
@@ -82,7 +82,7 @@ function ContactUs() {
       </div>
 
       <div className="py-10 md:py-16">
-        <div className="max-w-5xl w-full mx-auto py-10 px-4 md:py-16 text-[#111] rounded-xl shadow-2xl">
+        <div className="max-w-5xl w-full mx-auto py-10 px-4 md:py-16 text-black rounded-xl shadow-2xl">
           <h4 className="text-xl md:text-3xl font-bold font-DMSans text-center text-primary">
             Drop Us a Message, Let Us Know What You Think
           </h4>
@@ -102,7 +102,7 @@ function ContactUs() {
                 name="first-name"
                 id="first-name"
                 placeholder="First Name"
-                className="mt-2 border-b border-[#111] w-full md:mt-4 focus:outline-none focus:border-primary focus:border-b-2"
+                className="mt-2 border-b border-black w-full md:mt-4 focus:outline-none focus:border-primary focus:border-b-2"
               />
             </div>
             <div className="">
@@ -117,7 +117,7 @@ function ContactUs() {
                 name="last-name"
                 id="last-name"
                 placeholder="Last Name"
-                className="mt-2 border-b border-[#111] w-full md:mt-4 focus:outline-none focus:border-primary focus:border-b-2"
+                className="mt-2 border-b border-black w-full md:mt-4 focus:outline-none focus:border-primary focus:border-b-2"
               />
             </div>
             <div className="col-span-2">
@@ -132,7 +132,7 @@ function ContactUs() {
                 name="email"
                 id="email"
                 placeholder="Email Address"
-                className="mt-2 border-b border-[#111] w-full md:mt-4 focus:outline-none focus:border-primary focus:border-b-2"
+                className="mt-2 border-b border-black w-full md:mt-4 focus:outline-none focus:border-primary focus:border-b-2"
               />
             </div>
             <div className="col-span-2">
@@ -146,13 +146,13 @@ function ContactUs() {
                 rows={5}
                 id="message"
                 placeholder="Message..."
-                className="mt-2 border-b border-[#111] w-full md:mt-4 focus:outline-none focus:border-primary focus:border-b-2"
+                className="mt-2 border-b border-black w-full md:mt-4 focus:outline-none focus:border-primary focus:border-b-2"
               ></textarea>
             </div>
             <div className="col-span-2 flex justify-center">
               <button
                 type="submit"
-                className="w-fit py-3 px-10 tracking-[2px] font-bold bg-primary text-[#111] rounded-xl font-DMSans"
+                className="w-fit py-3 px-10 tracking-[2px] font-bold bg-primary text-white rounded-xl font-DMSans"
               >
                 Submit
               </button>

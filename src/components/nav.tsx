@@ -70,12 +70,12 @@ function Nav({
 
   return (
     <nav
-      className={`group/header max-md:fixed inset-y-0 right-0 max-md:py-14 max-md:z-[1] max-md:bg-[#111] transition-[width] delay-150 duration-300 ease-in-out ${
+      className={`group/header max-md:fixed inset-y-0 right-0 max-md:py-14 max-md:z-[1] max-md:bg-black transition-[width] delay-150 duration-300 ease-in-out ${
         isOpen ? "max-md:w-3/4" : "max-md:w-0"
       }`}
       ref={container}
     >
-      <ul className="relative md:flex md:gap-6 bg-primary md:bg-white [--color-link-hover:#111] [--marquee-text:#fff] [--menu-focus:#775e41] text-[#111]">
+      <ul className="relative md:flex md:gap-6 bg-primary md:bg-white [--color-link-hover:#111] [--marquee-text:#fff] [--menu-focus:#775e41] text-black">
         {navItems.map((item) => (
           <NavItem key={item.title} {...item} handleClick={setIsOpen} />
         ))}

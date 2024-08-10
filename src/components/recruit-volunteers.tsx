@@ -6,7 +6,7 @@ function RecruitVolunteers() {
     <div className="flex flex-col md:flex-row gap-14 md:gap-16 px-4 sm:px-8 lg:px-16">
       <div className="flex-1">
         <img
-          src="src/assets/images/neom-wbOKjgQv3nY-unsplash.jpg"
+          src="src/assets/images/volunteer-1888823_640.webp"
           alt=""
           className=""
         />

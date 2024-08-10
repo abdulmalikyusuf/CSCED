@@ -16,7 +16,6 @@ function Testimonials() {
       ref.current.push(el);
     }
   };
-  const slideCount = ref.current.length;
 
   const { contextSafe } = useGSAP({ scope: container.current });
 
@@ -51,7 +50,7 @@ function Testimonials() {
   return (
     <div
       ref={container}
-      className="flex flex-col md:flex-row items-center gap-14 px-4 sm:px-8 lg:px-16"
+      className="flex flex-col md:flex-row items-center gap-14 px-4 sm:px-8 lg:px-16 bg-transparent"
     >
       <div className="md:w-2/5 md:shrink-0">
         <h5 className="text-xl md:text-2xl text-primary md:font-medium font-space-grotesk uppercase">
@@ -65,12 +64,12 @@ function Testimonials() {
           data and feedback to guide our course.
         </p>
         <div className="mt-4 md:mt-6">
-          <button
+          {/* <button
             type="button"
             className="px-6 py-3 font-medium border-2 border-primary capitalize rounded-full"
           >
             all testimonials
-          </button>
+          </button> */}
         </div>
       </div>
 

@@ -6,7 +6,7 @@ function TheTeam() {
     <>
       <div className="relative h-[70vh] bg-[url(assets/images/feature-3.jpg)] bg-no-repeat bg-cover bg-bottom flex flex-col items-center justify-center">
         <div className="">
-          <h2 className="text-2xl md:text-4xl font-bold text-center text-primary text-stroke-px text-stroke-[#111] gradient-text bg-gradient-to-br from-primary to-[#111]">
+          <h2 className="text-2xl md:text-4xl font-bold text-center text-primary text-stroke-px text-stroke-black gradient-text bg-gradient-to-br from-primary to-black">
             The Team
           </h2>
           <div className="mt-4 flex gap-2 items-center justify-center text-sm font-semibold">

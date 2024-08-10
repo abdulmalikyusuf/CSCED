@@ -3,10 +3,6 @@ import { hourglass } from "ldrs";
 
 hourglass.register();
 
-import Community from "@/assets/svg/community-group-leader-svgrepo-com.svg";
-import Gift from "@/assets/svg/gift-svgrepo-com.svg";
-import Volunteer from "@/assets/svg/hand-yes-volunteer-fingers-svgrepo-com.svg";
-import FeatureCard from "@/components/feature-card";
 import Hero from "@/components/hero";
 import SectionTwo from "@/components/section-two";
 import AboutUs from "@/components/about-us";
@@ -40,33 +36,6 @@ function Home() {
       <Hero data={data.hero_section} />
       <SectionTwo title={data.section_two_heading} data={data.section_grid} />
       <AboutUs data={data.about_us} />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm*:min-w-[480px] lg:h-screen lg:max-h-[900px]">
-        {[
-          {
-            bgImage: "bg-[url(assets/images/feature-1.jpg)]",
-            svgIcon: Community,
-            title: data.features[0].title,
-            text: data.features[0].text,
-            transitionClass: "translate-y-[18%] md:translate-y-[30%]",
-          },
-          {
-            bgImage: "bg-[url(assets/images/feature-2.jpg)]",
-            svgIcon: Volunteer,
-            title: data.features[1].title,
-            text: data.features[1].text,
-            transitionClass: "translate-y-[30%] md:translate-y-[40%]",
-          },
-          {
-            bgImage: "bg-[url(assets/images/feature-3.jpg)]",
-            svgIcon: Gift,
-            title: data.features[2].title,
-            text: data.features[2].text,
-            transitionClass: "translate-y-[45%] md:translate-y-[53%]",
-          },
-        ].map((i) => (
-          <FeatureCard key={i.title[0].text} {...i} />
-        ))}
-      </div>
       <Partners />
       <MissionAndVision />
       <RecruitVolunteers />

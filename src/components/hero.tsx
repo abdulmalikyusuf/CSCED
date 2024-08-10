@@ -9,7 +9,7 @@ import {
   Simplify,
 } from "#/types.generated";
 
-import BgImage from "@/assets/images/neom-wbOKjgQv3nY-unsplash.jpg";
+import BgImage from "@/assets/images/feature-3.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 

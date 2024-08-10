@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import DonateNowBtn from "./donate-now-btn";
 
 function MissionAndVision() {
   const [tab, setTab] = useState<"vision" | "mission">("mission");
@@ -31,8 +33,8 @@ export default MissionAndVision;
 function Mission() {
   return (
     <div className="flex flex-wrap *:w-full md:*:w-1/2">
-      <div className="bg-[#111] p-6 sm:p-8 md:p-10 lg:p-16">
-        <p className="md:text-lg font-medium leading-loose text-pretty">
+      <div className="bg-black p-6 sm:p-8 md:p-10 lg:p-16">
+        <p className="md:text-lg font-medium leading-loose text-pretty text-justify">
           To promote access to essential information, knowledge, and skills,
           while empowering the poor and vulnerable to achieve sustainable
           development. We are dedicated to creating opportunities that foster
@@ -57,18 +59,18 @@ function Mission() {
             </p>
           </div>
         </div> */}
-        <button
-          type="button"
-          className="mt-10 px-4 md:px-8 py-2 md:py-4 bg-[#f8c792] text-white rounded-full text-sm uppercase font-medium"
+        <Link
+          to="/our-mission"
+          className="block w-fit mt-10 px-4 md:px-8 py-2 md:py-4 bg-[#f8c792] text-white rounded-full text-sm uppercase font-medium"
         >
           learn more
-        </button>
+        </Link>
       </div>
       <div className="bg-[url(assets/images/Group-940-1-1.png)] min-h-96 relative">
         <img
-          src="src/assets/images/home-1_03.png"
+          src="src/assets/images/istockphoto-1372606308-1024x1024.jpg"
           alt=""
-          className="absolute bottom-0"
+          className="absolutebottom-0 object-cover w-full h-full"
         />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <button
@@ -86,8 +88,8 @@ function Mission() {
 function Vision() {
   return (
     <div className="flex flex-wrap *:w-full md:*:w-1/2">
-      <div className="bg-[#111] p-6 sm:p-8 md:p-10 lg:p-16">
-        <p className="md:text-lg font-medium leading-loose text-pretty">
+      <div className="bg-black p-6 sm:p-8 md:p-10 lg:p-16">
+        <p className="md:text-lg font-medium leading-loose text-pretty text-justify">
           To empower communities by facilitating access to comprehensive
           healthcare services, diverse economic development opportunities, and
           quality education. We strive to create an environment where
@@ -100,12 +102,9 @@ function Vision() {
           and more equitable future for all.
         </p>
 
-        <button
-          type="button"
-          className="mt-10 px-4 md:px-8 py-2 md:py-4 bg-white text-[#111111] rounded-full text-sm uppercase font-medium"
-        >
-          donate now
-        </button>
+        <div className="mt-6 md:mt-10">
+          <DonateNowBtn />
+        </div>
       </div>
       <div className="bg-[url(assets/images/Group-940-1-1.png)] min-h-96 relative">
         <img

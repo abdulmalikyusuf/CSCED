@@ -1,3 +1,10 @@
+import { ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
 // Detect Closest Edge
 // from https://codepen.io/johnstew/pen/zxYJZP?editors=0010
 const closestEdge = (x, y, w, h) => {

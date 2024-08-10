@@ -12,6 +12,9 @@
   "dependencies": {
     "@gsap/react": "^2.1.1",
     "@million/lint": "1.0.0-rc.26",
+    "@tabler/icons-react": "^3.12.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.3.24",
     "gsap": "^3.12.5",
     "ldrs": "^1.0.2",
     "lucide-react": "^0.395.0",
@@ -20,7 +23,8 @@
     "react-fast-marquee": "^1.6.5",
     "react-router-dom": "^6.23.1",
     "segment-js": "^1.1.2",
-    "splitting": "^1.1.0"
+    "splitting": "^1.1.0",
+    "tailwind-merge": "^2.4.0"
   },
   "devDependencies": {
     "@prismicio/client": "^7.5.0",
