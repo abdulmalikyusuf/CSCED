@@ -1,6 +1,9 @@
 import { LucideIcons } from "@/components/icons";
 import Feature2 from "@/assets/images/feature-2.jpg";
-import AboutUsImage from "@/assets/images/about-us/icon-education.png";
+import HumanitarianAid from "@/assets/images/about-us/humatarian-aid.png";
+import Education from "@/assets/images/1016545.png";
+import MedicalHelp from "@/assets/images/about-us/medical-help.png";
+import CommunityDevelopment from "@/assets/images/about-us/community-development.png";
 import AnimateNumber from "@/components/about-us/animate-number";
 import Testimonials from "@/components/testimonials";
 import { Articles } from "@/components/articles";
@@ -9,22 +12,22 @@ const goals = [
   {
     title: "Education",
     text: "Unlock the potential of individuals through our educational empowerment programs. We focus on improving access to quality education, providing scholarships, and implementing innovative learning approaches, creating pathways for a brighter tomorrow",
-    image: AboutUsImage,
+    image: Education,
   },
   {
     title: "Humanitarian Aid and Relief Efforts",
     text: "Responding swiftly to crises, we provide essential humanitarian aid and relief to affected communities. Our dedicated teams ensure the timely delivery of vital resources, offering support in times of emergencies and natural disasters.",
-    image: AboutUsImage,
+    image: HumanitarianAid,
   },
   {
     title: "Community Development Programs",
     text: "Engage in our holistic community development initiatives. From infrastructure projects to educational programs, we work collaboratively to foster sustainable growth and empowerment.",
-    image: AboutUsImage,
+    image: CommunityDevelopment,
   },
   {
     title: "Medical Help",
     text: "We prioritize health and well-being through our comprehensive initiatives. From healthcare access projects to nutrition programs, we strive to improve the overall health of communities, ensuring a foundation for a resilient and thriving future",
-    image: AboutUsImage,
+    image: MedicalHelp,
   },
 ];
 function AboutUs() {

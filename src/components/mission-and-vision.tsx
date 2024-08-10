@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import DonateNowBtn from "./donate-now-btn";
+import MissionAndVisionImage from "@/assets/images/istockphoto-1372606308-1024x1024.jpg";
 
 function MissionAndVision() {
   const [tab, setTab] = useState<"vision" | "mission">("mission");
@@ -68,7 +69,7 @@ function Mission() {
       </div>
       <div className="bg-[url(assets/images/Group-940-1-1.png)] min-h-96 relative">
         <img
-          src="src/assets/images/istockphoto-1372606308-1024x1024.jpg"
+          src={MissionAndVisionImage}
           alt=""
           className="absolutebottom-0 object-cover w-full h-full"
         />

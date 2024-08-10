@@ -1,15 +1,11 @@
-import React from "react";
+import VolunteerImage from "@/assets/images/volunteer-1888823_640.webp";
 import { LucideIcons } from "@/components/icons";
 
 function RecruitVolunteers() {
   return (
     <div className="flex flex-col md:flex-row gap-14 md:gap-16 px-4 sm:px-8 lg:px-16">
       <div className="flex-1">
-        <img
-          src="src/assets/images/volunteer-1888823_640.webp"
-          alt=""
-          className=""
-        />
+        <img src={VolunteerImage} alt="" className="" />
       </div>
       <div className="flex-1">
         <p className="md:text-xl font-medium font-space-grotesk tracking-tight text-primary">

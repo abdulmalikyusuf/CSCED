@@ -34,7 +34,7 @@ function TeamMemberCard() {
       </div>
       <div className="pt-6 pb-4 px-8">
         <h6 className="text-xl md:text-2xl font-medium font-Montserrat mb-4 text-[#232323] hover:text-primary">
-          Ibrahim Ishaku Balami
+          Ibrahim Muhammad
         </h6>
         <div className="pt-2 border-t">
           <p className="text-sm md:text-base font-space-grotesk text-[#232323] capitalize font-medium opacity-80">

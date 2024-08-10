@@ -1,4 +1,3 @@
-import React from "react";
 import {
   IconClipboardCopy,
   IconFileBroken,
@@ -6,6 +5,7 @@ import {
   IconTableColumn,
 } from "@tabler/icons-react";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
+import PlaceholderImage from "@/assets/images/istockphoto-1372606308-1024x1024.jpg";
 
 export function Articles() {
   return (
@@ -24,7 +24,9 @@ export function Articles() {
   );
 }
 const Skeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)] border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"></div>
+  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl [mask-image:radial-gradient(ellipse_at_center,white,transparent)] border border-transparent bg-neutral-100">
+    <img src={PlaceholderImage} alt="" className="w-full object-cover" />{" "}
+  </div>
 );
 const items = [
   {
