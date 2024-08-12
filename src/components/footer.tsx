@@ -1,4 +1,5 @@
 import { LucideIcons } from "@/components/icons";
+import DonateNowBtn from "./donate-now-btn";
 
 function Footer() {
   return (
@@ -9,15 +10,12 @@ function Footer() {
             We envision a Sustainable future where everyone can access
             development, leaving no one behind.
           </p>
-          <button
-            type="button"
-            className="mt-4 md:mt-6 uppercase text-sm md:text-base md:font-medium rounded-full px-6 py-2 md:px-8 md:py-4 border md:border-2"
-          >
-            Donate Now
-          </button>
+          <div className="mt-4 md:mt-6">
+            <DonateNowBtn />
+          </div>
         </div>
         <div className="md:order-1">
-          <h6 className="md:text-lg font-medium">PARTNERS</h6>
+          <h6 className="md:text-lg font-bold text-primary">PARTNERS</h6>
           <ul className="mt-4 md:mt-6 flex flex-col gap-2.5 opacity-70">
             {[
               "Adamawa State Gov't",
@@ -34,30 +32,30 @@ function Footer() {
           </ul>
         </div>
         <div className="md:order-3">
-          <h6 className="md:text-lg font-medium">CONTACT</h6>
+          <h6 className="md:text-lg font-bold text-primary">CONTACT</h6>
           <ul className="mt-4 md:mt-6 flex flex-col gap-5 opacity-70 text-sm md:text-base">
             <li className="flex items-center gap-4">
               <span className="">
-                <LucideIcons.mapPin size={24} />
+                <LucideIcons.mapPin size={24} className="stroke-primary" />
               </span>
               <span className="">92 Bowery St., NY 10013</span>
             </li>
             <li className="flex items-center gap-4">
               <span className="">
-                <LucideIcons.telephone size={24} />
+                <LucideIcons.telephone size={24} className="stroke-primary" />
               </span>
               <span className="">+234 904 5667 455</span>
             </li>
             <li className="flex items-center gap-4">
               <span className="">
-                <LucideIcons.mail size={24} />
+                <LucideIcons.mail size={24} className="stroke-primary" />
               </span>
               <span className="">example@mail.com</span>
             </li>
           </ul>
         </div>
         <div className="md:order-4">
-          <h6 className="md:text-lg font-medium">NONPROFITS</h6>
+          <h6 className="md:text-lg font-bold text-primary">NONPROFITS</h6>
           <ul className="mt-4 md:mt-6 flex flex-col gap-2.5 opacity-70">
             {[
               "Nonprofit Resources",

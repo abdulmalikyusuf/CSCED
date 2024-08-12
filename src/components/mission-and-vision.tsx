@@ -13,7 +13,7 @@ function MissionAndVision() {
             key={btn}
             type="button"
             onClick={() => setTab(btn)}
-            className={`px-4 md:px-8 py-2 md:py-4 rounded-t-md md:rounded-t-lg text-sm md:text-lg leading-none font-medium md:font-semibold font-space-grotesk uppercase
+            className={`px-4 md:px-8 py-2 md:py-4 rounded-t-md md:rounded-t-lg text-sm md:text-lg leading-none font-medium md:font-semibold font-amatic uppercase
               ${tab === btn && "bg-[#f8c792] text-white"} ${
               tab !== btn &&
               "text-[#f8c792] border-[1.5px] md:border-2 border-b-0 border-[#f8c792]"
@@ -49,13 +49,13 @@ function Mission() {
         {/* <div className="flex gap-2 mt-6">
           <div className="">
             <h6 className="text-2xl font-bold">25%</h6>
-            <p className="text-sm font-medium uppercase font-space-grotesk">
+            <p className="text-sm font-medium uppercase font-amatic">
               kids needs help
             </p>
           </div>
           <div className="">
             <h6 className="text-2xl font-bold">75k+</h6>
-            <p className="text-sm font-medium uppercase font-space-grotesk">
+            <p className="text-sm font-medium uppercase font-amatic">
               volunteers
             </p>
           </div>

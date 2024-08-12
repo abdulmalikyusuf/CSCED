@@ -88,7 +88,7 @@ function SectionTwo({ title, data }: Props) {
       className="flex flex-col lg:flex-row gap-14 md:gap-16 text-black px-4 sm:px-8 lg:px-16 py-10 md:py-24 bg-[url(assets/images/clean-gray-paper.png)]"
     >
       <div className="min-w-80">
-        <h4 className="text-3xl md:text-4xl leading-none font-bold text-pretty font-space-grotesk">
+        <h4 className="text-3xl md:text-4xl leading-none font-bold text-pretty font-amatic">
           {title[0].text}
           {/* <span
             ref={text}

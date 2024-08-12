@@ -53,7 +53,7 @@ function Testimonials() {
       className="flex flex-col md:flex-row items-center gap-14 px-4 sm:px-8 lg:px-16 bg-transparent"
     >
       <div className="md:w-2/5 md:shrink-0">
-        <h5 className="text-xl md:text-2xl text-primary md:font-medium font-space-grotesk uppercase">
+        <h5 className="text-xl md:text-2xl text-primary md:font-medium font-amatic uppercase">
           testimonials
         </h5>
         <h2 className="md:mt-1 text-3xl md:text-5xl font-bold font-DMSans">
@@ -63,17 +63,9 @@ function Testimonials() {
           We continually experiment. We fail quickly and productively. We use
           data and feedback to guide our course.
         </p>
-        <div className="mt-4 md:mt-6">
-          {/* <button
-            type="button"
-            className="px-6 py-3 font-medium border-2 border-primary capitalize rounded-full"
-          >
-            all testimonials
-          </button> */}
-        </div>
       </div>
 
-      <div className="relative grow-0 w-full md:w-3/5 overflow-x-clip h-full">
+      <div className="relative grow-0 w-full md:w-3/5 overflow-x-hidden hfull">
         <button
           type="button"
           ref={prevBtn}
@@ -98,12 +90,11 @@ function Testimonials() {
               className="shrink-0 w-[20rem] shadow-2xl shadow-primary rounded-2xl p-10"
             >
               <p className="leading-relaxed">
-                Maryam Umar, a 38-year-old housewife" from Gwange 3, Maiduguri,
-                received N132,000 through the MPCA intervention in four monthly
-                disbursements of N33,000. Grateful for the support from FRAD
-                Foundation and Save the Children, she used the funds for basic
-                household needs and started a business, now earning up to a
-                thousand Naira daily.
+                Fatima Ahmad, a 38-year-old housewife" from Yola, Adamawa State,
+                received N132,000 through the QuickSandvention in four weekly
+                disbursements of N56,000. She is grateful for the support from
+                CSCED, she used the funds for basic household needs and started
+                a business, now earning up to a thousand Naira daily.
               </p>
               <div className="mt-4 md:mt-8 flex items-center gap-4">
                 <div className="shrink-0">
@@ -114,7 +105,7 @@ function Testimonials() {
                   />
                 </div>
                 <div className="">
-                  <h6 className="whitespace-nowrap text-xl font-bold font-space-grotesk">
+                  <h6 className="whitespace-nowrap text-xl font-bold font-amatic">
                     Binta Yerima
                   </h6>
                   <p className="mt-1 capitalize font-medium font-DMSans">

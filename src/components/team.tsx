@@ -8,7 +8,7 @@ function Team() {
         <h6 className="md:text-xl font-semibold text-primary">
           PROFESSIONAL TEAM
         </h6>
-        <h4 className="text-3xl lg:text-5xl font-bold font-space-grotesk">
+        <h4 className="text-3xl lg:text-5xl font-bold font-amatic">
           Know the Heroes in Person
         </h4>
       </div>

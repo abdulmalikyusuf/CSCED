@@ -21,7 +21,7 @@ function ContactUs() {
           <img src={Image1} alt="" className="h-full w-full" />
         </div>
         <div className="px-4 sm:px-8 lg:px-0 text-black">
-          <h5 className="md:text-xl font-semibold uppercase md:mb-2 font-space-grotesk text-primary">
+          <h5 className="md:text-xl font-semibold uppercase md:mb-2 font-amatic text-primary">
             Contact Us
           </h5>
           <h4 className="text-3xl md:text-5xl font-bold font-DMSans capitalize">
@@ -43,7 +43,7 @@ function ContactUs() {
                 <LucideIcons.mapPin size={20} className="stroke-primary" />
               </div>
               <div className="">
-                <h5 className="text-lg font-bold font-space-grotesk text-primary">
+                <h5 className="text-lg font-bold font-amatic text-primary">
                   Visit
                 </h5>
                 <p className="mt-0.5 leading-none text-sm font-DMSans font-medium text-black">
@@ -56,7 +56,7 @@ function ContactUs() {
                 <LucideIcons.mail size={20} className="stroke-primary" />
               </div>
               <div className="">
-                <h5 className="text-lg font-bold font-space-grotesk text-primary">
+                <h5 className="text-lg font-bold font-amatic text-primary">
                   E-Mail Us
                 </h5>
                 <p className="mt-0.5 leading-none text-sm font-DMSans font-medium text-black">
@@ -69,7 +69,7 @@ function ContactUs() {
                 <LucideIcons.telephone size={20} className="stroke-primary" />
               </div>
               <div className="">
-                <h5 className="text-lg font-bold font-space-grotesk text-primary">
+                <h5 className="text-lg font-bold font-amatic text-primary">
                   Call
                 </h5>
                 <p className="mt-0.5 leading-none text-sm font-DMSans font-medium text-black">
@@ -88,7 +88,7 @@ function ContactUs() {
           </h4>
           <form
             action=""
-            className="pt-10 px-4 md:pt-14 md:px-32 grid md:grid-cols-2 gap-y-8 md:gap-y-10 gap-x-8 md:gap-x-14 font-space-grotesk"
+            className="pt-10 px-4 md:pt-14 md:px-32 grid md:grid-cols-2 gap-y-8 md:gap-y-10 gap-x-8 md:gap-x-14 font-amatic"
           >
             <div className="">
               <label

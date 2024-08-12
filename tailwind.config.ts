@@ -13,16 +13,16 @@ export default {
       5: "5px",
     },
     fontFamily: {
-      inter: [
-        "Inter",
+      QuickSand: [
+        "QuickSand",
         "system-ui",
         "Avenir",
         "Helvetica",
         "Arial",
         "sans-serif",
       ],
-      "space-grotesk": [
-        "SpaceGrotesk",
+      amatic: [
+        "Amatic",
         "system-ui",
         "Avenir",
         "Helvetica",
@@ -30,14 +30,14 @@ export default {
         "sans-serif",
       ],
       DMSans: ["DMSans", "system-ui"],
-      Montserrat: ["Montserrat", "system-ui"],
+      NunitoSans: ["NunitoSans", "system-ui"],
     },
     extend: {
       colors: {
         black: "#111",
         white: "#FFF",
         transparent: "transparent",
-        primary: "#f8c792",
+        primary: "#015AA5",
       },
       keyframes: {
         marquee: {

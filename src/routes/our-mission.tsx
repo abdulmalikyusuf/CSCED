@@ -23,7 +23,7 @@ function OurMission() {
           <img src={Image1} alt="" className="h-full w-full" />
         </div>
         <div className="px-4 sm:px-8 md:px-0 text-black">
-          <h5 className="md:text-xl font-semibold uppercase md:mb-2 font-space-grotesk text-primary">
+          <h5 className="md:text-xl font-semibold uppercase md:mb-2 font-amatic text-primary">
             Help each other
           </h5>
           <h4 className="text-3xl md:text-5xl font-bold font-DMSans capitalize">
@@ -41,13 +41,13 @@ function OurMission() {
 
       <div className="py-16 px-4 sm:px-8 lg:px-16 mb-20">
         <div className="text-center text-[#232323]">
-          <h6 className="md:text-xl font-semibold font-space-grotesk text-primary uppercase">
+          <h6 className="md:text-xl font-semibold font-amatic text-primary uppercase">
             Empowering Lives, Building Futures
           </h6>
           <h4 className="text-3xl md:text-5xl font-bold font-DMSans capitalize">
             Committed to Social and Economic Development for All
           </h4>
-          <p className="mt-4 md:mt-6 md:text-lg font-Montserrat font-medium">
+          <p className="mt-4 md:mt-6 md:text-lg font-NunitoSans font-medium">
             Our gallery showcases the heart and soul of our organization in
             action. These images capture the essence of our efforts,
             highlighting the faces and stories of those we serve. Through these
@@ -83,7 +83,7 @@ function OurMission() {
           <img src={Image1} alt="" className="object-cover h-full w-full" />
         </div>
         <div className="flex-1 p-8 lg:p-10 xl:p-14 flex flex-col justify-center bg-primary text-white">
-          <h5 className="md:text-xl xl:text-2xl font-semibold uppercase md:mb-2 font-space-grotesk">
+          <h5 className="md:text-xl xl:text-2xl font-semibold uppercase md:mb-2 font-amatic">
             subscribe
           </h5>
           <h4 className="text-3xl md:text-5xl xl:text-6xl font-bold font-DMSans capitalize">
@@ -93,7 +93,7 @@ function OurMission() {
             <p className="xl:text-xl xl:font-medium">
               Mattis enim ut tellus elementum sagittis. In egestas erat
               imperdiet sed euismod nisi porta. Ullamcorper malesuada proin
-              libero nunc consequat interdum varius sit amet.
+              libero nunc consequat QuickSanddum varius sit amet.
             </p>
           </div>
           <div className="mt-6 md:mt-8 xl:mt-10 flex">
@@ -102,7 +102,7 @@ function OurMission() {
               name=""
               id=""
               placeholder="Your Email"
-              className="text-sm xl:text-base xl:font-medium font-space-grotesk w-full sm:w-96 rounded-l-lg text-black px-2"
+              className="text-sm xl:text-base xl:font-medium font-amatic w-full sm:w-96 rounded-l-lg text-black px-2"
             />
             <button
               type="submit"

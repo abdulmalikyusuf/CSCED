@@ -13,7 +13,7 @@ function Banner() {
           </div>
         </div>
         <div className="">
-          <h5 className="text-sm font-medium font-Montserrat">
+          <h5 className="text-sm font-medium font-NunitoSans">
             END Violence against Women and Girls
           </h5>
         </div>
@@ -21,20 +21,20 @@ function Banner() {
       <ul className="flex items-center text-[10px] 2xl:text-xs divide-x divide-white [&>*]:px-6">
         <li className="flex items-center gap-2">
           <span className="">
-            <LucideIcons.mapPin size={12} />
+            <LucideIcons.mapPin size={12} className="stroke-primary" />
           </span>
           <span className="">92 Bowery St., NY 10013</span>
         </li>
         <li className="flex items-center gap-4">
           <span className="">
-            <LucideIcons.telephone size={12} />
+            <LucideIcons.telephone size={12} className="stroke-primary" />
           </span>
           <span className="">+234 904 5667 455</span>
         </li>
         <li className="flex items-center gap-2">
-          <LucideIcons.twitter size={12} />
-          <LucideIcons.facebook size={12} />
-          <LucideIcons.instagram size={12} />
+          <LucideIcons.twitter size={12} className="stroke-primary" />
+          <LucideIcons.facebook size={12} className="stroke-primary" />
+          <LucideIcons.instagram size={12} className="stroke-primary" />
         </li>
       </ul>
     </div>

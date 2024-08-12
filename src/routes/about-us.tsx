@@ -32,13 +32,13 @@ const goals = [
 ];
 function AboutUs() {
   return (
-    <div className="">
+    <div className="bg-transparent">
       <div className="relative h-[70vh] flex flex-col items-center justify-center">
         <div className="absolute inset-0 -z-0">
           <img src={Feature2} alt="" className="size-full object-cover" />
         </div>
         <div className="relative">
-          <h2 className="text-2xl md:text-4xl font-bold text-center text-primary text-stroke-px text-stroke-black gradient-text bg-gradient-to-br from-primary to-black">
+          <h2 className="text-2xl md:text-4xl font-bold text-center text-primary text-stroke-px text-stroke-black gradient-text bg-gradient-to-br from-primary to-transparent">
             About Us
           </h2>
           <div className="mt-4 flex gap-2 items-center justify-center text-sm font-semibold">
@@ -50,10 +50,10 @@ function AboutUs() {
       </div>
       <div className="flex flex-col gap-10 md:gap-16 lg:gap-20 py-16 bg-white text-black">
         <div className="md:columns-2 lg:gap-16 px-4 sm:px-8 lg:px-16">
-          <h5 className="text-lg md:text-3xl font-semibold text-primary uppercase md:mb-2">
+          <h5 className="text-lg md:text-3xl font-semibold font-amatic text-primary uppercase md:mb-2">
             about us
           </h5>
-          <h4 className="text-3xl md:text-5xl font-bold font-space-grotesk capitalize">
+          <h4 className="text-3xl md:text-5xl font-bold capitalize">
             Centre for Social Change and Economic Development (CSCED)
           </h4>
           <div className="mt-2 md:mt-6 leading-relaxed text-justify opacity-80 flex flex-col gap-4">
@@ -99,7 +99,7 @@ function AboutUs() {
         <div className="">
           <div className="bg-[url(assets/images/clean-gray-paper.png)] pt-8 md:pt-10 pb-16 md:pb-28 px-4 sm:px-8 lg:px-16">
             <div className="text-center">
-              <h4 className="text-lg md:text-2xl font-medium text-primary font-space-grotesk md:mb-2">
+              <h4 className="text-lg md:text-2xl font-medium text-primary font-amatic md:mb-2">
                 HELP IS OUR GOAL
               </h4>
               <h3 className="text-3xl md:text-5xl font-bold">
@@ -134,7 +134,7 @@ function AboutUs() {
               ["785", "", "successful campaign"],
             ].map((stat) => (
               <div key={stat[0]} className="flex items-center gap-1 w-min">
-                <h2 className="text-4xl leading-none text-primary font-bold font-space-grotesk">
+                <h2 className="text-4xl leading-none text-primary font-bold font-amatic">
                   <AnimateNumber
                     from={0}
                     to={parseInt(stat[0])}
@@ -155,7 +155,7 @@ function AboutUs() {
           </div>
           <div className="flex-1">
             <div className="">
-              <h4 className="text-lg md:text-2xl font-medium font-space-grotesk text-primary uppercase md:mb-2">
+              <h4 className="text-lg md:text-2xl font-medium font-amatic text-primary uppercase md:mb-2">
                 become a volunteer
               </h4>
               <h3 className="text-3xl md:text-5xl font-bold capitalize font-DMSans">
@@ -174,7 +174,7 @@ function AboutUs() {
 
         <div className="px-4 sm:px-8 lg:px-16">
           <div className="text-center">
-            <h6 className="md:text-xl font-medium text-primary font-space-grotesk uppercase">
+            <h6 className="md:text-xl font-medium text-primary font-amatic uppercase">
               what's new
             </h6>
             <h3 className="md:mt-2 text-3xl md:text-5xl font-bold font-DMSans capitalize">

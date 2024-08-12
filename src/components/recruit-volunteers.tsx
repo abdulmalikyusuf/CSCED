@@ -8,7 +8,7 @@ function RecruitVolunteers() {
         <img src={VolunteerImage} alt="" className="" />
       </div>
       <div className="flex-1">
-        <p className="md:text-xl font-medium font-space-grotesk tracking-tight text-primary">
+        <p className="md:text-xl font-medium font-amatic tracking-tight text-primary">
           BECOME A VOLUNTEER
         </p>
         <h5 className="text-3xl md:text-5xl font-semibold md:font-bold text-[#232323]">
@@ -30,12 +30,12 @@ function RecruitVolunteers() {
             },
             {
               title: "Personal Growth",
-              text: "Volunteering with FRAD Foundation is not just about giving back; it's also an opportunity for personal growth. Gain valuable experiences, develop new skills, and make a meaningful impact on the lives of others.",
+              text: "Volunteering with CSCED is not just about giving back; it's also an opportunity for personal growth. Gain valuable experiences, develop new skills, and make a meaningful impact on the lives of others.",
             },
           ].map(({ title, text }) => (
             <details
               key={title}
-              className="group/accordion transition-transform duration-300 cursor-pointer"
+              className="group/accordion transition-transform duration-300 cursor-poQuickSand"
             >
               <summary className="flex justify-between marker:hidden rounded-full py-2 px-5 text-[#232323] text-sm md:text-lg font-medium capitalize border-2 border-black/15 group-open:bg-[#01592E] group-open:text-white group-open:border-[#01592E]">
                 <p className="">{title}</p>

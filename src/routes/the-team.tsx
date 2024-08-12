@@ -18,7 +18,7 @@ function TheTeam() {
       </div>
       <div className="py-16 px-4 sm:px-8 lg:px-16 mb-20">
         <div className="text-center text-[#232323]">
-          <h6 className="md:text-xl font-semibold font-space-grotesk text-primary">
+          <h6 className="md:text-xl font-semibold font-amatic text-primary">
             PROFESSIONAL TEAM
           </h6>
           <h4 className="text-3xl md:text-5xl font-bold font-DMSans capitalize">

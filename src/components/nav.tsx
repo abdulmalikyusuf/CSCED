@@ -146,7 +146,7 @@ function NavItem({ title, children, href, handleClick }: NavItemProps) {
     >
       <NavLink
         to={href}
-        className="[&.active]:md:text-primary md:hover:text-primary md:!opacity-100 block md:inline-flex relative cursor-pointer max-md:focus:text-[var(--menu-focus)] max-md:focus-visible:text-[var(--menu-focus)] max-md:[&>:focus:not(:focus-visible)]:text-[#000] whitespace-nowrap text-[6vw] md:text-sm font-semibold md:font-medium pt-[1vh] px-[1vw] md:p-0 uppercase md:capitalize"
+        className="[&.active]:md:text-primary md:hover:text-primary md:!opacity-100 block md:inline-flex relative cursor-poQuickSand max-md:focus:text-[var(--menu-focus)] max-md:focus-visible:text-[var(--menu-focus)] max-md:[&>:focus:not(:focus-visible)]:text-[#000] whitespace-nowrap text-[6vw] md:text-sm font-semibold md:font-medium pt-[1vh] px-[1vw] md:p-0 uppercase md:capitalize"
         ref={DOMLink}
         onMouseEnter={contextSafe(mouseEnter)}
         onMouseLeave={contextSafe(mouseLeave)}
@@ -154,7 +154,7 @@ function NavItem({ title, children, href, handleClick }: NavItemProps) {
         {title}
       </NavLink>
       <div
-        className="marquee md:hidden absolute top-0 left-0 overflow-hidden w-full h-full pointer-events-none bg-[#000] -translate3d-y-full"
+        className="marquee md:hidden absolute top-0 left-0 overflow-hidden w-full h-full poQuickSand-events-none bg-[#000] -translate3d-y-full"
         ref={marquee}
       >
         <div

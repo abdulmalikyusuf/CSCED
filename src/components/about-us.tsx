@@ -21,7 +21,7 @@ function AboutUs({
         <div className="absolute bottom-0">
           <div className="relative">
             <img src={Image2} alt="" className="" />
-            <div className="absolute left-14 md:left-1/5 bottom-[15%] text-white font-space-grotesk">
+            <div className="absolute left-14 md:left-1/5 bottom-[15%] text-white font-amatic">
               <p className="text-xl md:text-3xl leading-none font-medium md:font-bold md:mb-2">
                 Empowering Lives:
               </p>
@@ -40,7 +40,7 @@ function AboutUs({
         </div>
       </div>
       <div className="px-4 sm:px-8 lg:px-0 lg:max-w-[50%]">
-        <h5 className="md:text-xl font-semibold uppercase font-space-grotesk text-primary md:mb-2">
+        <h5 className="md:text-xl font-semibold uppercase font-amatic text-primary md:mb-2">
           about us
         </h5>
         <h4 className="text-3xl md:text-5xl font-bold capitalize">
