@@ -93,7 +93,7 @@ function ContactUs() {
             <div className="">
               <label
                 htmlFor="first-name"
-                className="font-medium md:font-semibold text-sm md:text-base"
+                className="font-NunitoSans font-medium md:font-semibold text-sm md:text-base"
               >
                 First Name
               </label>
@@ -102,13 +102,13 @@ function ContactUs() {
                 name="first-name"
                 id="first-name"
                 placeholder="First Name"
-                className="mt-2 border-b border-black w-full md:mt-4 focus:outline-none focus:border-primary focus:border-b-2"
+                className="font-QuickSand mt-2 border-b border-black w-full md:mt-4 focus:outline-none focus:border-primary focus:border-b-2"
               />
             </div>
             <div className="">
               <label
                 htmlFor="last-name"
-                className="font-medium md:font-semibold text-sm md:text-base"
+                className="font-NunitoSans font-medium md:font-semibold text-sm md:text-base"
               >
                 Last Name
               </label>
@@ -117,13 +117,13 @@ function ContactUs() {
                 name="last-name"
                 id="last-name"
                 placeholder="Last Name"
-                className="mt-2 border-b border-black w-full md:mt-4 focus:outline-none focus:border-primary focus:border-b-2"
+                className="font-QuickSand mt-2 border-b border-black w-full md:mt-4 focus:outline-none focus:border-primary focus:border-b-2"
               />
             </div>
             <div className="col-span-2">
               <label
                 htmlFor="email"
-                className="font-medium md:font-semibold text-sm md:text-base"
+                className="font-NunitoSans font-medium md:font-semibold text-sm md:text-base"
               >
                 Email
               </label>
@@ -132,13 +132,13 @@ function ContactUs() {
                 name="email"
                 id="email"
                 placeholder="Email Address"
-                className="mt-2 border-b border-black w-full md:mt-4 focus:outline-none focus:border-primary focus:border-b-2"
+                className="font-QuickSand mt-2 border-b border-black w-full md:mt-4 focus:outline-none focus:border-primary focus:border-b-2"
               />
             </div>
             <div className="col-span-2">
               <label
                 htmlFor="message"
-                className="font-medium md:font-semibold text-sm md:text-base"
+                className="font-NunitoSans font-medium md:font-semibold text-sm md:text-base"
               >
                 Message...
               </label>
@@ -146,7 +146,7 @@ function ContactUs() {
                 rows={5}
                 id="message"
                 placeholder="Message..."
-                className="mt-2 border-b border-black w-full md:mt-4 focus:outline-none focus:border-primary focus:border-b-2"
+                className="font-QuickSand mt-2 border-b border-black w-full md:mt-4 focus:outline-none focus:border-primary focus:border-b-2"
               ></textarea>
             </div>
             <div className="col-span-2 flex justify-center">

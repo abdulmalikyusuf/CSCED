@@ -106,7 +106,7 @@ function OurMission() {
             />
             <button
               type="submit"
-              className="px-6 py-3 text-primary bg-black rounded-r-lg capitalize font-medium font-DMSans"
+              className="px-6 py-3 text-white bg-black rounded-r-lg capitalize font-medium font-DMSans"
             >
               subscribe
             </button>

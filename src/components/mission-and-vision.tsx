@@ -14,9 +14,9 @@ function MissionAndVision() {
             type="button"
             onClick={() => setTab(btn)}
             className={`px-4 md:px-8 py-2 md:py-4 rounded-t-md md:rounded-t-lg text-sm md:text-lg leading-none font-medium md:font-semibold font-amatic uppercase
-              ${tab === btn && "bg-[#f8c792] text-white"} ${
+              ${tab === btn && "bg-primary text-white"} ${
               tab !== btn &&
-              "text-[#f8c792] border-[1.5px] md:border-2 border-b-0 border-[#f8c792]"
+              "text-primary border-[1.5px] md:border-2 !border-b-0 border-primary"
             }`}
           >
             {btn}
@@ -46,23 +46,9 @@ function Mission() {
           empowerment and collaboration, we aim to drive meaningful change and
           contribute to a more equitable and prosperous future for all.
         </p>
-        {/* <div className="flex gap-2 mt-6">
-          <div className="">
-            <h6 className="text-2xl font-bold">25%</h6>
-            <p className="text-sm font-medium uppercase font-amatic">
-              kids needs help
-            </p>
-          </div>
-          <div className="">
-            <h6 className="text-2xl font-bold">75k+</h6>
-            <p className="text-sm font-medium uppercase font-amatic">
-              volunteers
-            </p>
-          </div>
-        </div> */}
         <Link
           to="/our-mission"
-          className="block w-fit mt-10 px-4 md:px-8 py-2 md:py-4 bg-[#f8c792] text-white rounded-full text-sm uppercase font-medium"
+          className="block w-fit mt-10 px-4 md:px-8 py-2 md:py-4 bg-primary text-white rounded-full text-sm uppercase font-medium"
         >
           learn more
         </Link>
@@ -76,7 +62,7 @@ function Mission() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <button
             type="button"
-            className="size-12 md:size-20 lg:size-[100px] rounded-full bg-[#f8c792] flex justify-center items-center"
+            className="size-12 md:size-20 lg:size-[100px] rounded-full bg-primary flex justify-center items-center"
           >
             <span className="block w-2 h-2.5 md:w-4 md:h-5 bg-white [clip-path:_polygon(0%_0%,_100%_50%,_0%_100%)]" />
           </button>
@@ -109,14 +95,14 @@ function Vision() {
       </div>
       <div className="bg-[url(assets/images/Group-940-1-1.png)] min-h-96 relative">
         <img
-          src="src/assets/images/home-1_03.png"
+          src={MissionAndVisionImage}
           alt=""
-          className="absolute bottom-0"
+          className="absolutebottom-0 object-cover w-full h-full"
         />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <button
             type="button"
-            className="size-12 md:size-20 lg:size-[100px] rounded-full bg-[#f8c792] flex justify-center items-center"
+            className="size-12 md:size-20 lg:size-[100px] rounded-full bg-primary flex justify-center items-center"
           >
             <span className="block w-4 h-5 bg-white [clip-path:_polygon(0%_0%,_100%_50%,_0%_100%)]" />
           </button>

@@ -134,7 +134,7 @@ function AboutUs() {
               ["785", "", "successful campaign"],
             ].map((stat) => (
               <div key={stat[0]} className="flex items-center gap-1 w-min">
-                <h2 className="text-4xl leading-none text-primary font-bold font-amatic">
+                <h2 className="text-4xl leading-none font-NunitoSans text-primary font-bold">
                   <AnimateNumber
                     from={0}
                     to={parseInt(stat[0])}

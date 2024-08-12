@@ -95,7 +95,7 @@ function Hero({
           {data[0].title[0].text}
         </h6>
         <h2
-          className="text-4xl md:text-6xl font-bold capitalize tracking-wider font-amatic [--color-highlight-end:_#fff] [--color-highlight-end-alt:_#f8c792]"
+          className="text-4xl md:text-6xl font-bold capitalize tracking-wider font-QuickSand [--color-highlight-end:_#fff] [--color-highlight-end-alt:_var(--primary)]"
           data-splitting="chars"
           ref={subTitle}
         >

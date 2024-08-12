@@ -14,6 +14,7 @@ import {
   HomepageDocumentDataSectionGridItem,
   Simplify,
 } from "#/types.generated";
+import DonateNowBtn from "./donate-now-btn";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -103,12 +104,9 @@ function SectionTwo({ title, data }: Props) {
             Creating
           </span>{" "} */}
         </h4>
-        <button
-          type="button"
-          className="mt-6 md:mt-8 text-[#232323] uppercase font-medium text-sm rounded-full px-8 py-4 border-2 border-[#f8c792]"
-        >
-          Donate Now
-        </button>
+        <div className="mt-6 md:mt-8">
+          <DonateNowBtn />
+        </div>
       </div>
       <div className="flex-shrink grid grid-cols-1 md:grid-cols-2 gap-y-14 gap-x-8">
         {[ConflitResolution, Education, FoodSecurity, WomensRight].map(
@@ -118,7 +116,7 @@ function SectionTwo({ title, data }: Props) {
                 <div className="size-10 md:size-14 flex-shrink-0">
                   <img src={image} alt={idx.toString()} className="" />
                 </div>
-                <h6 className="text-xl md:text-2xl !leading-none font-medium md:font-semibold">
+                <h6 className="text-xl md:text-2xl !leading-none font-medium md:font-semibold text-primary">
                   {data[idx].title[0].text}
                 </h6>
               </div>
