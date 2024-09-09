@@ -12,9 +12,11 @@ import {
   Plus,
   Minus,
   ChevronRight,
+  CircleFadingPlus,
 } from "lucide-react";
 
 export const LucideIcons = {
+  circleFadingPlus: CircleFadingPlus,
   chevronRight: ChevronRight,
   hamburger: Menu,
   search: Search,

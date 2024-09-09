@@ -1,4 +1,5 @@
 import { LucideIcons } from "@/components/icons";
+import { staffs } from "@/components/team";
 import TeamMemberCard from "@/components/team-member-card";
 
 function TheTeam() {
@@ -25,8 +26,10 @@ function TheTeam() {
             Meet our volunteer team
           </h4>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-6 md:mt-10">
-          <TeamMemberCard />
+        <div className="grid grid-cols-[repeat(auto-fit,_minmax(min(320px,_100%),_1fr))] gap-6 mt-6">
+          {staffs.map((staff) => (
+            <TeamMemberCard key={staff.name} {...staff} />
+          ))}
         </div>
       </div>
     </>
