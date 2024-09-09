@@ -1,10 +1,19 @@
 import TeamMemberCard from "@/components/team-member-card";
+import abdulkarimhamid from "@/assets/images/staffs/abdulkarim-hamid.jpg";
+import abdulrashidmustapha from "@/assets/images/staffs/abdulrashid-mustapha.jpg";
+import isagabdo from "@/assets/images/staffs/idris-isa-gabdo.jpg";
+import usmanjijiwa from "@/assets/images/staffs/shehu-usman-jijiwa.jpg";
+import babamustapha from "@/assets/images/staffs/abubakar-baba-mustapha.jpg";
+import hassanuraji from "@/assets/images/staffs/salamatu-hassanu-raji.jpg";
+import kefasmustapha from "@/assets/images/staffs/susuti-kefas-mustapha.jpg";
+import ndonindo from "@/assets/images/staffs/uhwe-ndon-indo.jpg";
+import shuaibumusa from "@/assets/images/staffs/shuaibu-musa.jpg";
 
 export const staffs = [
   {
     name: "Abdulkarim Hamid",
     position: "Board Chair",
-    imageSrc: "src/assets/images/staffs/abdulkarim-hamid.jpg",
+    imageSrc: abdulkarimhamid,
     socials: {
       twitter: "",
       facebook: "",
@@ -15,7 +24,7 @@ export const staffs = [
   {
     name: "Abubakar Baba Mustapha",
     position: "Executive Director",
-    imageSrc: "src/assets/images/staffs/abdulrashid-mustapha.jpg",
+    imageSrc: babamustapha,
     socials: {
       twitter: "abubakarbm",
       facebook: "abubakar baba mustapha",
@@ -26,7 +35,7 @@ export const staffs = [
   {
     name: "Idris Isa Gabdo",
     position: "Program Manager",
-    imageSrc: "src/assets/images/staffs/idris-isa-gabdo.jpg",
+    imageSrc: isagabdo,
     socials: {
       twitter: "",
       facebook: "",
@@ -37,7 +46,7 @@ export const staffs = [
   {
     name: "Shehu Usman Jijiwa",
     position: "Operation Manager",
-    imageSrc: "src/assets/images/staffs/shehu-usman-jijiwa.jpg",
+    imageSrc: usmanjijiwa,
     socials: {
       twitter: "",
       facebook: "jijiwa shehu usman",
@@ -48,7 +57,7 @@ export const staffs = [
   {
     name: "Abdulrashid Mustapha",
     position: "M&E Officer",
-    imageSrc: "src/assets/images/staffs/abubakar-baba-mustapha.jpg",
+    imageSrc: abdulrashidmustapha,
     socials: {
       twitter: "RashmanGY",
       facebook: "Abdulrashid Baba Mustapha",
@@ -59,7 +68,7 @@ export const staffs = [
   {
     name: "Salamatu Hassanu Raji",
     position: "Admin Manager",
-    imageSrc: "src/assets/images/staffs/salamatu-hassanu-raji.jpg",
+    imageSrc: hassanuraji,
     socials: {
       twitter: "",
       facebook: "",
@@ -70,7 +79,7 @@ export const staffs = [
   {
     name: "Susuti Kefas Mustapha",
     position: "Gender & Protection Specialist",
-    imageSrc: "src/assets/images/staffs/susuti-kefas-mustapha.jpg",
+    imageSrc: kefasmustapha,
     socials: {
       twitter: "",
       facebook: "",
@@ -81,7 +90,7 @@ export const staffs = [
   {
     name: "Uhwe Ndon Indo",
     position: "Farmer Field School Specialist",
-    imageSrc: "src/assets/images/staffs/uhwe-ndon-indo.jpg",
+    imageSrc: ndonindo,
     socials: {
       twitter: "",
       facebook: "",
@@ -92,7 +101,7 @@ export const staffs = [
   {
     name: "Shuaibu Musa",
     position: "Finance & Procurement Officer",
-    imageSrc: "src/assets/images/staffs/shuaibu-musa.jpg",
+    imageSrc: shuaibumusa,
     socials: {
       twitter: "Shuaibu57",
       facebook: "Shuaibu Musa Babaji",
