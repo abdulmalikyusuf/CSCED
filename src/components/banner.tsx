@@ -26,7 +26,7 @@ function Banner() {
           <span className="">
             <LucideIcons.mapPin size={12} className="stroke-primary" />
           </span>
-          <span className="">4 Hospital Rd, Jimeta-Yola, Adamawa</span>
+          <span className="">No. 4 Hospital Rd, Jimeta-Yola, Adamawa</span>
         </li>
         <li className="flex items-center gap-4">
           <span className="">
