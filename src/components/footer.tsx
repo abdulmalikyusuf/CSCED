@@ -10,12 +10,17 @@ function Footer() {
             We envision a Sustainable future where everyone can access
             development, leaving no one behind.
           </p>
-          <div className="mt-4 md:mt-6">
-            <DonateNowBtn />
+          <div className="mt-4 md:mt-6 ">
+            <button
+              type="button"
+              className="hidden lg:block px-4 md:px-8 py-1 md:py-3 bg-transparent border-2 hover:bg-white hover:text-primary transition-colors duration-300 delay-150 rounded-full text-xs md:text-sm uppercase font-medium"
+            >
+              donate now
+            </button>
           </div>
         </div>
         <div className="md:order-1">
-          <h6 className="md:text-lg font-bold text-primary">PARTNERS</h6>
+          <h6 className="md:text-lg font-bold">PARTNERS</h6>
           <ul className="mt-4 md:mt-6 flex flex-col gap-2.5 opacity-70">
             {[
               "Adamawa State Gov't",
@@ -32,30 +37,30 @@ function Footer() {
           </ul>
         </div>
         <div className="md:order-3">
-          <h6 className="md:text-lg font-bold text-primary">CONTACT</h6>
+          <h6 className="md:text-lg font-bold">CONTACT</h6>
           <ul className="mt-4 md:mt-6 flex flex-col gap-5 opacity-70 text-sm md:text-base">
             <li className="flex items-center gap-4">
               <span className="">
-                <LucideIcons.mapPin size={24} className="stroke-primary" />
+                <LucideIcons.mapPin size={24} className="" />
               </span>
               <span className="">92 Bowery St., NY 10013</span>
             </li>
             <li className="flex items-center gap-4">
               <span className="">
-                <LucideIcons.telephone size={24} className="stroke-primary" />
+                <LucideIcons.telephone size={24} className="" />
               </span>
               <span className="">+234 904 5667 455</span>
             </li>
             <li className="flex items-center gap-4">
               <span className="">
-                <LucideIcons.mail size={24} className="stroke-primary" />
+                <LucideIcons.mail size={24} className="" />
               </span>
               <span className="">example@mail.com</span>
             </li>
           </ul>
         </div>
         <div className="md:order-4">
-          <h6 className="md:text-lg font-bold text-primary">NONPROFITS</h6>
+          <h6 className="md:text-lg font-bold">NONPROFITS</h6>
           <ul className="mt-4 md:mt-6 flex flex-col gap-2.5 opacity-70">
             {[
               "Nonprofit Resources",

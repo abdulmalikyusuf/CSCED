@@ -1,14 +1,35 @@
 import { LucideIcons } from "@/components/icons";
 import Image1 from "@/assets/images/feature-2.jpg";
-import Image2 from "@/assets/images/feature-1.jpg";
-import Image3 from "@/assets/images/feature-3.jpg";
+import ImageWA0023 from "@/assets/gallery/IMG-20241116-WA0023.jpg";
+import ImageWA0012 from "@/assets/gallery/IMG-20241116-WA0012.jpg";
+import ImageWA0003 from "@/assets/gallery/IMG-20241116-WA0003.jpg";
+import ImageWA0005 from "@/assets/gallery/IMG-20241116-WA0005.jpg";
+import ImageWA0010 from "@/assets/gallery/IMG-20241116-WA0010.jpg";
+import ImageWA0011 from "@/assets/gallery/IMG-20241116-WA0011.jpg";
+import ImageWA0015 from "@/assets/gallery/IMG-20241116-WA0015.jpg";
+import ImageWA0019 from "@/assets/gallery/IMG-20241116-WA0019.jpg";
+import ImageWA0020 from "@/assets/gallery/IMG-20241116-WA0020.jpg";
+import ImageWA0024 from "@/assets/gallery/IMG-20241116-WA0024.jpg";
+import ImageWA0001 from "@/assets/gallery/IMG-20241116-WA0001.jpg";
+import ImageWA0002 from "@/assets/gallery/IMG-20241116-WA0002.jpg";
+import ImageWA0004 from "@/assets/gallery/IMG-20241116-WA0004.jpg";
+import ImageWA0006 from "@/assets/gallery/IMG-20241116-WA0006.jpg";
+import ImageWA0007 from "@/assets/gallery/IMG-20241116-WA0007.jpg";
+import ImageWA0008 from "@/assets/gallery/IMG-20241116-WA0008.jpg";
+import ImageWA0009 from "@/assets/gallery/IMG-20241116-WA0009.jpg";
+import ImageWA0013 from "@/assets/gallery/IMG-20241116-WA0013.jpg";
+import ImageWA0014 from "@/assets/gallery/IMG-20241116-WA0014.jpg";
+import ImageWA0016 from "@/assets/gallery/IMG-20241116-WA0016.jpg";
+import ImageWA0017 from "@/assets/gallery/IMG-20241116-WA0017.jpg";
+import ImageWA0018 from "@/assets/gallery/IMG-20241116-WA0018.jpg";
+import ImageWA0022 from "@/assets/gallery/IMG-20241116-WA0022.jpg";
 
 function OurMission() {
   return (
     <>
       <div className="relative h-[70vh] bg-[url(assets/images/feature-3.jpg)] bg-no-repeat bg-cover bg-center flex flex-col items-center justify-center">
         <div className="">
-          <h2 className="text-2xl md:text-4xl font-bold text-center text-primary text-stroke-px text-stroke-black gradient-text bg-gradient-to-br from-primary to-black">
+          <h2 className="text-2xl md:text-4xl font-bold text-center text-primary textstroke-px text-stroke-black gradient-text bg-gradient-to-br from-primary to-black">
             The Mission
           </h2>
           <div className="mt-4 flex gap-2 items-center justify-center text-sm md:text-base font-semibold">
@@ -56,20 +77,31 @@ function OurMission() {
             future.
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-x-4 md:gap-y-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-10 2xl:grid-cols-[repeat(auto-fill,_minmax(420px,_1fr))] 2xl:gap-10 items-stretch mt-6 md:mt-10">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-x-4 md:gap-y-6 lg:grid-cols-3 lg:gap-x-6 lg:gap-y-8 2xl:grid-cols-[repeat(auto-fill,_minmax(420px,_1fr))] 2xl:gap-10 items-stretch mt-6 md:mt-10">
           {[
-            Image1,
-            Image2,
-            Image3,
-            Image1,
-            Image2,
-            Image3,
-            Image1,
-            Image2,
-            Image3,
-            Image1,
-            Image2,
-            Image3,
+            ImageWA0023,
+            ImageWA0012,
+            ImageWA0003,
+            ImageWA0005,
+            ImageWA0010,
+            ImageWA0011,
+            ImageWA0015,
+            ImageWA0019,
+            ImageWA0020,
+            ImageWA0024,
+            ImageWA0001,
+            ImageWA0002,
+            ImageWA0004,
+            ImageWA0006,
+            ImageWA0007,
+            ImageWA0008,
+            ImageWA0009,
+            ImageWA0013,
+            ImageWA0014,
+            ImageWA0016,
+            ImageWA0017,
+            ImageWA0018,
+            ImageWA0022,
           ].map((img, i) => (
             <div key={i} className="h-full">
               <img src={img} alt="" className="h-full" />
@@ -79,7 +111,7 @@ function OurMission() {
       </div>
 
       <div className="flex flex-col md:flex-row h-full md:h-screen md:max-h-[900px]">
-        <div className="md:w-3/5 flex-1 basis-3/5 grayscale">
+        <div className="md:w-3/5 flex-1 basis-3/5">
           <img src={Image1} alt="" className="object-cover h-full w-full" />
         </div>
         <div className="flex-1 p-8 lg:p-10 xl:p-14 flex flex-col justify-center bg-primary text-white">

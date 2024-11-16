@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import DonateNowBtn from "./donate-now-btn";
-import MissionAndVisionImage from "@/assets/images/istockphoto-1372606308-1024x1024.jpg";
+
+import MissionAndVisionImage from "@/assets/gallery/IMG-20241116-WA0006.jpg";
 
 function MissionAndVision() {
   const [tab, setTab] = useState<"vision" | "mission">("mission");

@@ -1,6 +1,6 @@
 import { GroupField } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
-import Image1 from "@/assets/images/pexels-rdne-6646945.jpg";
+import Image1 from "@/assets/gallery/IMG-20241116-WA0008.jpg";
 import Image2 from "@/assets/images/home-1_01-2.png";
 import { HomepageDocumentDataAboutUsItem, Simplify } from "#/types.generated";
 import { Link } from "react-router-dom";
@@ -20,7 +20,7 @@ function AboutUs({
         />
         <div className="absolute bottom-0">
           <div className="relative">
-            <img src={Image2} alt="" className="" />
+            <img src={Image2} alt="" className="size-[70%]" />
             <div className="absolute left-14 md:left-1/5 bottom-[15%] text-white font-amatic">
               <p className="text-xl md:text-3xl leading-none font-medium md:font-bold md:mb-2">
                 Empowering Lives:

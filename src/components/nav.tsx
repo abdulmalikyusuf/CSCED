@@ -75,7 +75,7 @@ function Nav({
       }`}
       ref={container}
     >
-      <ul className="relative md:flex md:gap-6 bg-primary md:bg-white [--color-link-hover:#111] [--marquee-text:#fff] [--menu-focus:#775e41] text-black">
+      <ul className="relative md:flex md:gap-6 bg-primary md:bg-white [--color-link-hover:#111] [--marquee-text:#fff] [--menu-focus:#775e41] max-md:text-white">
         {navItems.map((item) => (
           <NavItem key={item.title} {...item} handleClick={setIsOpen} />
         ))}
@@ -146,7 +146,7 @@ function NavItem({ title, children, href, handleClick }: NavItemProps) {
     >
       <NavLink
         to={href}
-        className="[&.active]:md:text-primary md:hover:text-primary md:!opacity-100 block md:inline-flex relative cursor-poQuickSand max-md:focus:text-[var(--menu-focus)] max-md:focus-visible:text-[var(--menu-focus)] max-md:[&>:focus:not(:focus-visible)]:text-[#000] whitespace-nowrap text-[6vw] md:text-sm font-semibold md:font-medium pt-[1vh] px-[1vw] md:p-0 uppercase md:capitalize"
+        className="[&.active]:md:text-primary [&.active]:md:font-semibold md:hover:text-primary md:hover:font-medium md:!opacity-100 block md:inline-flex relative cursor-poQuickSand max-md:focus:text-[var(--menu-focus)] max-md:focus-visible:text-[var(--menu-focus)] max-md:[&>:focus:not(:focus-visible)]:text-[#000] whitespace-nowrap text-[6vw] md:text-sm font-semibold md:font-medium pt-[1vh] px-[1vw] md:p-0 uppercase md:capitalize"
         ref={DOMLink}
         onMouseEnter={contextSafe(mouseEnter)}
         onMouseLeave={contextSafe(mouseLeave)}

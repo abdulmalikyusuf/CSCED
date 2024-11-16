@@ -84,7 +84,7 @@ function Hero({
 
   return (
     <div ref={container} className="relative h-screen max-h-[900px] flow-root">
-      <div className="absolute inset-0 -z-0 grayscale">
+      <div className="absolute inset-0 -z-0">
         <img src={BgImage} alt="" className="size-full object-cover" />
       </div>
       <div className="flex flex-col items-center justify-center h-full max-w-4xl mx-auto text-center">
