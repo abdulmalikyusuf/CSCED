@@ -2,14 +2,17 @@ import React from "react";
 import { LucideIcons } from "./icons";
 
 function Banner() {
+  const today = new Date();
   return (
     <div className="hidden py-1 px-4 lg:flex items-center justify-between bg-black">
       <div className="flex items-center gap-6">
         <div className="flex items-center gap-1">
-          <h4 className="text-lg text-primary font-bold">10</h4>
+          <h4 className="text-lg text-primary font-bold">{today.getDate()}</h4>
           <div className="inline-flex flex-col text-[10px] leading-[10px] font-medium">
-            <p className="">AUG</p>
-            <p className="">2024</p>
+            <p className="uppercase">
+              {today.toLocaleString("default", { month: "short" })}
+            </p>
+            <p className="">{today.getFullYear()}</p>
           </div>
         </div>
         <div className="">
@@ -23,7 +26,7 @@ function Banner() {
           <span className="">
             <LucideIcons.mapPin size={12} className="stroke-primary" />
           </span>
-          <span className="">92 Bowery St., NY 10013</span>
+          <span className="">4 Hospital Rd, Jimeta-Yola, Adamawa</span>
         </li>
         <li className="flex items-center gap-4">
           <span className="">
@@ -32,9 +35,15 @@ function Banner() {
           <span className="">+234 904 5667 455</span>
         </li>
         <li className="flex items-center gap-2">
-          <LucideIcons.twitter size={12} className="stroke-primary" />
-          <LucideIcons.facebook size={12} className="stroke-primary" />
-          <LucideIcons.instagram size={12} className="stroke-primary" />
+          <a href="#">
+            <LucideIcons.twitter size={12} className="stroke-primary" />
+          </a>
+          <a href="#">
+            <LucideIcons.facebook size={12} className="stroke-primary" />
+          </a>
+          <a href="#">
+            <LucideIcons.instagram size={12} className="stroke-primary" />
+          </a>
         </li>
       </ul>
     </div>
