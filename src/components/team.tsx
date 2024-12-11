@@ -121,7 +121,7 @@ function Team() {
           Know the Heroes in Person
         </h4>
       </div>
-      <div className="flex *:min-w-[320px] gap-6 mt-6 overflow-x-scroll no-scrollbar">
+      <div className="flex *:min-w-[320px] gap-6 mt-6 overflow-x-scroll no-scrollbar pb-10 -mr-4 sm:-mr-8 lg:-mr-16">
         {staffs.map((staff) => (
           <TeamMemberCard key={staff.name} {...staff} />
         ))}

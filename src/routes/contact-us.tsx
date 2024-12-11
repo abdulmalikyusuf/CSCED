@@ -1,5 +1,7 @@
 import { LucideIcons } from "@/components/icons";
 import Image1 from "@/assets/images/feature-2.jpg";
+import { formatPhoneNumber } from "@/lib/utils";
+import { info } from "@/lib/info";
 
 function ContactUs() {
   return (
@@ -47,7 +49,7 @@ function ContactUs() {
                   Visit
                 </h5>
                 <p className="mt-0.5 leading-none text-sm font-DMSans font-medium text-black">
-                  House No. 6, Gama Street, Maiduguri, Borno State.
+                  {info.address}
                 </p>
               </div>
             </div>
@@ -60,7 +62,7 @@ function ContactUs() {
                   E-Mail Us
                 </h5>
                 <p className="mt-0.5 leading-none text-sm font-DMSans font-medium text-black">
-                  info@csced.org
+                  {info.email}
                 </p>
               </div>
             </div>
@@ -73,7 +75,7 @@ function ContactUs() {
                   Call
                 </h5>
                 <p className="mt-0.5 leading-none text-sm font-DMSans font-medium text-black">
-                  +234 901 2345 677
+                  {formatPhoneNumber(info.phoneNumber)}
                 </p>
               </div>
             </div>

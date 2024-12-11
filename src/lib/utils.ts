@@ -24,15 +24,6 @@ const distMetric = (x, y, x2, y2) => {
 
 export { closestEdge, distMetric };
 
-type Field =
-  | {
-      type: "heading1" | "paragraph";
-      text: string;
-      spans: [];
-      direction: "ltr" | "rtl";
-    }
-  | Record<string, never>;
-
 function parsePrismicField(field: any) {
   field = field[0];
   if (field.type.startsWith("heading") || field.type === "paragraph")
@@ -47,4 +38,24 @@ export function formatNumber(value: number | string) {
   }).format(Number(value));
 }
 
-export { parsePrismicField };
+function formatPhoneNumber(phoneNumber: string) {
+  // Remove all non-digit characters
+  const cleaned = phoneNumber.replace(/\D/g, "");
+
+  // Ensure it starts with '+234'
+  if (!cleaned.startsWith("234")) {
+    throw new Error("Invalid number format. Must start with +234.");
+  }
+
+  // Extract parts of the phone number
+  const countryCode = "+234";
+  const mainNumber = cleaned.slice(3); // Remove the '234' prefix
+  const part1 = mainNumber.slice(0, 3); // First 3 digits
+  const part2 = mainNumber.slice(3, 7); // Next 4 digits
+  const part3 = mainNumber.slice(7, 11); // Last 4 digits
+
+  // Format and return the phone number
+  return `${countryCode} ${part1} ${part2} ${part3}`;
+}
+
+export { parsePrismicField, formatPhoneNumber };

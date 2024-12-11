@@ -1,5 +1,7 @@
 import React from "react";
 import { LucideIcons } from "./icons";
+import { info } from "@/lib/info";
+import { formatPhoneNumber } from "@/lib/utils";
 
 function Banner() {
   const today = new Date();
@@ -26,13 +28,13 @@ function Banner() {
           <span className="">
             <LucideIcons.mapPin size={12} className="stroke-primary" />
           </span>
-          <span className="">No. 4 Hospital Rd, Jimeta-Yola, Adamawa</span>
+          <span className="">{info.address}</span>
         </li>
         <li className="flex items-center gap-4">
           <span className="">
             <LucideIcons.telephone size={12} className="stroke-primary" />
           </span>
-          <span className="">+234 904 5667 455</span>
+          <span className="">{formatPhoneNumber(info.phoneNumber)}</span>
         </li>
         <li className="flex items-center gap-2">
           <a href="#">

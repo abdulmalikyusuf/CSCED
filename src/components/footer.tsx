@@ -1,5 +1,6 @@
 import { LucideIcons } from "@/components/icons";
-import DonateNowBtn from "./donate-now-btn";
+import { info } from "@/lib/info";
+import { formatPhoneNumber } from "@/lib/utils";
 
 function Footer() {
   return (
@@ -43,19 +44,19 @@ function Footer() {
               <span className="">
                 <LucideIcons.mapPin size={24} className="" />
               </span>
-              <span className="">92 Bowery St., NY 10013</span>
+              <span className="">{info.address}</span>
             </li>
             <li className="flex items-center gap-4">
               <span className="">
                 <LucideIcons.telephone size={24} className="" />
               </span>
-              <span className="">+234 904 5667 455</span>
+              <span className="">{formatPhoneNumber(info.phoneNumber)}</span>
             </li>
             <li className="flex items-center gap-4">
               <span className="">
                 <LucideIcons.mail size={24} className="" />
               </span>
-              <span className="">example@mail.com</span>
+              <span className="">{info.email}</span>
             </li>
           </ul>
         </div>

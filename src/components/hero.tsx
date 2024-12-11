@@ -73,10 +73,10 @@ function Hero({
         trigger: subTitle.current,
         start: "top bottom",
         onEnter: () => animateChars(),
-        onEnterBack: () => animateChars(),
+        // onEnterBack: () => animateChars(),
         // Reset the character's state when scrolling back past the element
         onLeave: () => resetChars(),
-        onLeaveBack: () => resetChars(),
+        // onLeaveBack: () => resetChars(),
       });
     },
     { scope: container }
