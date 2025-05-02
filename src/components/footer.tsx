@@ -43,38 +43,23 @@ function Footer() {
               <span className="">
                 <LucideIcons.mapPin size={24} className="" />
               </span>
-              <span className="">92 Bowery St., NY 10013</span>
+              <span className="">No. 4 Hospital Rd, Jimeta-Yola, Adamawa State</span>
             </li>
             <li className="flex items-center gap-4">
               <span className="">
                 <LucideIcons.telephone size={24} className="" />
               </span>
-              <span className="">+234 904 5667 455</span>
+              <span className="">+234 803 6231 300</span>
             </li>
             <li className="flex items-center gap-4">
               <span className="">
                 <LucideIcons.mail size={24} className="" />
               </span>
-              <span className="">example@mail.com</span>
+              <span className="">info@csced-nigeria.org</span>
             </li>
           </ul>
         </div>
-        <div className="md:order-4">
-          <h6 className="md:text-lg font-bold">NONPROFITS</h6>
-          <ul className="mt-4 md:mt-6 flex flex-col gap-2.5 opacity-70">
-            {[
-              "Nonprofit Resources",
-              "Corporate Giving Resources",
-              "Corporate Gift Cards",
-              "CSR Made Simple",
-              "Start an Application",
-            ].map((partner) => (
-              <li key={partner} className="text-wrap text-sm md:text-base">
-                {partner}
-              </li>
-            ))}
-          </ul>
-        </div>
+    
       </div>
       <div className="border-t pt-4 md:pt-8">
         <div className="flex flex-col gap-4 md:flex-row md:gap-0 justify-between text-sm md:text-base">
