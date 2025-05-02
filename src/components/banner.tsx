@@ -32,7 +32,7 @@ function Banner() {
           <span className="">
             <LucideIcons.telephone size={12} className="stroke-primary" />
           </span>
-          <span className="">+234 904 5667 455</span>
+          <span className="">+234 803 6231 300</span>
         </li>
         <li className="flex items-center gap-2">
           <a href="#">
