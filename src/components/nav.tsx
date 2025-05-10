@@ -1,5 +1,5 @@
 import { useRef, Fragment } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { closestEdge } from "@/lib/utils";
@@ -70,9 +70,8 @@ function Nav({
 
   return (
     <nav
-      className={`group/header max-md:fixed inset-y-0 right-0 max-md:py-14 max-md:z-[1] max-md:bg-black transition-[width] delay-150 duration-300 ease-in-out ${
-        isOpen ? "max-md:w-3/4" : "max-md:w-0"
-      }`}
+      className={`group/header max-md:fixed inset-y-0 right-0 max-md:py-14 max-md:z-[1] max-md:bg-black transition-[width] delay-150 duration-300 ease-in-out ${isOpen ? "max-md:w-3/4" : "max-md:w-0"
+        }`}
       ref={container}
     >
       <ul className="relative md:flex md:gap-6 bg-primary md:bg-white [--color-link-hover:#111] [--marquee-text:#fff] [--menu-focus:#775e41] max-md:text-white">
@@ -144,7 +143,7 @@ function NavItem({ title, children, href, handleClick }: NavItemProps) {
       ref={menuItem}
       onClick={() => handleClick(false)}
     >
-      <NavLink
+      <Link
         to={href}
         className="[&.active]:md:text-primary [&.active]:md:font-semibold md:hover:text-primary md:hover:font-medium md:!opacity-100 block md:inline-flex relative cursor-poQuickSand max-md:focus:text-[var(--menu-focus)] max-md:focus-visible:text-[var(--menu-focus)] max-md:[&>:focus:not(:focus-visible)]:text-[#000] whitespace-nowrap text-[6vw] md:text-sm font-semibold md:font-medium pt-[1vh] px-[1vw] md:p-0 uppercase md:capitalize"
         ref={DOMLink}
@@ -152,7 +151,7 @@ function NavItem({ title, children, href, handleClick }: NavItemProps) {
         onMouseLeave={contextSafe(mouseLeave)}
       >
         {title}
-      </NavLink>
+      </Link>
       <div
         className="marquee md:hidden absolute top-0 left-0 overflow-hidden w-full h-full poQuickSand-events-none bg-[#000] -translate3d-y-full"
         ref={marquee}

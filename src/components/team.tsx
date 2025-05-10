@@ -8,6 +8,10 @@ import hassanuraji from "@/assets/images/staffs/salamatu-hassanu-raji.jpg";
 import kefasmustapha from "@/assets/images/staffs/susuti-kefas-mustapha.jpg";
 import ndonindo from "@/assets/images/staffs/uhwe-ndon-indo.jpg";
 import shuaibumusa from "@/assets/images/staffs/shuaibu-musa.jpg";
+import { GroupField, RichTextField, TitleField } from "@prismicio/client";
+import { Simplify } from "@/types";
+import { OurTeamPageDocumentDataTeamMemberItem } from "#/types.generated";
+import { PrismicRichText } from "@prismicio/react";
 
 export const staffs = [
   {
@@ -110,20 +114,27 @@ export const staffs = [
     },
   },
 ];
-function Team() {
+
+type TeamProps = {
+  heading: TitleField | undefined, subtitle: RichTextField | undefined, staffs: GroupField<Simplify<OurTeamPageDocumentDataTeamMemberItem>> | undefined
+}
+
+function Team({ heading, subtitle, staffs }: TeamProps) {
+  if (!staffs || staffs.length === 0) return null;
+
   return (
     <div className="px-4 sm:px-8 lg:px-16 mb-20">
       <div className="text-center text-[#232323]">
-        <h6 className="md:text-xl font-semibold text-primary font-amatic">
-          PROFESSIONAL TEAM
-        </h6>
-        <h4 className="text-3xl lg:text-5xl font-bold">
-          Know the Heroes in Person
-        </h4>
+        <div className="md:text-xl font-semibold text-primary font-amatic uppercase mb-2">
+          {heading?.[0]?.text}
+        </div>
+        <div className="text-3xl lg:text-5xl font-bold capitalize">
+          <PrismicRichText field={subtitle} />
+        </div>
       </div>
       <div className="flex *:min-w-[320px] gap-6 mt-6 overflow-x-scroll no-scrollbar pb-10 -mr-4 sm:-mr-8 lg:-mr-16">
-        {staffs.map((staff) => (
-          <TeamMemberCard key={staff.name} {...staff} />
+        {staffs.map((staff: Simplify<OurTeamPageDocumentDataTeamMemberItem>, index) => (
+          <TeamMemberCard key={index} {...staff} />
         ))}
       </div>
     </div>

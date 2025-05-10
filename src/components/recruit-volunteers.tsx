@@ -1,7 +1,16 @@
+import { IndexDocumentDataVolunteeringPitchItem, Simplify } from "#/types.generated";
 import VolunteerImage from "@/assets/images/volunteer-1888823_640.webp";
 import { LucideIcons } from "@/components/icons";
+import { GroupField, RichTextField } from "@prismicio/client";
+import { TitleField } from "@prismicio/client";
 
-function RecruitVolunteers() {
+type RecruitVolunteersProps = {
+  title: TitleField | undefined;
+  text: RichTextField | undefined;
+  items: GroupField<Simplify<IndexDocumentDataVolunteeringPitchItem>> | undefined
+}
+
+function RecruitVolunteers({ title, text, items }: RecruitVolunteersProps) {
   return (
     <div className="flex flex-col md:flex-row gap-14 md:gap-16 px-4 sm:px-8 lg:px-16">
       <div className="flex-1">

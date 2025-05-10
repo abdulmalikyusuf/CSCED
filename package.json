@@ -7,13 +7,19 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prismic-generate": "prismic-ts-codegen"
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
     "@million/lint": "1.0.0-rc.26",
     "@tabler/icons-react": "^3.12.0",
+    "@tanstack/react-router": "^1.119.0",
+    "@tanstack/react-router-devtools": "^1.119.1",
     "clsx": "^2.1.1",
+    "embla-carousel": "^8.6.0",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
     "framer-motion": "^11.3.24",
     "gsap": "^3.12.5",
     "ldrs": "^1.0.2",
@@ -21,7 +27,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.6.5",
-    "react-router-dom": "^6.23.1",
     "segment-js": "^1.1.2",
     "splitting": "^1.1.0",
     "tailwind-merge": "^2.4.0"
@@ -30,6 +35,8 @@
     "@prismicio/client": "^7.5.0",
     "@prismicio/react": "^2.8.0",
     "@prismicio/types": "^0.2.9",
+    "@tanstack/router-plugin": "^1.119.0",
+    "@types/node": "^22.15.3",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@types/splitting": "^1.0.6",

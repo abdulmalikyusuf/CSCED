@@ -11,7 +11,7 @@ import Education from "@/assets/images/1016545.png";
 import FoodSecurity from "@/assets/images/noun-food-security-4965899.png";
 import WomensRight from "@/assets/images/Women's Right.png";
 import {
-  HomepageDocumentDataSectionGridItem,
+  IndexDocumentDataObjectivesItem,
   Simplify,
 } from "#/types.generated";
 import DonateNowBtn from "./donate-now-btn";
@@ -19,8 +19,8 @@ import DonateNowBtn from "./donate-now-btn";
 gsap.registerPlugin(ScrollTrigger);
 
 type Props = {
-  title: TitleField;
-  data: GroupField<Simplify<HomepageDocumentDataSectionGridItem>>;
+  title: TitleField | undefined;
+  data: GroupField<Simplify<IndexDocumentDataObjectivesItem>> | undefined;
 };
 function SectionTwo({ title, data }: Props) {
   const container = useRef<HTMLDivElement | null>(null);
@@ -90,7 +90,7 @@ function SectionTwo({ title, data }: Props) {
     >
       <div className="min-w-80">
         <h4 className="text-3xl md:text-4xl leading-none font-bold text-pretty font-amatic">
-          {title[0].text}
+          {title?.[0]?.text}
           {/* <span
             ref={text}
             data-splitting="chars"
@@ -108,28 +108,29 @@ function SectionTwo({ title, data }: Props) {
           <DonateNowBtn />
         </div>
       </div>
-      <div className="flex-shrink grid grid-cols-1 md:grid-cols-2 gap-y-14 gap-x-8">
-        {[ConflitResolution, Education, FoodSecurity, WomensRight].map(
-          (image, idx) => (
+      {data &&
+        <div className="flex-shrink grid grid-cols-1 md:grid-cols-2 gap-y-14 gap-x-8">
+          {data.map((objective: Simplify<IndexDocumentDataObjectivesItem>, idx: number) => (
             <div key={idx}>
               <div className="flex items-center gap-2 md:gap-4">
                 <div className="size-10 md:size-14 flex-shrink-0">
-                  <img src={image} alt={idx.toString()} className="" />
+                  {objective.objective_image.url && <img src={objective.objective_image.url} alt={objective.objective_image.alt ?? ""} className="" />}
                 </div>
                 <h6 className="text-xl md:text-2xl !leading-none font-medium md:font-semibold text-primary">
-                  {data[idx].title[0].text}
+                  {objective.objective_title[0]?.text}
                 </h6>
               </div>
 
               <div className="mt-2 md:mt-4">
                 <div className="opacity-80 text-pretty text-justify">
-                  <PrismicRichText field={data[idx].text} />
+                  <PrismicRichText field={objective.objective_text} />
                 </div>
               </div>
             </div>
           )
-        )}
-      </div>
+          )}
+        </div>
+      }
     </div>
   );
 }

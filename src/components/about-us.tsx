@@ -2,14 +2,17 @@ import { GroupField } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
 import Image1 from "@/assets/gallery/IMG-20241116-WA0008.jpg";
 import Image2 from "@/assets/images/home-1_01-2.png";
-import { HomepageDocumentDataAboutUsItem, Simplify } from "#/types.generated";
-import { Link } from "react-router-dom";
+import { IndexDocumentDataAboutItem } from "#/types.generated";
+import { Link } from "@tanstack/react-router";
+import { Simplify } from "@/types";
 
 function AboutUs({
   data,
 }: {
-  data: GroupField<Simplify<HomepageDocumentDataAboutUsItem>>;
+  data: GroupField<Simplify<IndexDocumentDataAboutItem>> | undefined
 }) {
+  if (!data) return null
+  const { about_subtitle, about_text, about_title } = data[0]!
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center gap-16 text-black pr-4 sm:pr-8 lg:pr-16 h-full">
       <div className="shrink-0 relative lg:max-w-[50%]">
@@ -41,13 +44,13 @@ function AboutUs({
       </div>
       <div className="px-4 sm:px-8 lg:px-0 lg:max-w-[50%]">
         <h5 className="md:text-xl font-semibold uppercase font-amatic text-primary md:mb-2">
-          about us
+          {about_title[0]?.text}
         </h5>
-        <h4 className="text-3xl md:text-5xl font-bold capitalize">
-          {data[0].title[0].text}
-        </h4>
+        <div className="text-3xl md:text-5xl font-bold capitalize">
+          <PrismicRichText field={about_subtitle} />
+        </div>
         <div className="mt-2 md:mt-6 leading-relaxed opacity-80 text-justify">
-          <PrismicRichText field={data[0].text} />
+          <PrismicRichText field={about_text} />
         </div>
         <Link
           to="/about-us"

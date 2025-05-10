@@ -7,6 +7,21 @@ import CommunityDevelopment from "@/assets/images/about-us/community-development
 import AnimateNumber from "@/components/about-us/animate-number";
 import Testimonials from "@/components/testimonials";
 import { Articles } from "@/components/articles";
+import { createRoute } from "@tanstack/react-router";
+import { rootRoute } from "./root";
+import { client } from "@/prismic";
+
+export const aboutRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/about-us',
+  component: AboutUs,
+  loader: async () => {
+    const aboutpage = await client.getByType("about_us")
+    console.log(aboutpage)
+    return aboutpage.results.at(0)?.data
+  }
+})
+
 
 const goals = [
   {
@@ -31,11 +46,12 @@ const goals = [
   },
 ];
 function AboutUs() {
+  const about = aboutRoute.useLoaderData()
   return (
     <div className="bg-transparent">
       <div className="relative h-[70vh] flex flex-col items-center justify-center">
         <div className="absolute inset-0 -z-0">
-          <img src={Feature2} alt="" className="size-full object-cover" />
+          <img src={about?.hero_image1.url!} alt="" className="size-full object-cover" />
         </div>
         <div className="relative">
           <h2 className="text-2xl md:text-4xl font-bold text-center text-primary text-stroke-px text-stroke-black gradient-text bg-gradient-to-br from-primary to-transparent">
@@ -51,10 +67,10 @@ function AboutUs() {
       <div className="flex flex-col gap-10 md:gap-16 lg:gap-20 py-16 bg-white text-black">
         <div className="md:columns-2 lg:gap-16 px-4 sm:px-8 lg:px-16">
           <h5 className="text-lg md:text-3xl font-semibold font-amatic text-primary uppercase md:mb-2">
-            about us
+            {about?.title[0]?.text}
           </h5>
           <h4 className="text-3xl md:text-5xl font-bold capitalize">
-            Centre for Social Change and Economic Development (CSCED)
+            {about?.subtitle[0]?.text}
           </h4>
           <div className="mt-2 md:mt-6 leading-relaxed text-justify opacity-80 flex flex-col gap-4">
             <p className="">

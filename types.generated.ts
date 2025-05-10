@@ -2,471 +2,1154 @@
 
 import type * as prismic from "@prismicio/client";
 
-export type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
+type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
- * Item in *homepage → Hero Section*
+ * Item in *About Us Page → goal*
  */
-export interface HomepageDocumentDataHeroSectionItem {
-  /**
-   * Title field in *homepage → Hero Section*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Resilience for all
-   * - **API ID Path**: homepage.hero_section[].title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
-  /**
-   * Subtitle field in *homepage → Hero Section*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Education for all, igniting hope
-   * - **API ID Path**: homepage.hero_section[].subtitle
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  subtitle: prismic.TitleField;
+export interface AboutUsDocumentDataGoalItem {
+	/**
+	 * Goal Icon field in *About Us Page → goal*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: about_us.goal[].goal_icon
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	goal_icon: prismic.ImageField<never>;
+	
+	/**
+	 * Goal Title field in *About Us Page → goal*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: Education
+	 * - **API ID Path**: about_us.goal[].goal_title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	goal_title: prismic.TitleField;
+	
+	/**
+	 * Goal Text field in *About Us Page → goal*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Unlock the potential of individuals through our educational empowerment programs. We focus on improving access to quality education, providing scholarships, and implementing innovative learning approaches, creating pathways for a brighter tomorrow
+	 * - **API ID Path**: about_us.goal[].goal_text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	goal_text: prismic.RichTextField;
 }
 
 /**
- * Item in *homepage → Section grid*
+ * Item in *About Us Page → Impact*
  */
-export interface HomepageDocumentDataSectionGridItem {
-  /**
-   * Title field in *homepage → Section grid*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Community Development Programs
-   * - **API ID Path**: homepage.section_grid[].title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
-  /**
-   * Text field in *homepage → Section grid*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Engage in our holistic community development initiatives. From infrastructure projects to educational programs, we work collaboratively to foster sustainable growth and empowerment.
-   * - **API ID Path**: homepage.section_grid[].text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  text: prismic.RichTextField;
+export interface AboutUsDocumentDataImpactItem {
+	/**
+	 * Impact Value field in *About Us Page → Impact*
+	 *
+	 * - **Field Type**: Number
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: about_us.impact[].impact_value
+	 * - **Documentation**: https://prismic.io/docs/field#number
+	 */
+	impact_value: prismic.NumberField;
+	
+	/**
+	 * Impact Text field in *About Us Page → Impact*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: about_us.impact[].impact_text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	impact_text: prismic.RichTextField;
 }
 
 /**
- * Item in *homepage → About Us*
+ * Item in *About Us Page → Section*
  */
-export interface HomepageDocumentDataAboutUsItem {
-  /**
-   * Title field in *homepage → About Us*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Empowering Lives, Creating Impact
-   * - **API ID Path**: homepage.about_us[].title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
-  /**
-   * Text field in *homepage → About Us*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Future Resilience and Development Foundation (FRAD Foundation) is a registered Non-profit organization with the corporate affairs commission (CAC) with CAC No CAC/IT/NO/139393 in 2019 in accordance with the Nigerian Law with office address at Suit B87, Mohammed Goni, Complex, Maiduguri Borno state, Nigeria.
-   * - **API ID Path**: homepage.about_us[].text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  text: prismic.RichTextField;
+export interface AboutUsDocumentDataSectionItem {
+	/**
+	 * Title field in *About Us Page → Section*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: become a volunteer
+	 * - **API ID Path**: about_us.section[].title1
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title1: prismic.TitleField;
+	
+	/**
+	 * Section Subtitle field in *About Us Page → Section*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: why we need you
+	 * - **API ID Path**: about_us.section[].section_subtitle
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	section_subtitle: prismic.TitleField;
+	
+	/**
+	 * Section Text field in *About Us Page → Section*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Your involvement directly impacts communities in Maiduguri, Nigeria, contributing to community development, humanitarian aid, and educational programs.
+	 * - **API ID Path**: about_us.section[].section_text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	section_text: prismic.RichTextField;
 }
 
 /**
- * Item in *homepage → Features*
+ * Item in *About Us Page → Testimonial*
  */
-export interface HomepageDocumentDataFeaturesItem {
-  /**
-   * Title field in *homepage → Features*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Become a volunteer
-   * - **API ID Path**: homepage.features[].title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
-  /**
-   * text field in *homepage → Features*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Join FRAD Foundation as a volunteer, contributing to community development, humanitarian aid, and education in Maiduguri, Nigeria. Your commitment helps foster sustainable growth and empowerment, creating positive change.
-   * - **API ID Path**: homepage.features[].text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  text: prismic.RichTextField;
+export interface AboutUsDocumentDataTestimonialItem {
+	/**
+	 * Author Image field in *About Us Page → Testimonial*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: about_us.testimonial[].author_image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	author_image: prismic.ImageField<never>;
+	
+	/**
+	 * Author Name field in *About Us Page → Testimonial*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: Binta Yerima
+	 * - **API ID Path**: about_us.testimonial[].author_name
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	author_name: prismic.TitleField;
+	
+	/**
+	 * Author Occupation field in *About Us Page → Testimonial*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: Volunteer
+	 * - **API ID Path**: about_us.testimonial[].author_occupation
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	author_occupation: prismic.TitleField;
+	
+	/**
+	 * Testimonial Content Text field in *About Us Page → Testimonial*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Fatima Ahmad, a 38-year-old housewife" from Yola, Adamawa State, received N132,000 through the QuickSandvention in four weekly disbursements of N56,000. She is grateful for the support from CSCED, she used the funds for basic household needs and started a business, now earning up to a thousand Naira daily.
+	 * - **API ID Path**: about_us.testimonial[].testimonial_content_text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	testimonial_content_text: prismic.RichTextField;
 }
 
 /**
- * Primary content in *homepage → Slice zone → Hero Section → Primary*
+ * Content for About Us Page documents
  */
-export interface HomepageDocumentDataBodyHeroSectionSlicePrimary {
-  /**
-   * Call to action field in *homepage → Slice zone → Hero Section → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Call To Action
-   * - **API ID Path**: homepage.body[].hero_section.primary.call_to_action
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  call_to_action: prismic.LinkField;
+interface AboutUsDocumentData {
+	/**
+	 * Hero Image field in *About Us Page*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: about_us.hero_image1
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	hero_image1: prismic.ImageField<never>;
+	
+	/**
+	 * Title field in *About Us Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: About
+	 * - **API ID Path**: about_us.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.TitleField;
+	
+	/**
+	 * Subtitle field in *About Us Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: Centre for Social Change and Economic Development (CSCED)
+	 * - **API ID Path**: about_us.subtitle
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	subtitle: prismic.TitleField;
+	
+	/**
+	 * Text field in *About Us Page*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Centre for Social Change and Economic Development (CSCED) is a registered Non-profit organization with the corporate affairs commission (CAC) with CAC No CAC/IT/NO/ in 2019 in accordance with the Nigerian Law with office address at Suit B87, Mohammed Goni, Complex, Maiduguri Borno state, Nigeria.  Our organization has grown periodically through our work with other sister organizations in the state providing humanitarian and development response. Today we have an experienced workforce and network of field staff and field researcher and data collectors working in 5 LGAs of MMC, JERE, Konduga, Mafa and Magumeri.
+	 * - **API ID Path**: about_us.text
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	text: prismic.RichTextField;
+	
+	/**
+	 * Goal Heading field in *About Us Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: HELPING IS OUR GOAL
+	 * - **API ID Path**: about_us.goal_heading
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	goal_heading: prismic.TitleField;
+	
+	/**
+	 * Goal Subheading field in *About Us Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: What Make Us Different
+	 * - **API ID Path**: about_us.goal_subheading
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	goal_subheading: prismic.TitleField;
+	
+	/**
+	 * goal field in *About Us Page*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: about_us.goal[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	goal: prismic.GroupField<Simplify<AboutUsDocumentDataGoalItem>>;
+	
+	/**
+	 * Impact field in *About Us Page*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: about_us.impact[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	impact: prismic.GroupField<Simplify<AboutUsDocumentDataImpactItem>>;
+	
+	/**
+	 * Section field in *About Us Page*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: about_us.section[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	section: prismic.GroupField<Simplify<AboutUsDocumentDataSectionItem>>;
+	
+	/**
+	 * Testimonial Title field in *About Us Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: testimonials
+	 * - **API ID Path**: about_us.testimonial_title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	testimonial_title: prismic.TitleField;
+	
+	/**
+	 * Testimonial Subtitle field in *About Us Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: What People Say About Our Mission
+	 * - **API ID Path**: about_us.testimonial_subtitle
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	testimonial_subtitle: prismic.TitleField;
+	
+	/**
+	 * Testimonial Text field in *About Us Page*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: We continually experiment. We fail quickly and productively. We use data and feedback to guide our course
+	 * - **API ID Path**: about_us.testimonial_text
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	testimonial_text: prismic.RichTextField;
+	
+	/**
+	 * Testimonial field in *About Us Page*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: about_us.testimonial[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	testimonial: prismic.GroupField<Simplify<AboutUsDocumentDataTestimonialItem>>;
 }
 
 /**
- * Slice for *homepage → Slice zone*
- */
-export type HomepageDocumentDataBodyHeroSectionSlice = prismic.Slice<
-  "hero_section",
-  Simplify<HomepageDocumentDataBodyHeroSectionSlicePrimary>,
-  never
->;
-
-type HomepageDocumentDataBodySlice = HomepageDocumentDataBodyHeroSectionSlice;
-
-/**
- * Content for homepage documents
- */
-interface HomepageDocumentData {
-  /**
-   * Hero Section field in *homepage*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.hero_section[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  hero_section: prismic.GroupField<
-    Simplify<HomepageDocumentDataHeroSectionItem>
-  >;
-
-  /**
-   * Section Two Heading field in *homepage*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Empowering Lives, Creating Impact
-   * - **API ID Path**: homepage.section_two_heading
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  section_two_heading: prismic.TitleField;
-
-  /**
-   * Section grid field in *homepage*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.section_grid[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  section_grid: prismic.GroupField<
-    Simplify<HomepageDocumentDataSectionGridItem>
-  >;
-
-  /**
-   * About Us field in *homepage*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.about_us[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  about_us: prismic.GroupField<Simplify<HomepageDocumentDataAboutUsItem>>;
-
-  /**
-   * Features field in *homepage*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.features[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  features: prismic.GroupField<Simplify<HomepageDocumentDataFeaturesItem>>;
-
-  /**
-   * Slice zone field in *homepage*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.body[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  body: prismic.SliceZone<HomepageDocumentDataBodySlice>;
-}
-
-/**
- * homepage document from Prismic
+ * About Us Page document from Prismic
  *
- * - **API ID**: `homepage`
+ * - **API ID**: `about_us`
  * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type HomepageDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<HomepageDocumentData>,
-    "homepage",
-    Lang
-  >;
+export type AboutUsDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<AboutUsDocumentData>, "about_us", Lang>;
 
 /**
- * Item in *Index Page → Hero Section*
+ * Content for Blog Item Page documents
  */
-export interface IndexPageDocumentDataHeroSectionItem {
-  /**
-   * Title field in *Index Page → Hero Section*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Resilience for all
-   * - **API ID Path**: index_page.hero_section[].title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
-  /**
-   * Subtitle field in *Index Page → Hero Section*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Education for all, igniting hope
-   * - **API ID Path**: index_page.hero_section[].subtitle
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  subtitle: prismic.TitleField;
+interface BlogItemPageDocumentData {
+	/**
+	 * Blog Post Title field in *Blog Item Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: Title of the blog post here..
+	 * - **API ID Path**: blog_item_page.blog_post_title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	blog_post_title: prismic.TitleField;
+	
+	/**
+	 * Subtitle of blog post field in *Blog Item Page*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Subtitle of blog post here
+	 * - **API ID Path**: blog_item_page.subtitle_of_blog_post
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	subtitle_of_blog_post: prismic.RichTextField;
+	
+	/**
+	 * Blog post preview image field in *Blog Item Page*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: blog_item_page.blog_post_preview_image
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	blog_post_preview_image: prismic.ImageField<never>;
+	
+	/**
+	 * Blog post content field in *Blog Item Page*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	 * - **API ID Path**: blog_item_page.blog_post_content
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	blog_post_content: prismic.RichTextField;
 }
 
 /**
- * Item in *Index Page → Section grid*
+ * Blog Item Page document from Prismic
+ *
+ * - **API ID**: `blog_item_page`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
  */
-export interface IndexPageDocumentDataSectionGridItem {
-  /**
-   * Title field in *Index Page → Section grid*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Community Development Programs
-   * - **API ID Path**: index_page.section_grid[].title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
+export type BlogItemPageDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<BlogItemPageDocumentData>, "blog_item_page", Lang>;
 
-  /**
-   * Text field in *Index Page → Section grid*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Engage in our holistic community development initiatives. From infrastructure projects to educational programs, we work collaboratively to foster sustainable growth and empowerment.
-   * - **API ID Path**: index_page.section_grid[].text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  text: prismic.RichTextField;
+/**
+ * Content for Contact Us Page documents
+ */
+interface ContactUsPageDocumentData {
+	/**
+	 * Hero Image field in *Contact Us Page*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contact_us_page.contact_hero_image
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	contact_hero_image: prismic.ImageField<never>;
+	
+	/**
+	 * Hero Text field in *Contact Us Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: Contact Us
+	 * - **API ID Path**: contact_us_page.contact_hero_text
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	contact_hero_text: prismic.TitleField;
+	
+	/**
+	 * Contact Heading field in *Contact Us Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contact_us_page.contact_heading
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	contact_heading: prismic.TitleField;
+	
+	/**
+	 * Contact Title field in *Contact Us Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: get in touch with us
+	 * - **API ID Path**: contact_us_page.contact_title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	contact_title: prismic.TitleField;
+	
+	/**
+	 * Contact Text field in *Contact Us Page*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Connect with us to be a part of positive change. Whether you have questions, feedback, or want to explore collaboration opportunities, the CSCED team is here for you. Your engagement fuels our mission to make a meaningful impact in the lives of those we serve. Reach out to us today, and let’s create a brighter future together.
+	 * - **API ID Path**: contact_us_page.contact_text
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	contact_text: prismic.RichTextField;
+	
+	/**
+	 * Address field in *Contact Us Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: House No. 6, Gama Street, Maiduguri, Borno State.
+	 * - **API ID Path**: contact_us_page.address
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	address: prismic.TitleField;
+	
+	/**
+	 * Email field in *Contact Us Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: info@csced.org
+	 * - **API ID Path**: contact_us_page.email
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	email: prismic.TitleField;
+	
+	/**
+	 * Phone Number field in *Contact Us Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: +234 901 2345 677
+	 * - **API ID Path**: contact_us_page.phone_number
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	phone_number: prismic.TitleField;
 }
 
 /**
- * Item in *Index Page → About Us*
+ * Contact Us Page document from Prismic
+ *
+ * - **API ID**: `contact_us_page`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
  */
-export interface IndexPageDocumentDataAboutUsItem {
-  /**
-   * Title field in *Index Page → About Us*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Empowering Lives, Creating Impact
-   * - **API ID Path**: index_page.about_us[].title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
+export type ContactUsPageDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<ContactUsPageDocumentData>, "contact_us_page", Lang>;
 
-  /**
-   * Text field in *Index Page → About Us*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Future Resilience and Development Foundation (FRAD Foundation) is a registered Non-profit organization with the corporate affairs commission (CAC) with CAC No CAC/IT/NO/139393 in 2019 in accordance with the Nigerian Law with office address at Suit B87, Mohammed Goni, Complex, Maiduguri Borno state, Nigeria.
-   * - **API ID Path**: index_page.about_us[].text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  text: prismic.RichTextField;
+/**
+ * Item in *Index Page → hero*
+ */
+export interface IndexDocumentDataHeroItem {
+	/**
+	 * Hero Image field in *Index Page → hero*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: index.hero[].hero_image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	hero_image: prismic.ImageField<never>;
+	
+	/**
+	 * Hero Text field in *Index Page → hero*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: Empower Change: CSCED - Fostering Self-Reliance and Development
+	 * - **API ID Path**: index.hero[].hero_text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	hero_text: prismic.TitleField;
 }
 
 /**
- * Item in *Index Page → Features*
+ * Item in *Index Page → Objectives*
  */
-export interface IndexPageDocumentDataFeaturesItem {
-  /**
-   * Title field in *Index Page → Features*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Become a volunteer
-   * - **API ID Path**: index_page.features[].title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
-  /**
-   * text field in *Index Page → Features*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Join FRAD Foundation as a volunteer, contributing to community development, humanitarian aid, and education in Maiduguri, Nigeria. Your commitment helps foster sustainable growth and empowerment, creating positive change.
-   * - **API ID Path**: index_page.features[].text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  text: prismic.RichTextField;
+export interface IndexDocumentDataObjectivesItem {
+	/**
+	 * Objective Image field in *Index Page → Objectives*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: index.objectives[].objective_image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	objective_image: prismic.ImageField<never>;
+	
+	/**
+	 * Objective Title field in *Index Page → Objectives*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: Fostering Self-Reliance and Development
+	 * - **API ID Path**: index.objectives[].objective_title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	objective_title: prismic.TitleField;
+	
+	/**
+	 * Objective Text field in *Index Page → Objectives*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: index.objectives[].objective_text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	objective_text: prismic.RichTextField;
 }
 
 /**
- * Primary content in *Index Page → Slice zone → Hero Section → Primary*
+ * Item in *Index Page → About*
  */
-export interface IndexPageDocumentDataBodyHeroSectionSlicePrimary {
-  /**
-   * Call to action field in *Index Page → Slice zone → Hero Section → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Call To Action
-   * - **API ID Path**: index_page.body[].hero_section.primary.call_to_action
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  call_to_action: prismic.LinkField;
+export interface IndexDocumentDataAboutItem {
+	/**
+	 * About Title field in *Index Page → About*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: About Us
+	 * - **API ID Path**: index.about[].about_title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	about_title: prismic.TitleField;
+	
+	/**
+	 * About subtitle field in *Index Page → About*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: fostering positive societal change and economic development
+	 * - **API ID Path**: index.about[].about_subtitle
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	about_subtitle: prismic.RichTextField;
+	
+	/**
+	 * About Text field in *Index Page → About*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: CSCED is a non-governmental, non-profit organization dedicated to fostering positive societal change and economic development through self-reliance and alternative employment opportunities. Initially established as a Community-Based Organization (CBO), CSCED has achieved significant milestones that have propelled its growth towards a national presence. In October 2010, the CBO evolved into a formally registered entity with the Corporate Affairs Commission (CAC), adopting a new name and a broader vision while maintaining its original mission
+	 * - **API ID Path**: index.about[].about_text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	about_text: prismic.TitleField;
 }
 
 /**
- * Slice for *Index Page → Slice zone*
+ * Item in *Index Page → partners*
  */
-export type IndexPageDocumentDataBodyHeroSectionSlice = prismic.Slice<
-  "hero_section",
-  Simplify<IndexPageDocumentDataBodyHeroSectionSlicePrimary>,
-  never
->;
+export interface IndexDocumentDataPartnersItem {
+	/**
+	 * Partner Image field in *Index Page → partners*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: index.partners[].partner_image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	partner_image: prismic.ImageField<never>;
+}
 
-type IndexPageDocumentDataBodySlice = IndexPageDocumentDataBodyHeroSectionSlice;
+/**
+ * Item in *Index Page → Volunteering Pitch*
+ */
+export interface IndexDocumentDataVolunteeringPitchItem {
+	/**
+	 * Pitch Title field in *Index Page → Volunteering Pitch*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: community impact
+	 * - **API ID Path**: index.volunteering_pitch[].pitch_title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	pitch_title: prismic.TitleField;
+	
+	/**
+	 * Pitch Text field in *Index Page → Volunteering Pitch*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Your involvement directly impacts communities in Maiduguri, Nigeria, contributing to community development, humanitarian aid, and educational programs.
+	 * - **API ID Path**: index.volunteering_pitch[].pitch_text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	pitch_text: prismic.RichTextField;
+}
 
 /**
  * Content for Index Page documents
  */
-interface IndexPageDocumentData {
-  /**
-   * Hero Section field in *Index Page*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: index_page.hero_section[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  hero_section: prismic.GroupField<
-    Simplify<IndexPageDocumentDataHeroSectionItem>
-  >;
-
-  /**
-   * Section Two Heading field in *Index Page*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: Empowering Lives, Creating Impact
-   * - **API ID Path**: index_page.section_two_heading
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  section_two_heading: prismic.TitleField;
-
-  /**
-   * Section grid field in *Index Page*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: index_page.section_grid[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  section_grid: prismic.GroupField<
-    Simplify<IndexPageDocumentDataSectionGridItem>
-  >;
-
-  /**
-   * About Us field in *Index Page*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: index_page.about_us[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  about_us: prismic.GroupField<Simplify<IndexPageDocumentDataAboutUsItem>>;
-
-  /**
-   * Features field in *Index Page*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: index_page.features[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  features: prismic.GroupField<Simplify<IndexPageDocumentDataFeaturesItem>>;
-
-  /**
-   * Slice zone field in *Index Page*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: index_page.body[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  body: prismic.SliceZone<IndexPageDocumentDataBodySlice>;
+interface IndexDocumentData {
+	/**
+	 * hero field in *Index Page*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: index.hero[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	hero: prismic.GroupField<Simplify<IndexDocumentDataHeroItem>>;
+	
+	/**
+	 * Objectives Heading field in *Index Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: Fostering Self-Reliance and Development
+	 * - **API ID Path**: index.objectives_heading
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	objectives_heading: prismic.TitleField;
+	
+	/**
+	 * Objectives field in *Index Page*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: index.objectives[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	objectives: prismic.GroupField<Simplify<IndexDocumentDataObjectivesItem>>;
+	
+	/**
+	 * About field in *Index Page*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: index.about[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	about: prismic.GroupField<Simplify<IndexDocumentDataAboutItem>>;
+	
+	/**
+	 * partners field in *Index Page*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: index.partners[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	partners: prismic.GroupField<Simplify<IndexDocumentDataPartnersItem>>;
+	
+	/**
+	 * Mission Title field in *Index Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: index.mission_title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	mission_title: prismic.TitleField;
+	
+	/**
+	 * Mission Text field in *Index Page*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: index.mission_text
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	mission_text: prismic.RichTextField;
+	
+	/**
+	 * Mission Image field in *Index Page*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: index.mission_image
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	mission_image: prismic.ImageField<never>;
+	
+	/**
+	 * Mission Title field in *Index Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: index.vision_title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	vision_title: prismic.TitleField;
+	
+	/**
+	 * Mission Text field in *Index Page*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: index.vision_text
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	vision_text: prismic.RichTextField;
+	
+	/**
+	 * Mission Image field in *Index Page*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: index.vision_image
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	vision_image: prismic.ImageField<never>;
+	
+	/**
+	 * Volunteer Image field in *Index Page*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: index.volunteer_image
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	volunteer_image: prismic.ImageField<never>;
+	
+	/**
+	 * Volunteer Title field in *Index Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: index.volunteer_title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	volunteer_title: prismic.TitleField;
+	
+	/**
+	 * Volunteer Text field in *Index Page*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Why We Need You
+	 * - **API ID Path**: index.volunteer_text
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	volunteer_text: prismic.RichTextField;
+	
+	/**
+	 * Volunteering Pitch field in *Index Page*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: index.volunteering_pitch[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	volunteering_pitch: prismic.GroupField<Simplify<IndexDocumentDataVolunteeringPitchItem>>;
 }
 
 /**
  * Index Page document from Prismic
  *
- * - **API ID**: `index_page`
+ * - **API ID**: `index`
  * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type IndexPageDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<IndexPageDocumentData>,
-    "index_page",
-    Lang
-  >;
+export type IndexDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<IndexDocumentData>, "index", Lang>;
 
-export type AllDocumentTypes = HomepageDocument | IndexPageDocument;
+/**
+ * Item in *Our Mission Page → Section*
+ */
+export interface OurMissionPageDocumentDataMissionSectionItem {
+	/**
+	 * Title field in *Our Mission Page → Section*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: become a volunteer
+	 * - **API ID Path**: our_mission_page.mission_section[].title1
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title1: prismic.TitleField;
+	
+	/**
+	 * Section Subtitle field in *Our Mission Page → Section*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: why we need you
+	 * - **API ID Path**: our_mission_page.mission_section[].section_subtitle
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	section_subtitle: prismic.TitleField;
+	
+	/**
+	 * Section Text field in *Our Mission Page → Section*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Your involvement directly impacts communities in Maiduguri, Nigeria, contributing to community development, humanitarian aid, and educational programs.
+	 * - **API ID Path**: our_mission_page.mission_section[].section_text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	section_text: prismic.RichTextField;
+}
+
+/**
+ * Item in *Our Mission Page → Mission Gallery Image*
+ */
+export interface OurMissionPageDocumentDataMissionGalleryImageItem {
+	/**
+	 * Gallery Image field in *Our Mission Page → Mission Gallery Image*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: our_mission_page.mission_gallery_image[].gallery_image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	gallery_image: prismic.ImageField<never>;
+}
+
+/**
+ * Content for Our Mission Page documents
+ */
+interface OurMissionPageDocumentData {
+	/**
+	 * Hero Image field in *Our Mission Page*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: our_mission_page.mission_hero_image
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	mission_hero_image: prismic.ImageField<never>;
+	
+	/**
+	 * Hero Text field in *Our Mission Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: The Mission
+	 * - **API ID Path**: our_mission_page.mission_hero_text
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	mission_hero_text: prismic.TitleField;
+	
+	/**
+	 * Section field in *Our Mission Page*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: our_mission_page.mission_section[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	mission_section: prismic.GroupField<Simplify<OurMissionPageDocumentDataMissionSectionItem>>;
+	
+	/**
+	 * Mission Gallery Heading field in *Our Mission Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: our_mission_page.mission_gallery_heading
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	mission_gallery_heading: prismic.TitleField;
+	
+	/**
+	 * Mission Gallery Title field in *Our Mission Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: Committed to Social and Economic Development for All
+	 * - **API ID Path**: our_mission_page.mission_gallery_title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	mission_gallery_title: prismic.TitleField;
+	
+	/**
+	 * Mision Gallery Subtitle field in *Our Mission Page*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Our gallery showcases the heart and soul of our organization in action. These images capture the essence of our efforts, highlighting the faces and stories of those we serve. Through these visuals, we invite you to witness the impact of our mission and join us in our journey towards creating a brighter, more equitable future.
+	 * - **API ID Path**: our_mission_page.mision_gallery_subtitle
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	mision_gallery_subtitle: prismic.RichTextField;
+	
+	/**
+	 * Mission Gallery Image field in *Our Mission Page*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: our_mission_page.mission_gallery_image[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	mission_gallery_image: prismic.GroupField<Simplify<OurMissionPageDocumentDataMissionGalleryImageItem>>;
+	
+	/**
+	 * Subscription Section Image field in *Our Mission Page*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: our_mission_page.subscription_section_image
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	subscription_section_image: prismic.ImageField<never>;
+	
+	/**
+	 * Subscription Section Heading field in *Our Mission Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: subscribe
+	 * - **API ID Path**: our_mission_page.subscription_section_heading
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	subscription_section_heading: prismic.TitleField;
+	
+	/**
+	 * Subscription Section Title field in *Our Mission Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: Listen, Act, Learn. Subscribe to Our Updates.
+	 * - **API ID Path**: our_mission_page.subscription_section_title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	subscription_section_title: prismic.TitleField;
+	
+	/**
+	 * Subscription Section Text field in *Our Mission Page*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Mattis enim ut tellus elementum sagittis. In egestas erat imperdiet sed euismod nisi porta. Ullamcorper malesuada proin libero nunc consequat QuickSanddum varius sit amet.
+	 * - **API ID Path**: our_mission_page.subscription_section_text
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	subscription_section_text: prismic.RichTextField;
+}
+
+/**
+ * Our Mission Page document from Prismic
+ *
+ * - **API ID**: `our_mission_page`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type OurMissionPageDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<OurMissionPageDocumentData>, "our_mission_page", Lang>;
+
+/**
+ * Item in *Our Team Page → Team Member*
+ */
+export interface OurTeamPageDocumentDataTeamMemberItem {
+	/**
+	 * Team member photo field in *Our Team Page → Team Member*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: our_team_page.team_member[].team_member_photo
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	team_member_photo: prismic.ImageField<never>;
+	
+	/**
+	 * Team Member name field in *Our Team Page → Team Member*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: Abdulkarim Hamid
+	 * - **API ID Path**: our_team_page.team_member[].team_member_name
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	team_member_name: prismic.TitleField;
+	
+	/**
+	 * Team Member position field in *Our Team Page → Team Member*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Board Chair
+	 * - **API ID Path**: our_team_page.team_member[].team_member_position
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	team_member_position: prismic.RichTextField;
+	
+	/**
+	 * Twitter field in *Our Team Page → Team Member*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: our_team_page.team_member[].twitter
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	twitter: prismic.LinkField;
+	
+	/**
+	 * Instagram field in *Our Team Page → Team Member*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: our_team_page.team_member[].instagram
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	instagram: prismic.LinkField;
+	
+	/**
+	 * Facebook field in *Our Team Page → Team Member*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: our_team_page.team_member[].facebook
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	facebook: prismic.LinkField;
+	
+	/**
+	 * LinkedIn field in *Our Team Page → Team Member*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: our_team_page.team_member[].linkedin
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	linkedin: prismic.LinkField;
+}
+
+/**
+ * Content for Our Team Page documents
+ */
+interface OurTeamPageDocumentData {
+	/**
+	 * Hero Image field in *Our Team Page*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: our_team_page.team_hero_image
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	team_hero_image: prismic.ImageField<never>;
+	
+	/**
+	 * Hero Text field in *Our Team Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: The Team
+	 * - **API ID Path**: our_team_page.team_hero_text
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	team_hero_text: prismic.TitleField;
+	
+	/**
+	 * Team heading field in *Our Team Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: PROFESSIONAL TEAM
+	 * - **API ID Path**: our_team_page.team_heading
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	team_heading: prismic.TitleField;
+	
+	/**
+	 * Team Subtitle field in *Our Team Page*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Know the Heroes in Person
+	 * - **API ID Path**: our_team_page.team_subtitle
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	team_subtitle: prismic.RichTextField;
+	
+	/**
+	 * Team Member field in *Our Team Page*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: our_team_page.team_member[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	team_member: prismic.GroupField<Simplify<OurTeamPageDocumentDataTeamMemberItem>>;
+}
+
+/**
+ * Our Team Page document from Prismic
+ *
+ * - **API ID**: `our_team_page`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type OurTeamPageDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<OurTeamPageDocumentData>, "our_team_page", Lang>;
+
+export type AllDocumentTypes = AboutUsDocument | BlogItemPageDocument | ContactUsPageDocument | IndexDocument | OurMissionPageDocument | OurTeamPageDocument;
 
 declare module "@prismicio/client" {
-  interface CreateClient {
-    (
-      repositoryNameOrEndpoint: string,
-      options?: prismic.ClientConfig
-    ): prismic.Client<AllDocumentTypes>;
-  }
-
-  namespace Content {
-    export type {
-      HomepageDocument,
-      HomepageDocumentData,
-      HomepageDocumentDataHeroSectionItem,
-      HomepageDocumentDataSectionGridItem,
-      HomepageDocumentDataAboutUsItem,
-      HomepageDocumentDataFeaturesItem,
-      HomepageDocumentDataBodyHeroSectionSlicePrimary,
-      HomepageDocumentDataBodySlice,
-      IndexPageDocument,
-      IndexPageDocumentData,
-      IndexPageDocumentDataHeroSectionItem,
-      IndexPageDocumentDataSectionGridItem,
-      IndexPageDocumentDataAboutUsItem,
-      IndexPageDocumentDataFeaturesItem,
-      IndexPageDocumentDataBodyHeroSectionSlicePrimary,
-      IndexPageDocumentDataBodySlice,
-      AllDocumentTypes,
-    };
-  }
+	interface CreateClient {
+		(repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
+	}
+	
+	namespace Content {
+		export type {
+			AboutUsDocument,
+			AboutUsDocumentData,
+			AboutUsDocumentDataGoalItem,
+			AboutUsDocumentDataImpactItem,
+			AboutUsDocumentDataSectionItem,
+			AboutUsDocumentDataTestimonialItem,
+			BlogItemPageDocument,
+			BlogItemPageDocumentData,
+			ContactUsPageDocument,
+			ContactUsPageDocumentData,
+			IndexDocument,
+			IndexDocumentData,
+			IndexDocumentDataHeroItem,
+			IndexDocumentDataObjectivesItem,
+			IndexDocumentDataAboutItem,
+			IndexDocumentDataPartnersItem,
+			IndexDocumentDataVolunteeringPitchItem,
+			OurMissionPageDocument,
+			OurMissionPageDocumentData,
+			OurMissionPageDocumentDataMissionSectionItem,
+			OurMissionPageDocumentDataMissionGalleryImageItem,
+			OurTeamPageDocument,
+			OurTeamPageDocumentData,
+			OurTeamPageDocumentDataTeamMemberItem,
+			AllDocumentTypes
+		}
+	}
 }

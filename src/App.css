@@ -62,3 +62,16 @@
 .overlay {
   border-image: fill 0 linear-gradient(#0003, #000);
 } */
+
+.splitting .line {
+  display: block !important; /* Or 'flex' if words inside are inline-block and need to wrap */
+  overflow: hidden !important; /* This is KEY for the effect */
+  /* position: relative; */ /* Might be needed depending on child positioning */
+}
+
+/* The actual elements being animated (words/chars within lines) */
+.splitting .line .word,
+.splitting .line .char {
+  display: inline-block; /* Allow yPercent to work correctly */
+  /* transform-style: preserve-3d; /* For more complex 3D transforms if needed */
+}

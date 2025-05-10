@@ -1,10 +1,21 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import DonateNowBtn from "./donate-now-btn";
 
-import MissionAndVisionImage from "@/assets/gallery/IMG-20241116-WA0006.jpg";
+import { ImageField, RichTextField, TitleField } from "@prismicio/client";
+import { PrismicRichText } from "@prismicio/react";
 
-function MissionAndVision() {
+type MissionAndVisionProps = {
+  mission: {
+    text: RichTextField | undefined
+    image: ImageField<never> | undefined
+  };
+  vision: {
+    text: RichTextField | undefined
+    image: ImageField<never> | undefined
+  };
+}
+function MissionAndVision({ mission, vision }: MissionAndVisionProps) {
   const [tab, setTab] = useState<"vision" | "mission">("mission");
   return (
     <div className="min-h-full">
@@ -15,38 +26,29 @@ function MissionAndVision() {
             type="button"
             onClick={() => setTab(btn)}
             className={`px-4 md:px-8 py-2 md:py-4 rounded-t-md md:rounded-t-lg text-sm md:text-lg leading-none font-medium md:font-semibold font-amatic uppercase
-              ${tab === btn && "bg-primary text-white"} ${
-              tab !== btn &&
+              ${tab === btn && "bg-primary text-white"} ${tab !== btn &&
               "text-primary border-[1.5px] md:border-2 !border-b-0 border-primary"
-            }`}
+              }`}
           >
             {btn}
           </button>
         ))}
       </div>
-      {tab === "mission" && <Mission />}
-      {tab === "vision" && <Vision />}
+      {tab === "mission" && <Mission {...mission} />}
+      {tab === "vision" && <Vision {...vision} />}
     </div>
   );
 }
 
 export default MissionAndVision;
 
-function Mission() {
+function Mission({ image, text }: MissionAndVisionProps["mission"]) {
   return (
     <div className="flex flex-wrap *:w-full md:*:w-1/2">
       <div className="bg-black p-6 sm:p-8 md:p-10 lg:p-16">
-        <p className="md:text-lg font-medium leading-loose text-pretty text-justify">
-          To promote access to essential information, knowledge, and skills,
-          while empowering the poor and vulnerable to achieve sustainable
-          development. We are dedicated to creating opportunities that foster
-          self-reliance and resilience, focusing on inclusive programs that
-          address critical needs and support community growth. Our mission is to
-          bridge gaps and dismantle barriers, ensuring that every individual has
-          the resources and support needed to thrive. By fostering a culture of
-          empowerment and collaboration, we aim to drive meaningful change and
-          contribute to a more equitable and prosperous future for all.
-        </p>
+        <div className="md:text-lg font-medium leading-loose text-pretty text-justify">
+          <PrismicRichText field={text} />
+        </div>
         <Link
           to="/our-mission"
           className="block w-fit mt-10 px-4 md:px-8 py-2 md:py-4 bg-primary text-white rounded-full text-sm uppercase font-medium"
@@ -56,7 +58,7 @@ function Mission() {
       </div>
       <div className="bg-[url(assets/images/Group-940-1-1.png)] min-h-96 relative">
         <img
-          src={MissionAndVisionImage}
+          src={image?.url!}
           alt=""
           className="absolutebottom-0 object-cover w-full h-full"
         />
@@ -73,22 +75,13 @@ function Mission() {
   );
 }
 
-function Vision() {
+function Vision({ image, text }: MissionAndVisionProps["vision"]) {
   return (
     <div className="flex flex-wrap *:w-full md:*:w-1/2">
       <div className="bg-black p-6 sm:p-8 md:p-10 lg:p-16">
-        <p className="md:text-lg font-medium leading-loose text-pretty text-justify">
-          To empower communities by facilitating access to comprehensive
-          healthcare services, diverse economic development opportunities, and
-          quality education. We strive to create an environment where
-          individuals are equipped with the knowledge, skills, and resources
-          necessary to achieve self-reliance and sustainable growth. Our vision
-          is to build inclusive communities where every person has the
-          opportunity to contribute meaningfully to society, fostering a culture
-          of mutual support, respect, and collaboration. Through our efforts, we
-          aim to break the cycle of poverty and inequality, ensuring a brighter
-          and more equitable future for all.
-        </p>
+        <div className="md:text-lg font-medium leading-loose text-pretty text-justify">
+          <PrismicRichText field={text} />
+        </div>
 
         <div className="mt-6 md:mt-10">
           <DonateNowBtn />
@@ -96,7 +89,7 @@ function Vision() {
       </div>
       <div className="bg-[url(assets/images/Group-940-1-1.png)] min-h-96 relative">
         <img
-          src={MissionAndVisionImage}
+          src={image?.url!}
           alt=""
           className="absolutebottom-0 object-cover w-full h-full"
         />
