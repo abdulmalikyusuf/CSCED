@@ -423,6 +423,17 @@ interface ContactUsPageDocumentData {
 	contact_text: prismic.RichTextField;
 	
 	/**
+	 * contact image field in *Contact Us Page*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contact_us_page.contact_image
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	contact_image: prismic.ImageField<never>;
+	
+	/**
 	 * Address field in *Contact Us Page*
 	 *
 	 * - **Field Type**: Title
@@ -531,6 +542,16 @@ export interface IndexDocumentDataObjectivesItem {
  * Item in *Index Page → About*
  */
 export interface IndexDocumentDataAboutItem {
+	/**
+	 * about image field in *Index Page → About*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: index.about[].about_image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	about_image: prismic.ImageField<never>;
+	
 	/**
 	 * About Title field in *Index Page → About*
 	 *
@@ -787,6 +808,16 @@ export type IndexDocument<Lang extends string = string> = prismic.PrismicDocumen
  * Item in *Our Mission Page → Section*
  */
 export interface OurMissionPageDocumentDataMissionSectionItem {
+	/**
+	 * section image field in *Our Mission Page → Section*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: our_mission_page.mission_section[].section_image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	section_image: prismic.ImageField<never>;
+	
 	/**
 	 * Title field in *Our Mission Page → Section*
 	 *

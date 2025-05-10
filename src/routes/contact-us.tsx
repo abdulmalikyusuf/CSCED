@@ -1,15 +1,35 @@
+import { createRoute } from "@tanstack/react-router";
+import { PrismicImage, PrismicRichText, PrismicText } from "@prismicio/react";
+
 import { LucideIcons } from "@/components/icons";
-import Image1 from "@/assets/images/feature-2.jpg";
 import { formatPhoneNumber } from "@/lib/utils";
-import { info } from "@/lib/info";
+import { rootRoute } from "./root";
+import { client } from "@/lib/prismic";
+
+export const contactRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/contact-us',
+  component: ContactUs,
+  loader: async () => {
+    const contactUspage = (await client.getByType("contact_us_page")).results.at(0)?.data
+    if (!contactUspage) {
+      throw new Error("ContactUs page not found")
+    }
+    return contactUspage
+  }
+})
 
 function ContactUs() {
+  const data = contactRoute.useLoaderData()
   return (
     <>
-      <div className="relative h-[70vh] bg-[url(assets/images/feature-3.jpg)] bg-no-repeat bg-cover bg-center flex flex-col items-center justify-center">
-        <div className="">
+      <div className="relative h-[70vh] bg-no-repeat bg-cover bg-center flex flex-col items-center justify-center">
+        <div className="absolute inset-0 -z-0">
+          <PrismicImage field={data.contact_hero_image} className="w-full h-full object-cover" />
+        </div>
+        <div className="relative z-10">
           <h2 className="text-2xl md:text-4xl font-bold text-primary text-center text-stroke-px text-stroke-black gradient-text bg-gradient-to-br from-primary to-black">
-            Reach out to us
+            <PrismicText field={data.contact_hero_text} />
           </h2>
           <div className="mt-4 flex gap-2 items-center justify-center text-sm font-semibold">
             <h6 className="text-primary">HOME</h6>
@@ -20,24 +40,17 @@ function ContactUs() {
       </div>
       <div className="flex flex-col md:flex-row items-start gap-10 md:gap-14 py-10 md:py-16 px-4 sm:px-8 lg:px-16">
         <div className="flex-shrink-0 md:w-3/5">
-          <img src={Image1} alt="" className="h-full w-full" />
+          <PrismicImage field={data.contact_image} className="h-full w-full" />
         </div>
         <div className="px-4 sm:px-8 lg:px-0 text-black">
           <h5 className="md:text-xl font-semibold uppercase md:mb-2 font-amatic text-primary">
-            Contact Us
+            <PrismicText field={data.contact_heading} />
           </h5>
           <h4 className="text-3xl md:text-5xl font-bold font-DMSans capitalize">
-            get in touch with us
+            <PrismicRichText field={data.contact_title} />
           </h4>
-          <div className="mt-2 md:mt-4 leading-relaxed opacity-80">
-            <p className="text-justify">
-              Connect with us to be a part of positive change. Whether you have
-              questions, feedback, or want to explore collaboration
-              opportunities, the CSCED team is here for you. Your engagement
-              fuels our mission to make a meaningful impact in the lives of
-              those we serve. Reach out to us today, and let’s create a brighter
-              future together.
-            </p>
+          <div className="mt-2 md:mt-4 leading-relaxed opacity-80 text-justify">
+            <PrismicRichText field={data.contact_text} />
           </div>
           <div className="flex flex-col gap-4 mt-4 md:mt-6">
             <div className="flex gap-6 items-center">
@@ -48,9 +61,9 @@ function ContactUs() {
                 <h5 className="text-lg font-bold font-amatic text-primary">
                   Visit
                 </h5>
-                <p className="mt-0.5 leading-none text-sm font-DMSans font-medium text-black">
-                  {info.address}
-                </p>
+                <div className="mt-0.5 leading-none text-sm font-DMSans font-medium text-black">
+                  <PrismicText field={data.address} />
+                </div>
               </div>
             </div>
             <div className="flex gap-6 items-center">
@@ -61,9 +74,9 @@ function ContactUs() {
                 <h5 className="text-lg font-bold font-amatic text-primary">
                   E-Mail Us
                 </h5>
-                <p className="mt-0.5 leading-none text-sm font-DMSans font-medium text-black">
-                  {info.email}
-                </p>
+                <div className="mt-0.5 leading-none text-sm font-DMSans font-medium text-black">
+                  <PrismicText field={data.email} />
+                </div>
               </div>
             </div>
             <div className="flex gap-6 items-center">
@@ -74,9 +87,9 @@ function ContactUs() {
                 <h5 className="text-lg font-bold font-amatic text-primary">
                   Call
                 </h5>
-                <p className="mt-0.5 leading-none text-sm font-DMSans font-medium text-black">
-                  {formatPhoneNumber(info.phoneNumber)}
-                </p>
+                <div className="mt-0.5 leading-none text-sm font-DMSans font-medium text-black">
+                  {formatPhoneNumber(data.phone_number[0]?.text!)}
+                </div>
               </div>
             </div>
           </div>
@@ -165,5 +178,3 @@ function ContactUs() {
     </>
   );
 }
-
-export default ContactUs;

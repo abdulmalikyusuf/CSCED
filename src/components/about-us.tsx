@@ -1,9 +1,9 @@
+import { Link } from "@tanstack/react-router";
 import { GroupField } from "@prismicio/client";
-import { PrismicRichText } from "@prismicio/react";
-import Image1 from "@/assets/gallery/IMG-20241116-WA0008.jpg";
+import { PrismicImage, PrismicRichText } from "@prismicio/react";
+
 import Image2 from "@/assets/images/home-1_01-2.png";
 import { IndexDocumentDataAboutItem } from "#/types.generated";
-import { Link } from "@tanstack/react-router";
 import { Simplify } from "@/types";
 
 function AboutUs({
@@ -12,13 +12,12 @@ function AboutUs({
   data: GroupField<Simplify<IndexDocumentDataAboutItem>> | undefined
 }) {
   if (!data) return null
-  const { about_subtitle, about_text, about_title } = data[0]!
+  const { about_subtitle, about_text, about_title, about_image } = data[0]!
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center gap-16 text-black pr-4 sm:pr-8 lg:pr-16 h-full">
       <div className="shrink-0 relative lg:max-w-[50%]">
-        <img
-          src={Image1}
-          alt=""
+        <PrismicImage
+          field={about_image}
           className="max-h-[690px] md:max-h-dvh w-full"
         />
         <div className="absolute bottom-0">
