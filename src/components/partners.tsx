@@ -1,6 +1,8 @@
 import { GroupField } from "@prismicio/client";
 import Marquee from "react-fast-marquee";
-import { IndexDocumentDataPartnersItem, Simplify } from "#/types.generated";
+
+import { IndexDocumentDataPartnersItem } from "#/types.generated";
+import { Simplify } from "@/types";
 
 function Partners({ partners }: { partners: GroupField<Simplify<IndexDocumentDataPartnersItem>> | undefined }) {
 

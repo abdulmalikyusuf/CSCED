@@ -6,7 +6,7 @@ import {
 import { rootRoute } from "./routes/root";
 import { aboutRoute } from "./routes/about-us";
 import OurMission from "./routes/our-mission";
-import TheTeam from "./routes/the-team";
+import { teamRoute } from "./routes/the-team";
 import ContactUs from "./routes/contact-us";
 import { indexRoute } from "./routes";
 import "./App.css";
@@ -17,11 +17,7 @@ const missionRoute = createRoute({
   path: '/our-mission',
   component: OurMission,
 })
-const teamRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/our-team',
-  component: TheTeam,
-})
+
 const contactRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/contact-us',

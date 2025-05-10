@@ -26,8 +26,8 @@ const navItems = [
         }),
   },
   {
-    title: "The Team",
-    href: "/the-team",
+    title: "Our Team",
+    href: "/our-team",
     children:
       "Dome House, Revellion High, Wax Palace, Cellar Tree, Dome House, Revellion High, Wax Palace, Cellar Tree"
         .split(", ")
@@ -36,7 +36,7 @@ const navItems = [
         }),
   },
   {
-    title: "The Mission",
+    title: "Our Mission",
     href: "/our-mission",
     children:
       "Dome House, Revellion High, Wax Palace, Cellar Tree, Dome House, Revellion High, Wax Palace, Cellar Tree"
@@ -98,7 +98,7 @@ function NavItem({ title, children, href, handleClick }: NavItemProps) {
   const marquee = useRef<HTMLDivElement | null>(null);
   const marqueeInner = useRef<HTMLDivElement | null>(null);
 
-  const { contextSafe } = useGSAP({ scope: menuItem.current });
+  const { contextSafe } = useGSAP({ scope: menuItem.current! });
 
   const mouseEnter = (ev) => {
     // find closest side to the mouse
