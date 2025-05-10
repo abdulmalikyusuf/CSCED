@@ -1,8 +1,10 @@
-import { IndexDocumentDataVolunteeringPitchItem, Simplify } from "#/types.generated";
-import VolunteerImage from "@/assets/images/volunteer-1888823_640.webp";
-import { LucideIcons } from "@/components/icons";
 import { GroupField, RichTextField } from "@prismicio/client";
 import { TitleField } from "@prismicio/client";
+
+import { IndexDocumentDataVolunteeringPitchItem } from "#/types.generated";
+import VolunteerImage from "@/assets/images/volunteer-1888823_640.webp";
+import { LucideIcons } from "@/components/icons";
+import { Simplify } from "@/types";
 
 type RecruitVolunteersProps = {
   title: TitleField | undefined;

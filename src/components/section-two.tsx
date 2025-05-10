@@ -1,20 +1,14 @@
 import { useRef } from "react";
 import gsap from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import Splitting from "splitting";
 import { GroupField, TitleField } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
-import ConflitResolution from "@/assets/images/Icon-Blue-Conflict-Resolution-And-Mediation.png";
-import Education from "@/assets/images/1016545.png";
-import FoodSecurity from "@/assets/images/noun-food-security-4965899.png";
-import WomensRight from "@/assets/images/Women's Right.png";
 import {
   IndexDocumentDataObjectivesItem,
-  Simplify,
 } from "#/types.generated";
 import DonateNowBtn from "./donate-now-btn";
+import { Simplify } from "@/types";
 
 gsap.registerPlugin(ScrollTrigger);
 
