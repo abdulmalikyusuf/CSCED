@@ -5,18 +5,12 @@ import {
 
 import { rootRoute } from "./routes/root";
 import { aboutRoute } from "./routes/about-us";
-import OurMission from "./routes/our-mission";
+import { ourMissionRoute } from "./routes/our-mission";
 import { teamRoute } from "./routes/the-team";
 import ContactUs from "./routes/contact-us";
 import { indexRoute } from "./routes";
 import "./App.css";
 
-
-const missionRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/our-mission',
-  component: OurMission,
-})
 
 const contactRoute = createRoute({
   getParentRoute: () => rootRoute,
@@ -24,6 +18,6 @@ const contactRoute = createRoute({
   component: ContactUs,
 })
 
-const routeTree = rootRoute.addChildren([indexRoute, aboutRoute, missionRoute, teamRoute, contactRoute])
+const routeTree = rootRoute.addChildren([indexRoute, aboutRoute, ourMissionRoute, teamRoute, contactRoute])
 
 export const router = createRouter({ routeTree })
