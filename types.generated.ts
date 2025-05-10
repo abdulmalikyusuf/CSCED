@@ -62,12 +62,32 @@ export interface AboutUsDocumentDataImpactItem {
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
 	impact_text: prismic.RichTextField;
+	
+	/**
+	 * Impact suffix field in *About Us Page → Impact*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: +
+	 * - **API ID Path**: about_us.impact[].impact_suffix
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	impact_suffix: prismic.RichTextField;
 }
 
 /**
  * Item in *About Us Page → Section*
  */
 export interface AboutUsDocumentDataSectionItem {
+	/**
+	 * section image field in *About Us Page → Section*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: about_us.section[].section_image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	section_image: prismic.ImageField<never>;
+	
 	/**
 	 * Title field in *About Us Page → Section*
 	 *
@@ -290,6 +310,39 @@ interface AboutUsDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/field#group
 	 */
 	testimonial: prismic.GroupField<Simplify<AboutUsDocumentDataTestimonialItem>>;
+	
+	/**
+	 * News Heading field in *About Us Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: about_us.news_heading
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	news_heading: prismic.TitleField;
+	
+	/**
+	 * News Title field in *About Us Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: about_us.news_title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	news_title: prismic.TitleField;
+	
+	/**
+	 * News Subtitle field in *About Us Page*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: about_us.news_subtitle
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	news_subtitle: prismic.RichTextField;
 }
 
 /**

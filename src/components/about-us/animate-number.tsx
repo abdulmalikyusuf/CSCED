@@ -1,4 +1,4 @@
-import { ReactNode, useRef } from "react";
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -69,13 +69,14 @@ function AnimateNumber(config: Props) {
             roundProps: "value",
             ease: "power1.in",
             onUpdate: function () {
-              el.current.innerHTML = formatNumber(count.value) + config.suffix;
+              if (!el.current) return;
+              el.current.innerHTML = formatNumber(count.value) + `${config.suffix ?? ""}`;
             },
           });
         },
       });
     },
-    { scope: el.current }
+    { scope: el.current! }
   );
   return <span ref={el}>{config.from}</span>;
 }

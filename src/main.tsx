@@ -1,10 +1,10 @@
-import React, { StrictMode } from "react";
+import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { PrismicProvider } from "@prismicio/react";
 import { RouterProvider } from '@tanstack/react-router'
 
 import { router } from "@/App.tsx";
-import { client } from "@/prismic";
+import { client } from "@/lib/prismic";
 
 declare module '@tanstack/react-router' {
   interface Register {
